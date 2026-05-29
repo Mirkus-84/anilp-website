@@ -41,6 +41,12 @@ npm run preview
 
 ## Deploy
 
+Produzione Netlify:
+
+- URL temporaneo: https://anilp-website.netlify.app
+- Dominio configurato lato Netlify: https://www.anilp.it
+- Site ID: `9b72471d-468c-4bb0-a6fe-e860069e7c31`
+
 ### Netlify
 
 1. Eseguire `npm run build`.
