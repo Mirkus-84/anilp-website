@@ -8,7 +8,7 @@ import { StatusBadge } from './StatusBadge'
 export function Hero() {
   return (
     <section className="institutional-gradient overflow-hidden border-b border-[#D9E1E8]">
-      <div className="container-page py-8 md:py-10">
+      <div className="container-page py-4 md:py-5">
         <motion.div
           className="mx-auto flex max-w-5xl flex-col items-center text-center"
           initial={{ opacity: 0, y: 18 }}
@@ -16,17 +16,17 @@ export function Hero() {
           transition={{ duration: 0.45 }}
         >
           <Logo prominent />
-          <div className="mt-4 md:mt-5">
+          <div className="mt-2">
             <StatusBadge>Associazione in fase di costituzione</StatusBadge>
           </div>
-          <h1 className="mt-4 max-w-5xl text-4xl font-black leading-tight text-[#1E2A44] md:text-5xl lg:text-6xl">
+          <h1 className="mt-3 max-w-5xl text-4xl font-black leading-tight text-[#1E2A44] md:text-5xl lg:text-6xl">
             La rappresentanza nazionale degli infermieri liberi professionisti
           </h1>
-          <p className="mt-4 max-w-3xl text-lg leading-8 text-[#334155] md:text-xl">
+          <p className="mt-3 max-w-3xl text-lg leading-8 text-[#334155] md:text-xl">
             ANILP nasce per tutelare, rappresentare e valorizzare gli infermieri
             che esercitano o intendono esercitare la libera professione in Italia.
           </p>
-          <div className="mt-6 flex flex-col justify-center gap-3 sm:flex-row">
+          <div className="mt-5 flex flex-col justify-center gap-3 sm:flex-row">
             <CTAButton to={formUrl} external>
               Manifesta il tuo interesse
             </CTAButton>
@@ -37,7 +37,7 @@ export function Hero() {
         </motion.div>
 
         <motion.div
-          className="mx-auto mt-8 max-w-5xl"
+          className="mx-auto mt-6 max-w-5xl"
           initial={{ opacity: 0, y: 18 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.45, delay: 0.12 }}

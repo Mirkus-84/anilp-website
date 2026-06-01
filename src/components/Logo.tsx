@@ -20,11 +20,11 @@ export function Logo({ compact = false, prominent = false }: LogoProps) {
         alt={alt}
         className={`${
           prominent
-            ? 'h-auto w-[320px] max-w-full md:w-[760px] lg:w-[920px]'
+            ? 'h-[260px] w-[320px] max-w-full object-contain md:h-[320px] md:w-[760px] lg:h-[360px] lg:w-[920px]'
             : compact
               ? 'h-10 w-auto md:h-12'
               : 'h-14 w-auto md:h-16'
-        } object-contain`}
+        }`}
       />
     </Link>
   )
