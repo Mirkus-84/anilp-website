@@ -24,7 +24,7 @@ export function Header() {
       }`}
     >
       <div className="container-page flex min-h-[78px] items-center justify-between gap-5">
-        <Logo />
+        <Logo compact />
         <nav className="hidden items-center gap-1 xl:flex" aria-label="Navigazione principale">
           {navItems.map((item) => (
             <NavLink
