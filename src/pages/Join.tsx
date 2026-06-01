@@ -48,15 +48,15 @@ export function Join() {
               </div>
             </Card>
           </div>
-          <Card className="h-fit bg-slate-950 text-white">
-            <StatusBadge tone="dark">Quota non definitiva</StatusBadge>
-            <h2 className="mt-5 text-2xl font-black">Quota associativa</h2>
-            <p className="mt-4 leading-8 text-slate-300">
+          <Card className="h-fit border-l-4 border-l-teal-700 bg-slate-50">
+            <StatusBadge>Quota non definitiva</StatusBadge>
+            <h2 className="mt-5 text-2xl font-black text-slate-950">Quota associativa</h2>
+            <p className="mt-4 leading-8 text-slate-700">
               La quota associativa annuale sara definita dagli organi competenti.
               In fase di avvio e in valutazione una quota indicativa di 50 euro annui.
             </p>
             <div className="mt-8">
-              <CTAButton to={formUrl} external variant="light">
+              <CTAButton to={formUrl} external>
                 Compila la manifestazione di interesse
               </CTAButton>
             </div>

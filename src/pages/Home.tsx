@@ -1,4 +1,3 @@
-import { motion } from 'framer-motion'
 import { Building2, CheckCircle2, Globe2, Network, Users } from 'lucide-react'
 import { ActivityCard } from '../components/ActivityCard'
 import { Card } from '../components/Card'
@@ -60,10 +59,9 @@ export function Home() {
         </div>
       </section>
 
-      <section className="bg-slate-950 py-20 text-white">
+      <section className="border-y border-slate-200 bg-white py-20">
         <div className="container-page">
           <SectionTitle
-            light
             eyebrow="Visione"
             title="Cosa vogliamo costruire"
             text="Un’infrastruttura associativa nazionale, utile ai professionisti e credibile verso gli interlocutori istituzionali."
@@ -75,18 +73,17 @@ export function Home() {
               ['Rete territoriale', Network],
               ['Interlocuzione nazionale', Globe2],
             ].map(([label, Icon]) => (
-              <motion.div
+              <article
                 key={label as string}
-                className="rounded-md border border-white/10 bg-white/7 p-6"
-                whileHover={{ y: -4 }}
+                className="border-l-4 border-teal-700 bg-slate-50 p-6"
               >
-                <Icon className="h-8 w-8 text-teal-300" aria-hidden="true" />
-                <h3 className="mt-5 text-xl font-black">{label as string}</h3>
-                <p className="mt-3 leading-7 text-slate-300">
+                <Icon className="h-8 w-8 text-teal-700" aria-hidden="true" />
+                <h3 className="mt-5 text-xl font-black text-slate-950">{label as string}</h3>
+                <p className="mt-3 leading-7 text-slate-600">
                   Sviluppo progressivo dopo la costituzione formale e secondo lo
                   statuto approvato.
                 </p>
-              </motion.div>
+              </article>
             ))}
           </div>
         </div>
@@ -141,16 +138,16 @@ export function Home() {
         </div>
       </section>
 
-      <section className="bg-teal-700 py-16 text-white">
+      <section className="border-t border-slate-200 bg-slate-50 py-16">
         <div className="container-page flex flex-col items-start justify-between gap-6 md:flex-row md:items-center">
           <div>
-            <h2 className="text-3xl font-black">Partecipa alla nascita dell’associazione</h2>
-            <p className="mt-3 max-w-2xl leading-7 text-teal-50">
+            <h2 className="text-3xl font-black text-slate-950">Partecipa alla nascita dell’associazione</h2>
+            <p className="mt-3 max-w-2xl leading-7 text-slate-700">
               Compila la manifestazione di interesse e contribuisci al percorso
               verso una rappresentanza nazionale degli infermieri liberi professionisti.
             </p>
           </div>
-          <CTAButton to={formUrl} external variant="light">
+          <CTAButton to={formUrl} external>
             Manifesta il tuo interesse
           </CTAButton>
         </div>

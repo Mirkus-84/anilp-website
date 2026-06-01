@@ -11,11 +11,11 @@ type CTAButtonProps = {
 export function CTAButton({ children, to, variant = 'primary', external }: CTAButtonProps) {
   const classes = {
     primary:
-      'bg-teal-600 text-white shadow-lg shadow-teal-900/10 hover:bg-teal-500',
+      'bg-teal-700 text-white hover:bg-teal-800',
     secondary:
       'border border-slate-300 bg-white text-slate-950 hover:border-teal-500 hover:text-teal-700',
     light:
-      'border border-white/25 bg-white text-slate-950 hover:bg-teal-50',
+      'border border-teal-700 bg-white text-teal-800 hover:bg-teal-50',
   }
 
   const className = `inline-flex min-h-12 items-center justify-center gap-2 rounded-md px-5 py-3 text-sm font-bold transition ${classes[variant]}`

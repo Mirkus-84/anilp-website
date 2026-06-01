@@ -2,7 +2,7 @@
 
 :root {
   color: #0f172a;
-  background: #f8fafc;
+  background: #ffffff;
   font-family:
     Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
     sans-serif;
@@ -41,13 +41,6 @@ select {
 .container-page {
   width: min(1160px, calc(100% - 32px));
   margin-inline: auto;
-}
-
-.grid-pattern {
-  background-image:
-    linear-gradient(rgba(255, 255, 255, 0.08) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255, 255, 255, 0.08) 1px, transparent 1px);
-  background-size: 42px 42px;
 }
 
 .italy-map-shape {

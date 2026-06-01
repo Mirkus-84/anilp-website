@@ -13,8 +13,8 @@ export function MobileMenu({ open, onClose }: MobileMenuProps) {
   if (!open) return null
 
   return (
-    <div className="fixed inset-0 z-50 bg-slate-950/60 xl:hidden" role="dialog" aria-modal="true">
-      <div className="ml-auto flex h-full w-full max-w-sm flex-col bg-white p-5 shadow-2xl">
+    <div className="fixed inset-0 z-50 bg-slate-900/35 xl:hidden" role="dialog" aria-modal="true">
+      <div className="ml-auto flex h-full w-full max-w-sm flex-col border-l border-slate-200 bg-white p-5">
         <div className="flex items-center justify-between gap-4">
           <Logo />
           <button

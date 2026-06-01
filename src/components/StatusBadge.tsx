@@ -6,7 +6,7 @@ type StatusBadgeProps = {
 export function StatusBadge({ children, tone = 'light' }: StatusBadgeProps) {
   const styles = {
     light: 'border-teal-200 bg-teal-50 text-teal-800',
-    dark: 'border-white/20 bg-white/10 text-teal-100',
+    dark: 'border-teal-200 bg-white text-teal-800',
     gold: 'border-amber-200 bg-amber-50 text-amber-800',
   }
 
