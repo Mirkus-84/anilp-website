@@ -7,7 +7,7 @@ export function Footer() {
     <footer className="border-t border-[#D9E1E8] bg-white py-14 text-[#1F2937]">
       <div className="container-page grid gap-10 lg:grid-cols-[1.4fr_1fr_1fr_1fr]">
         <div>
-          <Logo compact />
+          <Logo symbol />
           <p className="mt-5 max-w-md leading-7 text-[#475569]">
             ANILP è in fase di costituzione e promuove un percorso verso una
             rappresentanza nazionale degli infermieri liberi professionisti.
