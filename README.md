@@ -70,7 +70,7 @@ git push -u origin main
 
 ## Personalizzazioni future
 
-- Logo ufficiale: il sito usa `public/Logo ANILP.png`. Per aggiornare il marchio, sostituire quel file mantenendo lo stesso nome oppure aggiornare il percorso in `src/components/Logo.tsx`.
+- Logo ufficiale: il sito usa `public/Logo ANILP no sfondo.png`. Per aggiornare il marchio, sostituire quel file mantenendo lo stesso nome oppure aggiornare il percorso in `src/components/Logo.tsx`.
 - Link definitivo del form di manifestazione di interesse.
 - PEC ufficiale.
 - Sede legale ufficiale.
