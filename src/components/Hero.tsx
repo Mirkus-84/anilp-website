@@ -31,7 +31,7 @@ export function Hero() {
               Manifesta il tuo interesse
             </CTAButton>
             <CTAButton to="/chi-siamo" variant="secondary">
-              Scopri il progetto
+              Scopri ANILP
             </CTAButton>
           </div>
         </motion.div>
@@ -51,7 +51,7 @@ export function Hero() {
                   Verso una rete nazionale
                 </p>
                 <p className="mt-2 text-2xl font-black text-[#1E2A44]">
-                  Tutela, qualita, autonomia
+                  Tutela, qualità, autonomia
                 </p>
               </div>
               <div className="grid h-14 w-14 shrink-0 place-items-center rounded-md bg-[#E6F5F3] text-[#087F7A]">

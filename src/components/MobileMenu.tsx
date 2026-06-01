@@ -16,7 +16,7 @@ export function MobileMenu({ open, onClose }: MobileMenuProps) {
     <div className="fixed inset-0 z-50 bg-slate-900/35 xl:hidden" role="dialog" aria-modal="true">
       <div className="ml-auto flex h-full w-full max-w-sm flex-col border-l border-[#D9E1E8] bg-white p-5">
         <div className="flex items-center justify-between gap-4">
-          <Logo />
+          <Logo compact />
           <button
             type="button"
             className="grid h-10 w-10 place-items-center rounded-md border border-[#D9E1E8] text-[#1E2A44] transition hover:border-[#087F7A] hover:bg-[#E6F5F3]"

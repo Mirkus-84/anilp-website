@@ -1,31 +1,30 @@
-import { Building2, CheckCircle2, Globe2, Network, Users } from 'lucide-react'
+import { CheckCircle2 } from 'lucide-react'
 import { ActivityCard } from '../components/ActivityCard'
 import { Card } from '../components/Card'
 import { CTAButton } from '../components/CTAButton'
-import { FounderCard } from '../components/FounderCard'
 import { Hero } from '../components/Hero'
 import { NewsCard } from '../components/NewsCard'
 import { SectionTitle } from '../components/SectionTitle'
 import { Seo } from '../components/Seo'
 import { StatusBadge } from '../components/StatusBadge'
-import { activities, formUrl, founders, news, pillars } from '../data/site'
+import { activities, constitutionSteps, formUrl, news, pillars } from '../data/site'
 
 export function Home() {
   return (
     <>
       <Seo
         title="ANILP | Associazione Nazionale Infermieri Liberi Professionisti"
-        description="ANILP e il progetto associativo nazionale dedicato alla rappresentanza, tutela e valorizzazione degli infermieri liberi professionisti in Italia."
+        description="ANILP è il progetto associativo nazionale dedicato alla rappresentanza, tutela e valorizzazione degli infermieri liberi professionisti in Italia."
       />
       <Hero />
 
       <section className="bg-white py-20">
         <div className="container-page grid gap-10 lg:grid-cols-[0.9fr_1.1fr]">
           <div>
-            <StatusBadge>ANILP e in fase di costituzione</StatusBadge>
+            <StatusBadge>ANILP è in fase di costituzione</StatusBadge>
             <div className="accent-bar mt-6 h-1 w-20 rounded-full" aria-hidden="true" />
             <h2 className="mt-5 text-3xl font-black leading-tight text-[#1E2A44] md:text-4xl">
-              Perche nasce ANILP
+              Perché nasce ANILP
             </h2>
           </div>
           <div className="grid gap-5 text-lg leading-8 text-[#334155]">
@@ -33,7 +32,7 @@ export function Home() {
               La libera professione infermieristica richiede rappresentanza,
               tutela e strumenti dedicati. ANILP nasce come percorso
               pre-costitutivo per costruire un’associazione nazionale capace di
-              valorizzare autonomia, qualita, deontologia e buone pratiche.
+              valorizzare autonomia, qualità, deontologia e buone pratiche.
             </p>
             <p>
               Il progetto intende promuovere iniziative legislative,
@@ -48,8 +47,8 @@ export function Home() {
       <section className="institutional-gradient py-20">
         <div className="container-page">
           <SectionTitle
-            eyebrow="Finalita statutarie"
-            title="I nostri pilastri"
+            eyebrow="Finalità statutarie"
+            title="Le priorità associative"
             text="Le direttrici che orientano il percorso verso la costituzione dell’associazione."
           />
           <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-4">
@@ -63,29 +62,31 @@ export function Home() {
       <section className="border-y border-[#D9E1E8] bg-white py-20">
         <div className="container-page">
           <SectionTitle
-            eyebrow="Visione"
-            title="Cosa vogliamo costruire"
-            text="Un’infrastruttura associativa nazionale, utile ai professionisti e credibile verso gli interlocutori istituzionali."
+            eyebrow="Percorso"
+            title="Percorso verso la costituzione"
+            text="Le tappe previste per passare dalla fase pre-costitutiva alla piena operatività associativa."
           />
           <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-4">
-            {[
-              ['Servizi agli associati', Users],
-              ['Convenzioni e strumenti', Building2],
-              ['Rete territoriale', Network],
-              ['Interlocuzione nazionale', Globe2],
-            ].map(([label, Icon]) => (
+            {constitutionSteps.slice(0, 4).map((step, index) => (
               <article
-                key={label as string}
+                key={step}
                 className="rounded-md border border-[#D9E1E8] border-l-4 border-l-[#087F7A] bg-[#F7F9FB] p-6 shadow-sm shadow-slate-950/5 transition-all duration-200 hover:-translate-y-[3px] hover:border-[#9DD8D3] hover:shadow-lg"
               >
-                <Icon className="h-8 w-8 text-[#087F7A]" aria-hidden="true" />
-                <h3 className="mt-5 text-xl font-black text-[#1E2A44]">{label as string}</h3>
+                <div className="grid h-10 w-10 place-items-center rounded-full bg-[#087F7A] text-sm font-black text-white">
+                  {index + 1}
+                </div>
+                <h3 className="mt-5 text-xl font-black text-[#1E2A44]">{step}</h3>
                 <p className="mt-3 leading-7 text-[#475569]">
-                  Sviluppo progressivo dopo la costituzione formale e secondo lo
-                  statuto approvato.
+                  Passaggio progressivo verso una rappresentanza nazionale strutturata,
+                  trasparente e conforme allo statuto approvato.
                 </p>
               </article>
             ))}
+          </div>
+          <div className="mt-8 text-center">
+            <CTAButton to="/percorso-costitutivo" variant="secondary">
+              Scopri il percorso costitutivo
+            </CTAButton>
           </div>
         </div>
       </section>
@@ -95,8 +96,8 @@ export function Home() {
           <div>
             <SectionTitle
               eyebrow="Territorio"
-              title="Verso una rete nazionale"
-              text="ANILP intende promuovere delegazioni territoriali, coordinamenti regionali e referenti regionali nel rispetto dello statuto e dei regolamenti associativi."
+              title="Delegazioni territoriali"
+              text="ANILP intende sviluppare progressivamente una presenza territoriale attraverso delegazioni e coordinamenti regionali, secondo quanto sarà previsto dallo statuto e dai regolamenti associativi."
             />
           </div>
           <Card>
@@ -113,23 +114,12 @@ export function Home() {
         </div>
       </section>
 
-      <section className="institutional-gradient py-20">
-        <div className="container-page">
-          <SectionTitle eyebrow="Promotori" title="Soci fondatori" />
-          <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-5">
-            {founders.map((name) => (
-              <FounderCard key={name} name={name} />
-            ))}
-          </div>
-        </div>
-      </section>
-
       <section className="bg-white py-20">
         <div className="container-page">
           <SectionTitle
-            eyebrow="Aggiornamenti"
-            title="News dal progetto ANILP"
-            text="Una struttura blog locale gia predisposta per comunicati, approfondimenti e aggiornamenti ufficiali."
+            eyebrow="Aggiornamenti istituzionali"
+            title="News e comunicati"
+            text="Una sezione predisposta per distinguere news, comunicati ufficiali e aggiornamenti istituzionali del progetto ANILP."
           />
           <div className="grid gap-5 md:grid-cols-3">
             {news.map((item) => (
@@ -150,7 +140,7 @@ export function Home() {
             </p>
           </div>
           <CTAButton to={formUrl} external>
-            Manifesta il tuo interesse
+            Compila la manifestazione di interesse
           </CTAButton>
         </div>
       </section>

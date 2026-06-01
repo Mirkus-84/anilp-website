@@ -2,7 +2,7 @@
 
 Sito web istituzionale di ANILP - Associazione Nazionale Infermieri Liberi Professionisti.
 
-ANILP e in fase di costituzione. Il sito comunica il progetto associativo nazionale, la manifestazione di interesse, i soci fondatori, gli organi previsti, le attivita, i documenti, le news e le aree future.
+ANILP è in fase di costituzione. Il sito comunica il progetto associativo nazionale, la manifestazione di interesse, i soci fondatori, gli organi previsti, le attività, i documenti, le news e le aree future.
 
 ## Stack
 

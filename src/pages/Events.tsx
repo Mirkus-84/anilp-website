@@ -4,13 +4,13 @@ import { PageHero } from '../components/PageHero'
 import { Seo } from '../components/Seo'
 
 export function Events() {
-  const items = ['Webinar', 'Congressi', 'Corsi', 'Tavoli tecnici', 'Incontri territoriali', 'Attivita ECM future']
+  const items = ['Webinar', 'Congressi', 'Corsi', 'Tavoli tecnici', 'Incontri territoriali', 'Attività ECM future']
 
   return (
     <>
       <Seo
         title="Eventi e formazione | ANILP"
-        description="Eventi, webinar, congressi, corsi, tavoli tecnici e attivita ECM future del progetto ANILP."
+        description="Eventi, webinar, congressi, corsi, tavoli tecnici e attività ECM future del progetto ANILP."
       />
       <PageHero
         badge="Formazione permanente"
@@ -25,7 +25,7 @@ export function Events() {
               <h2 className="mt-5 text-xl font-black text-[#1E2A44]">{item}</h2>
               <p className="mt-3 leading-7 text-[#475569]">
                 Programmazione in fase di definizione, da attivare dopo la
-                costituzione e secondo le priorita associative.
+                costituzione e secondo le priorità associative.
               </p>
             </Card>
           ))}

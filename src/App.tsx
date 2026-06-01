@@ -12,7 +12,9 @@ import { Join } from './pages/Join'
 import { News } from './pages/News'
 import { Organs } from './pages/Organs'
 import { Policy } from './pages/Policy'
+import { ConstitutionPath } from './pages/ConstitutionPath'
 import { ReservedArea } from './pages/ReservedArea'
+import { Transparency } from './pages/Transparency'
 import { Territory } from './pages/Territory'
 
 const router = createBrowserRouter([
@@ -31,6 +33,8 @@ const router = createBrowserRouter([
       { path: 'eventi-formazione', element: <Events /> },
       { path: 'convenzioni', element: <Conventions /> },
       { path: 'delegazioni-territoriali', element: <Territory /> },
+      { path: 'percorso-costitutivo', element: <ConstitutionPath /> },
+      { path: 'trasparenza', element: <Transparency /> },
       { path: 'contatti', element: <Contacts /> },
       { path: 'privacy-policy', element: <Policy type="privacy" /> },
       { path: 'cookie-policy', element: <Policy type="cookie" /> },

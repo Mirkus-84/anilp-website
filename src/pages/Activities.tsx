@@ -7,12 +7,12 @@ export function Activities() {
   return (
     <>
       <Seo
-        title="Attivita | ANILP"
-        description="Le aree di attivita previste da ANILP: tutela, rappresentanza, formazione, convenzioni, delegazioni ed eventi."
+        title="Attività | ANILP"
+        description="Le aree di attività previste da ANILP: tutela, rappresentanza, formazione, convenzioni, delegazioni ed eventi."
       />
       <PageHero
         badge="Aree di lavoro"
-        title="Attivita"
+        title="Attività"
         text="ANILP intende sviluppare iniziative professionali, legislative, formative, informative e organizzative per gli associati."
       />
       <section className="bg-slate-50 py-20">

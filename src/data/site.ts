@@ -35,14 +35,22 @@ export const founders = [
 export const navItems = [
   { label: 'Home', path: '/' },
   { label: 'Chi siamo', path: '/chi-siamo' },
-  { label: 'Fondatori', path: '/soci-fondatori' },
-  { label: 'Attivita', path: '/attivita' },
+  { label: 'Attività', path: '/attivita' },
   { label: 'Documenti', path: '/documenti' },
   { label: 'News', path: '/news' },
-  { label: 'Eventi', path: '/eventi-formazione' },
-  { label: 'Convenzioni', path: '/convenzioni' },
   { label: 'Delegazioni', path: '/delegazioni-territoriali' },
+  { label: 'Diventa socio', path: '/diventa-socio' },
   { label: 'Contatti', path: '/contatti' },
+]
+
+export const secondaryNavItems = [
+  { label: 'Soci fondatori', path: '/soci-fondatori' },
+  { label: 'Organi associativi', path: '/organi-associativi' },
+  { label: 'Percorso costitutivo', path: '/percorso-costitutivo' },
+  { label: 'Trasparenza', path: '/trasparenza' },
+  { label: 'Eventi e formazione', path: '/eventi-formazione' },
+  { label: 'Convenzioni', path: '/convenzioni' },
+  { label: 'Area riservata', path: '/area-riservata' },
 ]
 
 export const pillars: Array<{ title: string; text: string; icon: LucideIcon }> = [
@@ -57,13 +65,13 @@ export const pillars: Array<{ title: string; text: string; icon: LucideIcon }> =
     icon: Landmark,
   },
   {
-    title: 'Autonomia e identita',
-    text: 'Valorizzazione dell’autonomia professionale, della qualita, della deontologia e delle buone pratiche.',
+    title: 'Autonomia e identità',
+    text: 'Valorizzazione dell’autonomia professionale, della qualità, della deontologia e delle buone pratiche.',
     icon: Award,
   },
   {
     title: 'Formazione permanente',
-    text: 'Eventi, seminari, workshop, attivita ECM future e collaborazione con universita ed enti di formazione.',
+    text: 'Eventi, seminari, workshop, attività ECM future e collaborazione con università ed enti di formazione.',
     icon: GraduationCap,
   },
 ]
@@ -71,7 +79,7 @@ export const pillars: Array<{ title: string; text: string; icon: LucideIcon }> =
 export const activities: Array<{ title: string; text: string; icon: LucideIcon }> = [
   { title: 'Tutela professionale', text: 'Iniziative a supporto della libera professione infermieristica e dei suoi specifici bisogni.', icon: Scale },
   { title: 'Rappresentanza istituzionale', text: 'Dialogo con istituzioni, OPI, FNOPI, ENPAPI e stakeholder sanitari.', icon: Landmark },
-  { title: 'Formazione', text: 'Percorsi di aggiornamento, webinar, seminari, workshop e attivita ECM future.', icon: BookOpen },
+  { title: 'Formazione', text: 'Percorsi di aggiornamento, webinar, seminari, workshop e attività ECM future.', icon: BookOpen },
   { title: 'Supporto normativo e previdenziale', text: 'Informazione su aspetti legislativi, amministrativi, fiscali, sindacali e tributari.', icon: FileText },
   { title: 'Convenzioni', text: 'Sviluppo di servizi, strumenti e accordi utili agli infermieri liberi professionisti.', icon: Handshake },
   { title: 'Comunicazione e informazione', text: 'Aggiornamenti, comunicati ufficiali e contenuti specialistici per gli associati.', icon: Megaphone },
@@ -82,7 +90,7 @@ export const activities: Array<{ title: string; text: string; icon: LucideIcon }
 export const documents = [
   { title: 'Bozza Statuto', text: 'Documento di riferimento in fase di confronto tra i promotori.', status: 'in aggiornamento' },
   { title: 'Atto costitutivo', text: 'Disponibile appena completata la costituzione formale.', status: 'appena disponibile' },
-  { title: 'Regolamento interno', text: 'Sara elaborato secondo lo statuto approvato.', status: 'appena disponibile' },
+  { title: 'Regolamento interno', text: 'Sarà elaborato secondo lo statuto approvato.', status: 'appena disponibile' },
   { title: 'Codice etico', text: 'Documento in fase di elaborazione.', status: 'in elaborazione' },
   { title: 'Modulistica adesione', text: 'Materiali per manifestazione di interesse e futura adesione.', status: 'in aggiornamento' },
   { title: 'Comunicati ufficiali', text: 'Archivio delle comunicazioni istituzionali ANILP.', status: 'in aggiornamento' },
@@ -95,12 +103,12 @@ export const news = [
     excerpt: 'Il percorso pre-costitutivo punta a dare struttura, visione e rappresentanza agli infermieri che esercitano in libera professione.',
   },
   {
-    title: 'Libera professione infermieristica: perche serve una voce nazionale',
+    title: 'Libera professione infermieristica: perché serve una voce nazionale',
     date: 'Approfondimento',
     excerpt: 'Autonomia, tutela, formazione e interlocuzione istituzionale richiedono strumenti associativi dedicati e riconoscibili.',
   },
   {
-    title: 'Tutela, formazione e identita professionale: i pilastri del progetto ANILP',
+    title: 'Tutela, formazione e identità professionale: i pilastri del progetto ANILP',
     date: 'Pilastri',
     excerpt: 'La futura associazione intende costruire servizi, convenzioni, delegazioni territoriali e percorsi di aggiornamento.',
   },
@@ -117,3 +125,51 @@ export const futureServices = [
 ]
 
 export const stakeholderIcons = [Users, BriefcaseBusiness, Globe2, Network]
+
+export const constitutionSteps = [
+  'Fase pre-costitutiva',
+  'Raccolta manifestazioni di interesse',
+  'Definizione dello statuto',
+  'Costituzione formale',
+  'Apertura delle adesioni',
+  'Sviluppo delle delegazioni territoriali',
+  'Avvio delle attività associative',
+]
+
+export const faqs = [
+  {
+    question: 'ANILP è già costituita?',
+    answer:
+      'ANILP è in fase pre-costitutiva. Gli organi, le procedure e le adesioni ufficiali saranno definiti dopo la costituzione formale.',
+  },
+  {
+    question: 'Chi può aderire?',
+    answer:
+      'Potranno aderire infermieri liberi professionisti, professionisti in forme collettive e infermieri iscritti OPI interessati alla libera professione.',
+  },
+  {
+    question: 'La quota associativa è già definitiva?',
+    answer:
+      'No. La quota sarà definita dagli organi competenti. In fase di avvio è in valutazione una quota indicativa di 50 euro annui.',
+  },
+  {
+    question: 'Possono aderire anche infermieri non ancora liberi professionisti?',
+    answer:
+      'Sì, la manifestazione di interesse è aperta anche agli infermieri iscritti OPI interessati a conoscere o sviluppare la libera professione.',
+  },
+  {
+    question: 'ANILP è una community o un’associazione?',
+    answer:
+      'ANILP nasce come progetto associativo nazionale di rappresentanza professionale, non come semplice community informale.',
+  },
+  {
+    question: 'Quando partiranno le adesioni ufficiali?',
+    answer:
+      'Le adesioni ufficiali saranno avviate dopo la costituzione formale e secondo quanto previsto dallo statuto approvato.',
+  },
+  {
+    question: 'Come posso ricevere aggiornamenti?',
+    answer:
+      'Puoi compilare la manifestazione di interesse o scrivere a info@anilp.it per ricevere comunicazioni sul percorso costitutivo.',
+  },
+]

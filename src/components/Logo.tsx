@@ -18,7 +18,7 @@ export function Logo({ compact = false, prominent = false }: LogoProps) {
         alt={alt}
         className={`${
           prominent
-            ? 'h-auto w-[220px] max-w-full md:w-[320px]'
+            ? 'h-auto w-[280px] max-w-full md:w-[500px]'
             : compact
               ? 'h-10 w-auto md:h-12'
               : 'h-14 w-auto md:h-16'
