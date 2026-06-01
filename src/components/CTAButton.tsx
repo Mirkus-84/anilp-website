@@ -11,20 +11,20 @@ type CTAButtonProps = {
 export function CTAButton({ children, to, variant = 'primary', external }: CTAButtonProps) {
   const classes = {
     primary:
-      'bg-teal-700 text-white hover:bg-teal-800',
+      'bg-[linear-gradient(135deg,#087F7A,#0B9A91)] text-white shadow-md shadow-teal-900/10 hover:-translate-y-0.5 hover:bg-[linear-gradient(135deg,#066B67,#087F7A)] hover:shadow-lg hover:shadow-teal-900/20',
     secondary:
-      'border border-slate-300 bg-white text-slate-950 hover:border-teal-500 hover:text-teal-700',
+      'border border-[#D9E1E8] bg-white text-[#1E2A44] hover:-translate-y-0.5 hover:border-[#087F7A] hover:bg-[#E6F5F3] hover:text-[#066B67] hover:shadow-md',
     light:
-      'border border-teal-700 bg-white text-teal-800 hover:bg-teal-50',
+      'border border-[#087F7A] bg-white text-[#066B67] hover:-translate-y-0.5 hover:bg-[#E6F5F3] hover:shadow-md',
   }
 
-  const className = `inline-flex min-h-12 items-center justify-center gap-2 rounded-md px-5 py-3 text-sm font-bold transition ${classes[variant]}`
+  const className = `group inline-flex min-h-12 items-center justify-center gap-2 rounded-md px-5 py-3 text-sm font-bold transition-all duration-200 ease-out focus-visible:outline-[#087F7A] ${classes[variant]}`
 
   if (external) {
     return (
       <a href={to} className={className} target="_blank" rel="noreferrer">
         {children}
-        <ArrowRight className="h-4 w-4" aria-hidden="true" />
+        <ArrowRight className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-1" aria-hidden="true" />
       </a>
     )
   }
@@ -32,7 +32,7 @@ export function CTAButton({ children, to, variant = 'primary', external }: CTABu
   return (
     <Link to={to} className={className}>
       {children}
-      <ArrowRight className="h-4 w-4" aria-hidden="true" />
+      <ArrowRight className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-1" aria-hidden="true" />
     </Link>
   )
 }

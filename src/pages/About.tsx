@@ -30,8 +30,8 @@ export function About() {
               ['Fase attuale', 'Gli organi, gli strumenti e le procedure saranno definiti dopo la costituzione e lo statuto approvato.'],
             ].map(([title, text]) => (
               <Card key={title}>
-                <h2 className="text-xl font-black text-slate-950">{title}</h2>
-                <p className="mt-3 leading-7 text-slate-600">{text}</p>
+                <h2 className="text-xl font-black text-[#1E2A44]">{title}</h2>
+                <p className="mt-3 leading-7 text-[#475569]">{text}</p>
               </Card>
             ))}
           </div>

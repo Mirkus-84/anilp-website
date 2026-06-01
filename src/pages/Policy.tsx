@@ -22,14 +22,14 @@ export function Policy({ type }: PolicyProps) {
       <section className="bg-slate-50 py-20">
         <div className="container-page max-w-4xl">
           <Card>
-            <h2 className="text-2xl font-black text-slate-950">Informativa in fase di completamento</h2>
-            <p className="mt-4 leading-8 text-slate-600">
+            <h2 className="text-2xl font-black text-[#1E2A44]">Informativa in fase di completamento</h2>
+            <p className="mt-4 leading-8 text-[#475569]">
               Questa pagina contiene una struttura professionale provvisoria. I
               testi definitivi dovranno essere validati in base ai trattamenti
               effettivi, agli strumenti tecnici installati e agli eventuali servizi
               di terze parti utilizzati dal sito.
             </p>
-            <p className="mt-4 leading-8 text-slate-600">
+            <p className="mt-4 leading-8 text-[#475569]">
               Titolare, base giuridica, finalita, tempi di conservazione, diritti
               dell’interessato e dettagli sui cookie saranno aggiornati prima del
               deploy pubblico definitivo.

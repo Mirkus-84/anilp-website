@@ -1,8 +1,16 @@
 @import "tailwindcss";
 
 :root {
-  color: #0f172a;
+  color: #1f2937;
   background: #ffffff;
+  --anilp-navy: #1e2a44;
+  --anilp-deep-navy: #101828;
+  --anilp-teal: #087f7a;
+  --anilp-teal-dark: #066b67;
+  --anilp-teal-light: #e6f5f3;
+  --anilp-bg: #f7f9fb;
+  --anilp-border: #d9e1e8;
+  --anilp-text: #1f2937;
   font-family:
     Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
     sans-serif;
@@ -34,13 +42,21 @@ select {
 }
 
 *:focus-visible {
-  outline: 3px solid #14b8a6;
+  outline: 3px solid #087f7a;
   outline-offset: 3px;
 }
 
 .container-page {
   width: min(1160px, calc(100% - 32px));
   margin-inline: auto;
+}
+
+.institutional-gradient {
+  background: linear-gradient(180deg, #f7f9fb 0%, #ffffff 72%);
+}
+
+.accent-bar {
+  background: linear-gradient(90deg, #1e2a44, #087f7a);
 }
 
 .italy-map-shape {

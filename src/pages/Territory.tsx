@@ -21,8 +21,8 @@ export function Territory() {
           <div className="grid gap-5">
             {['Delegazioni territoriali', 'Coordinamenti regionali', 'Referenti regionali'].map((item) => (
               <Card key={item}>
-                <h2 className="text-2xl font-black text-slate-950">{item}</h2>
-                <p className="mt-3 leading-8 text-slate-600">
+                <h2 className="text-2xl font-black text-[#1E2A44]">{item}</h2>
+                <p className="mt-3 leading-8 text-[#475569]">
                   Struttura prevista in prospettiva per favorire prossimita,
                   partecipazione, raccolta delle esigenze locali e coordinamento nazionale.
                 </p>

@@ -9,10 +9,10 @@ export function Logo({ prominent = false }: LogoProps) {
     <Link to="/" className="inline-flex items-center" aria-label="ANILP home">
       <img
         src="/Logo%20ANILP%20no%20sfondo.png"
-        width={prominent ? 360 : 170}
-        height={prominent ? 253 : 119}
+        width={prominent ? 340 : 176}
+        height={prominent ? 239 : 124}
         alt="Logo ANILP"
-        className={`${prominent ? 'h-auto w-72 max-w-full md:w-96' : 'h-auto w-36 md:w-44'} object-contain`}
+        className={`${prominent ? 'h-auto w-[220px] max-w-full md:w-[320px]' : 'h-14 w-auto md:h-16'} object-contain`}
       />
     </Link>
   )

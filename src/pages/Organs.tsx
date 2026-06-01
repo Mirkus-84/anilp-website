@@ -39,7 +39,7 @@ export function Organs() {
         <div className="container-page grid gap-5 md:grid-cols-3">
           {groups.map((group) => (
             <Card key={group.title}>
-              <h2 className="text-2xl font-black text-slate-950">{group.title}</h2>
+              <h2 className="text-2xl font-black text-[#1E2A44]">{group.title}</h2>
               <ul className="mt-5 grid gap-3 text-slate-700">
                 {group.items.map((item) => (
                   <li key={item} className="border-b border-slate-100 pb-3 last:border-0">

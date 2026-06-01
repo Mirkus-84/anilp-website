@@ -20,9 +20,9 @@ export function Conventions() {
         <div className="container-page grid gap-5 md:grid-cols-2 lg:grid-cols-4">
           {futureServices.map((item) => (
             <Card key={item}>
-              <Handshake className="h-8 w-8 text-teal-700" aria-hidden="true" />
-              <h2 className="mt-5 text-xl font-black text-slate-950">{item}</h2>
-              <p className="mt-3 leading-7 text-slate-600">
+              <Handshake className="h-8 w-8 text-[#087F7A]" aria-hidden="true" />
+              <h2 className="mt-5 text-xl font-black text-[#1E2A44]">{item}</h2>
+              <p className="mt-3 leading-7 text-[#475569]">
                 Area predisposta per accordi e servizi dedicati agli infermieri liberi professionisti.
               </p>
             </Card>

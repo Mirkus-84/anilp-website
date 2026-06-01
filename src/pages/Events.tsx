@@ -21,9 +21,9 @@ export function Events() {
         <div className="container-page grid gap-5 md:grid-cols-2 lg:grid-cols-3">
           {items.map((item) => (
             <Card key={item}>
-              <CalendarDays className="h-8 w-8 text-teal-700" aria-hidden="true" />
-              <h2 className="mt-5 text-xl font-black text-slate-950">{item}</h2>
-              <p className="mt-3 leading-7 text-slate-600">
+              <CalendarDays className="h-8 w-8 text-[#087F7A]" aria-hidden="true" />
+              <h2 className="mt-5 text-xl font-black text-[#1E2A44]">{item}</h2>
+              <p className="mt-3 leading-7 text-[#475569]">
                 Programmazione in fase di definizione, da attivare dopo la
                 costituzione e secondo le priorita associative.
               </p>
