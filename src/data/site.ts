@@ -89,7 +89,7 @@ export const activities: Array<{ title: string; text: string; icon: LucideIcon }
   { title: 'Supporto normativo e previdenziale', text: 'Informazione su aspetti legislativi, amministrativi, fiscali, sindacali e tributari.', icon: FileText },
   { title: 'Convenzioni', text: 'Sviluppo di servizi, strumenti e accordi utili agli infermieri liberi professionisti.', icon: Handshake },
   { title: 'Comunicazione e informazione', text: 'Aggiornamenti, comunicati ufficiali e contenuti specialistici per gli associati.', icon: Megaphone },
-  { title: 'Delegazioni territoriali', text: 'Promozione progressiva di referenti regionali, coordinamenti e presidi territoriali.', icon: MapPinned },
+  { title: 'Delegazioni territoriali', text: 'Sviluppo futuro di delegazioni, coordinamenti e referenti secondo statuto e regolamenti associativi.', icon: MapPinned },
   { title: 'Congressi ed eventi', text: 'Tavoli tecnici, incontri nazionali e momenti di confronto professionale.', icon: CalendarDays },
 ]
 
@@ -121,7 +121,7 @@ export const news = [
   {
     title: 'Tutela, formazione e identità professionale: i pilastri del progetto ANILP',
     date: 'Pilastri',
-    excerpt: 'La futura associazione intende costruire servizi, convenzioni, delegazioni territoriali e percorsi di aggiornamento.',
+    excerpt: 'La futura associazione intende costruire servizi, convenzioni, sviluppo territoriale e percorsi di aggiornamento.',
   },
 ]
 
