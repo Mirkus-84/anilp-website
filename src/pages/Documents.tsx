@@ -8,12 +8,12 @@ export function Documents() {
     <>
       <Seo
         title="Documenti | ANILP"
-        description="Documenti del progetto ANILP: bozza statuto, atto costitutivo, regolamento, codice etico, modulistica e comunicati."
+        description="Documenti ANILP: statuto ufficiale, atto costitutivo, regolamento, codice etico, modulistica e comunicati."
       />
       <PageHero
         badge="Archivio documentale"
         title="Documenti"
-        text="Area predisposta per raccogliere i documenti ufficiali e i materiali di adesione del percorso ANILP."
+        text="Area predisposta per raccogliere i documenti ufficiali dell’associazione e i materiali di adesione del percorso ANILP."
       />
       <section className="bg-slate-50 py-20">
         <div className="container-page grid gap-5 md:grid-cols-2 lg:grid-cols-3">

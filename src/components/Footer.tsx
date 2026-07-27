@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import { navItems, secondaryNavItems } from '../data/site'
+import { institutionalEmails, navItems, secondaryNavItems } from '../data/site'
 import { Logo } from './Logo'
 
 export function Footer() {
@@ -37,7 +37,11 @@ export function Footer() {
         <div>
           <h2 className="text-sm font-bold uppercase tracking-wide text-[#087F7A]">Contatti</h2>
           <div className="mt-4 grid gap-2 text-[#475569]">
-            <a href="mailto:info@anilp.it" className="transition hover:text-[#066B67]">info@anilp.it</a>
+            {institutionalEmails.map((item) => (
+              <a key={item.email} href={`mailto:${item.email}`} className="transition hover:text-[#066B67]">
+                {item.email}
+              </a>
+            ))}
             <span>PEC in fase di attivazione</span>
             <span>Sede legale in fase di definizione</span>
             <Link to="/privacy-policy" className="transition hover:text-[#066B67]">Privacy Policy</Link>

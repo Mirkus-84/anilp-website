@@ -1,14 +1,16 @@
 import { FileText } from 'lucide-react'
 import { Card } from './Card'
+import { CTAButton } from './CTAButton'
 import { StatusBadge } from './StatusBadge'
 
 type DocumentCardProps = {
   title: string
   text: string
   status: string
+  href?: string
 }
 
-export function DocumentCard({ title, text, status }: DocumentCardProps) {
+export function DocumentCard({ title, text, status, href }: DocumentCardProps) {
   return (
     <Card className="h-full">
       <div className="flex items-start justify-between gap-4">
@@ -19,6 +21,13 @@ export function DocumentCard({ title, text, status }: DocumentCardProps) {
       </div>
       <h3 className="mt-5 text-xl font-black text-[#1E2A44]">{title}</h3>
       <p className="mt-3 leading-7 text-[#475569]">{text}</p>
+      {href && (
+        <div className="mt-6">
+          <CTAButton to={href} external>
+            Consulta il documento
+          </CTAButton>
+        </div>
+      )}
     </Card>
   )
 }

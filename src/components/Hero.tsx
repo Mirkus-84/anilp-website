@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion'
 import { CheckCircle2, Mail, MapPinned, ShieldCheck } from 'lucide-react'
-import { formUrl } from '../data/site'
+import { formUrl, institutionalEmails } from '../data/site'
 import { CTAButton } from './CTAButton'
 import { Logo } from './Logo'
 import { StatusBadge } from './StatusBadge'
@@ -71,11 +71,17 @@ export function Hero() {
                 </div>
               ))}
             </div>
-            <div className="mt-7 grid gap-3 border-t border-[#D9E1E8] pt-5 text-sm text-[#334155] sm:grid-cols-2">
-              <span className="flex items-center gap-2">
-                <Mail className="h-4 w-4 text-[#087F7A]" aria-hidden="true" />
-                info@anilp.it
-              </span>
+            <div className="mt-7 grid gap-3 border-t border-[#D9E1E8] pt-5 text-sm text-[#334155] sm:grid-cols-3">
+              {institutionalEmails.slice(0, 2).map((item) => (
+                <a
+                  key={item.email}
+                  href={`mailto:${item.email}`}
+                  className="flex items-center gap-2 font-semibold text-[#334155] transition hover:text-[#066B67]"
+                >
+                  <Mail className="h-4 w-4 text-[#087F7A]" aria-hidden="true" />
+                  {item.email}
+                </a>
+              ))}
               <span className="flex items-center gap-2">
                 <MapPinned className="h-4 w-4 text-[#087F7A]" aria-hidden="true" />
                 www.anilp.it

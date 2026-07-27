@@ -3,28 +3,36 @@ import { Card } from '../components/Card'
 import { ContactForm } from '../components/ContactForm'
 import { PageHero } from '../components/PageHero'
 import { Seo } from '../components/Seo'
+import { institutionalEmails } from '../data/site'
 
 export function Contacts() {
   return (
     <>
       <Seo
         title="Contatti | ANILP"
-        description="Contatti ANILP: email, PEC in fase di attivazione, sede legale in fase di definizione e form frontend-only."
+        description="Contatti ANILP: email istituzionali, PEC in fase di attivazione, sede legale in fase di definizione e form frontend-only."
       />
       <PageHero
         badge="Contatti istituzionali"
         title="Contatti"
-        text="Per informazioni sul progetto ANILP e sulla manifestazione di interesse e possibile scrivere all’indirizzo email ufficiale."
+        text="Per informazioni sul progetto ANILP, sugli eventi e sulla manifestazione di interesse è possibile utilizzare gli indirizzi istituzionali dell’associazione."
       />
       <section className="bg-white py-20">
         <div className="container-page grid gap-8 lg:grid-cols-[0.8fr_1fr]">
           <div className="grid gap-5">
             <Card>
               <Mail className="h-8 w-8 text-[#087F7A]" aria-hidden="true" />
-              <h2 className="mt-4 text-2xl font-black text-[#1E2A44]">Email</h2>
-              <a className="mt-2 block text-lg font-bold text-[#087F7A]" href="mailto:info@anilp.it">
-                info@anilp.it
-              </a>
+              <h2 className="mt-4 text-2xl font-black text-[#1E2A44]">Email istituzionali</h2>
+              <div className="mt-4 grid gap-3">
+                {institutionalEmails.map((item) => (
+                  <div key={item.email}>
+                    <p className="text-sm font-bold uppercase tracking-wide text-[#475569]">{item.label}</p>
+                    <a className="mt-1 block text-lg font-bold text-[#087F7A]" href={`mailto:${item.email}`}>
+                      {item.email}
+                    </a>
+                  </div>
+                ))}
+              </div>
             </Card>
             <Card>
               <MapPin className="h-8 w-8 text-[#087F7A]" aria-hidden="true" />

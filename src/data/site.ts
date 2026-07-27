@@ -19,6 +19,12 @@ import type { LucideIcon } from 'lucide-react'
 
 export const formUrl = 'https://forms.gle/INSERIRE-LINK-FORM'
 
+export const institutionalEmails = [
+  { label: 'Segreteria generale', email: 'info@anilp.it' },
+  { label: 'Eventi e formazione', email: 'eventi@anilp.it' },
+  { label: 'Presidenza', email: 'presidenza@anilp.it' },
+]
+
 export const founders = [
   'Michele Nanocchio',
   'Giorgio Padovan',
@@ -88,7 +94,12 @@ export const activities: Array<{ title: string; text: string; icon: LucideIcon }
 ]
 
 export const documents = [
-  { title: 'Bozza Statuto', text: 'Documento di riferimento in fase di confronto tra i promotori.', status: 'in aggiornamento' },
+  {
+    title: 'Statuto ANILP',
+    text: 'Statuto ufficiale dell’associazione consultabile in formato PDF.',
+    status: 'disponibile',
+    href: '/documenti/statuto-anilp.pdf',
+  },
   { title: 'Atto costitutivo', text: 'Disponibile appena completata la costituzione formale.', status: 'appena disponibile' },
   { title: 'Regolamento interno', text: 'Sarà elaborato secondo lo statuto approvato.', status: 'appena disponibile' },
   { title: 'Codice etico', text: 'Documento in fase di elaborazione.', status: 'in elaborazione' },
