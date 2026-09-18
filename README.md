@@ -105,6 +105,12 @@ python scripts/test_prepare_public_documents.py
 
 La sostituzione del PDF nel sito corrente non elimina le precedenti copie dallo storico Git o da altri archivi e deploy. L’eventuale rimozione storica richiede una procedura dedicata e coordinata con chi gestisce il repository e l’hosting.
 
+## Icona del browser
+
+La favicon `public/favicon-flame.svg` mostra la fiamma del logo ufficiale, senza l’asta sottostante. Il PNG originale `public/Logo ANILP solo fiamma no sfondo.png` è incorporato nell’SVG e rimane invariato. Il riferimento per tutte le pagine è in `index.html`.
+
+Per rigenerarla: `node scripts/prepare-favicon.mjs`. Se cambiano le dimensioni o la composizione del PNG, aggiornare prima il viewport nello script.
+
 ## Anteprima dei link
 
 Immagine: `public/anilp-social-preview-2026.png`, creata con lo strumento integrato ImageGen. Brief: logo ufficiale ANILP, fondo bianco, navy e teal, testo «Rappresentanza e tutela della libera professione infermieristica» e `www.anilp.it`, senza effetti commerciali.
