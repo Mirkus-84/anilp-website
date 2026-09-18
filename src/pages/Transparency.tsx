@@ -10,7 +10,7 @@ const items = [
     title: 'Statuto',
     status: 'disponibile',
     href: statuteUrl,
-    text: 'Statuto approvato il 9 settembre 2026, consultabile in formato PDF.',
+    text: 'Copia digitale dello statuto per la consultazione pubblica, senza firme e timbri.',
   },
   {
     title: 'Atto costitutivo',

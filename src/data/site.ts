@@ -18,6 +18,7 @@ import type { LucideIcon } from 'lucide-react'
 
 export const interestUrl = '/diventa-socio'
 export const interestEmailUrl = `mailto:info@anilp.it?subject=${encodeURIComponent('Manifestazione di interesse ANILP')}`
+export const annualMembershipFee = 60
 export const registeredOffice = 'Via Mauro Macchi 8, Milano'
 export const associationTaxCode = '98033030150'
 export const associationPec = 'associazione.anilp@pec.it'
@@ -105,7 +106,7 @@ export const activities: Array<{ title: string; text: string; icon: LucideIcon }
 export const documents = [
   {
     title: 'Statuto ANILP',
-    text: 'Statuto approvato in sede di costituzione il 9 settembre 2026, consultabile in formato PDF.',
+    text: 'Copia digitale dello statuto per la consultazione pubblica, senza firme e timbri.',
     status: 'disponibile',
     href: statuteUrl,
   },
@@ -195,9 +196,9 @@ export const faqs = [
       'Lo statuto ammette infermieri iscritti a un OPI, sia liberi professionisti individuali o in forma collettiva, sia non liberi professionisti. Prevede inoltre specifiche condizioni per infermieri con titolo estero autorizzati all’esercizio temporaneo in Italia. L’ammissione è deliberata dal Consiglio Direttivo su domanda scritta.',
   },
   {
-    question: 'La quota associativa è già definitiva?',
+    question: 'Qual è la quota associativa annuale?',
     answer:
-      'No. La quota sarà definita dagli organi competenti. In fase di avvio è in valutazione una quota indicativa di 50 euro annui.',
+      `La quota associativa è di ${annualMembershipFee} euro annui. La manifestazione di interesse non costituisce iscrizione e non comporta pagamenti; le modalità operative di adesione saranno comunicate sui canali istituzionali.`,
   },
   {
     question: 'Possono aderire anche infermieri non ancora liberi professionisti?',

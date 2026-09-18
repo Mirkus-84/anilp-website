@@ -3,20 +3,30 @@
 import argparse
 import re
 from pathlib import Path
+from shutil import copyfile
 
 import pymupdf
 
 
-def prepare(source_path: Path, output_dir: Path) -> None:
+def prepare(source_path: Path, digital_statute_path: Path, output_dir: Path) -> None:
     source = pymupdf.open(source_path)
     if len(source) != 22 or source[0].rect.width != 598 or source[1].rect.width != 156:
         raise ValueError("This script expects the supplied 22-page ANILP founding document.")
 
+    with pymupdf.open(digital_statute_path) as statute:
+        if len(statute) != 20 or statute.embfile_count():
+            raise ValueError("Provide the complete 20-page clean digital statute, without attachments.")
+        if any(page.get_images() or page.first_widget or page.first_annot for page in statute):
+            raise ValueError("The public statute must not contain scanned pages, images, or signature annotations.")
+        text = "".join(page.get_text() for page in statute)
+        if not re.search(r"Art\.?\s*26", text) or re.search(r"\b[A-Z]{6}\d{2}[A-Z]\d{2}[A-Z]\d{3}[A-Z]\b", text):
+            raise ValueError("Verify that the digital statute is complete and excludes private identifiers.")
+
     output_dir.mkdir(parents=True, exist_ok=True)
-    statute = pymupdf.open()
-    statute.insert_pdf(source, from_page=2)
-    statute.set_metadata({"title": "Statuto ANILP", "author": "ANILP"})
-    statute.save(output_dir / "statuto-anilp.pdf", garbage=4, deflate=True)
+    # Never extract the signed statute from the registered original for publication.
+    public_statute_path = output_dir / "statuto-anilp.pdf"
+    if digital_statute_path.resolve() != public_statute_path.resolve():
+        copyfile(digital_statute_path, public_statute_path)
 
     public_act = pymupdf.open()
     public_act.insert_pdf(source, from_page=0, to_page=1)
@@ -59,6 +69,7 @@ def prepare(source_path: Path, output_dir: Path) -> None:
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument("source", type=Path)
+    parser.add_argument("--digital-statute", type=Path, required=True)
     parser.add_argument("--output-dir", type=Path, default=Path("public/documenti"))
     args = parser.parse_args()
-    prepare(args.source, args.output_dir)
+    prepare(args.source, args.digital_statute, args.output_dir)

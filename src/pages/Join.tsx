@@ -5,7 +5,7 @@ import { PageHero } from '../components/PageHero'
 import { SectionTitle } from '../components/SectionTitle'
 import { Seo } from '../components/Seo'
 import { StatusBadge } from '../components/StatusBadge'
-import { faqs, interestEmailUrl } from '../data/site'
+import { annualMembershipFee, faqs, interestEmailUrl } from '../data/site'
 
 export function Join() {
   const who = [
@@ -19,7 +19,7 @@ export function Join() {
     <>
       <Seo
         title="Diventa socio | ANILP"
-        description="Partecipa al percorso di ANILP: requisiti statutari, manifestazione di interesse, quota indicativa e informazioni sulle adesioni."
+        description={`Partecipa al percorso di ANILP: requisiti statutari, manifestazione di interesse, quota associativa di ${annualMembershipFee} euro annui e informazioni sulle adesioni.`}
       />
       <PageHero
         badge="Manifestazione di interesse"
@@ -52,13 +52,17 @@ export function Join() {
             </Card>
           </div>
           <Card className="h-fit border-l-4 border-l-[#087F7A] bg-[#F7F9FB]">
-            <StatusBadge>Quota non definitiva</StatusBadge>
+            <StatusBadge>Adesione associativa</StatusBadge>
             <h2 className="mt-5 text-2xl font-black text-[#1E2A44]">Quota associativa</h2>
-            <p className="mt-4 leading-8 text-[#334155]">
-              La quota associativa annuale sarà proposta dal Comitato Esecutivo
-              e deliberata dal Consiglio Direttivo, secondo lo statuto.
-              In fase di avvio è in valutazione una quota indicativa di 50 euro annui.
+            <p className="mt-4 flex flex-wrap items-baseline gap-2 text-[#1E2A44]">
+              <span className="text-4xl font-bold">{annualMembershipFee} €</span>
+              <span className="text-base font-semibold text-[#475569]">annui</span>
             </p>
+            <p className="mt-4 leading-8 text-[#334155]">
+              La quota associativa è di {annualMembershipFee} euro annui.
+              Le modalità operative di adesione saranno comunicate sui canali istituzionali.
+            </p>
+            <p className="mt-4 text-sm leading-6 text-[#475569]">La manifestazione di interesse non costituisce iscrizione e non comporta pagamenti.</p>
             <div className="mt-8">
               <CTAButton to={interestEmailUrl} external>
                 Manifesta il tuo interesse via email

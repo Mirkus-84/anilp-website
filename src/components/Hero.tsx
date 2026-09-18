@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion'
-import { CheckCircle2, Mail, MapPinned, ShieldCheck } from 'lucide-react'
-import { interestUrl, institutionalEmails } from '../data/site'
+import { BookOpen, Globe2, ShieldCheck } from 'lucide-react'
+import { interestUrl } from '../data/site'
 import { CTAButton } from './CTAButton'
 import { Logo } from './Logo'
 import { StatusBadge } from './StatusBadge'
@@ -36,59 +36,29 @@ export function Hero() {
           </div>
         </motion.div>
 
-        <motion.div
-          className="mx-auto mt-6 max-w-5xl"
+        <motion.section
+          className="mx-auto mt-8 max-w-5xl border-t border-[#D9E1E8] pt-6 md:pt-8"
           initial={{ opacity: 0, y: 18 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.45, delay: 0.12 }}
-          aria-label="Sintesi istituzionale ANILP"
+          aria-labelledby="hero-priorities-title"
         >
-          <div className="rounded-md border border-[#D9E1E8] bg-white p-7 shadow-xl shadow-slate-900/8 md:p-8">
-            <div className="flex flex-col gap-6 md:flex-row md:items-start md:justify-between">
-              <div>
-                <div className="accent-bar mb-5 h-1 w-20 rounded-full" aria-hidden="true" />
-                <p className="text-sm font-bold uppercase tracking-wide text-[#087F7A]">
-                  Verso una rete nazionale
-                </p>
-                <p className="mt-2 text-2xl font-black text-[#1E2A44]">
-                  Tutela, qualità, autonomia
-                </p>
-              </div>
-              <div className="grid h-14 w-14 shrink-0 place-items-center rounded-md bg-[#E6F5F3] text-[#087F7A]">
-                <ShieldCheck className="h-7 w-7" aria-hidden="true" />
-              </div>
-            </div>
-
-            <div className="mt-8 grid gap-4 md:grid-cols-3">
-              {[
-                'Rappresentanza nazionale e internazionale degli iscritti',
-                'Supporto formativo, informativo e organizzativo',
-                'Qualità, deontologia e buone pratiche professionali',
-              ].map((item) => (
-                <div key={item} className="rounded-md border border-[#D9E1E8] bg-[#F7F9FB] p-4">
-                  <CheckCircle2 className="mb-3 h-5 w-5 text-[#087F7A]" aria-hidden="true" />
-                  <span className="text-sm leading-6 text-[#334155]">{item}</span>
-                </div>
-              ))}
-            </div>
-            <div className="mt-7 grid gap-3 border-t border-[#D9E1E8] pt-5 text-sm text-[#334155] sm:grid-cols-3">
-              {institutionalEmails.slice(0, 2).map((item) => (
-                <a
-                  key={item.email}
-                  href={`mailto:${item.email}`}
-                  className="flex items-center gap-2 font-semibold text-[#334155] transition hover:text-[#066B67]"
-                >
-                  <Mail className="h-4 w-4 text-[#087F7A]" aria-hidden="true" />
-                  {item.email}
-                </a>
-              ))}
-              <span className="flex items-center gap-2">
-                <MapPinned className="h-4 w-4 text-[#087F7A]" aria-hidden="true" />
-                www.anilp.it
-              </span>
-            </div>
-          </div>
-        </motion.div>
+          <p className="text-sm font-semibold uppercase text-[#087F7A]">Verso una rete nazionale</p>
+          <h2 id="hero-priorities-title" className="mt-2 text-2xl font-bold text-[#1E2A44]">Tutela, qualità, autonomia</h2>
+          <ul className="mt-5 grid gap-4 md:grid-cols-3">
+            {[
+              { title: 'Rappresentanza', text: 'Rappresentanza nazionale e internazionale degli iscritti.', icon: Globe2 },
+              { title: 'Formazione e supporto', text: 'Supporto formativo, informativo e organizzativo.', icon: BookOpen },
+              { title: 'Qualità professionale', text: 'Qualità, deontologia e buone pratiche professionali.', icon: ShieldCheck },
+            ].map(({ title, text, icon: Icon }) => (
+              <li key={title} className="rounded-md border border-[#D9E1E8] border-t-[3px] border-t-[#087F7A] bg-white p-6 shadow-sm shadow-slate-950/5">
+                <Icon className="mb-4 h-7 w-7 text-[#087F7A]" aria-hidden="true" />
+                <h3 className="text-lg font-bold leading-snug text-[#1E2A44]">{title}</h3>
+                <p className="mt-3 text-base leading-7 text-[#334155]">{text}</p>
+              </li>
+            ))}
+          </ul>
+        </motion.section>
       </div>
     </section>
   )

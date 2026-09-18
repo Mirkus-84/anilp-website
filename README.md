@@ -6,6 +6,8 @@ ANILP è stata costituita il 9 settembre 2026 e registrata presso l’Agenzia de
 
 Sede legale: Via Mauro Macchi 8, Milano. Codice fiscale: `98033030150`. PEC: `associazione.anilp@pec.it`.
 
+Quota associativa: 60 euro annui. Il valore è centralizzato in `src/data/site.ts`; la manifestazione di interesse non costituisce iscrizione e non comporta pagamenti.
+
 ## Stack
 
 - React + Vite
@@ -82,16 +84,26 @@ git push -u origin main
 
 ## Documenti pubblici
 
-`public/documenti/statuto-anilp.pdf` contiene lo statuto approvato, estratto dalle pagine 3-22 del documento registrato. `public/documenti/atto-costitutivo-anilp.pdf` è una copia pubblica delle prime due pagine con dati anagrafici privati e firme oscurati. Il documento originale non è incluso nel repository.
+`public/documenti/statuto-anilp.pdf` è la copia digitale di 20 pagine, ripristinata dalla versione pubblicata prima del documento scansionato (commit `04fc72b`). Contiene i 26 articoli, senza firme, timbri o dati anagrafici privati. `public/documenti/atto-costitutivo-anilp.pdf` è una copia pubblica delle prime due pagine dell’originale registrato, con dati anagrafici privati e firme oscurati.
 
-Per rigenerarli dallo stesso originale (richiede Python e PyMuPDF):
+Non estrarre lo statuto firmato dall’originale registrato per pubblicarlo. Conservare l’originale solo nei sistemi documentali dell’associazione. Lo script richiede una copia digitale separata e rifiuta statuti con scansioni, immagini, allegati o annotazioni.
+
+Per rigenerare le copie pubbliche (richiede Python e PyMuPDF):
 
 ```bash
 python -m pip install pymupdf
-python scripts/prepare-public-documents.py "PERCORSO/ANILP - Atto Costitutivo - Statuto.pdf"
+python scripts/prepare-public-documents.py "PERCORSO/ANILP - Atto Costitutivo - Statuto.pdf" --digital-statute "PERCORSO/Statuto ANILP.docx.pdf"
 ```
 
 Verificare visivamente entrambe le copie prima della pubblicazione.
+
+Test di regressione per le protezioni sui documenti pubblici:
+
+```bash
+python scripts/test_prepare_public_documents.py
+```
+
+La sostituzione del PDF nel sito corrente non elimina le precedenti copie dallo storico Git o da altri archivi e deploy. L’eventuale rimozione storica richiede una procedura dedicata e coordinata con chi gestisce il repository e l’hosting.
 
 ## Anteprima dei link
 
