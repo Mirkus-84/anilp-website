@@ -4,6 +4,7 @@ import { createPortal } from 'react-dom'
 import { NavLink } from 'react-router-dom'
 import { interestUrl, navItems } from '../data/site'
 import { CTAButton } from './CTAButton'
+import { AssociationMenu } from './AssociationMenu'
 import { Logo } from './Logo'
 
 type MobileMenuProps = {
@@ -30,7 +31,8 @@ export function MobileMenu({ open, onClose }: MobileMenuProps) {
     const onKeyDown = (event: KeyboardEvent) => {
       if (event.key === 'Escape') onClose()
       if (event.key !== 'Tab') return
-      const focusable = dialogRef.current?.querySelectorAll<HTMLElement>('a[href], button')
+      const focusable = Array.from(dialogRef.current?.querySelectorAll<HTMLElement>('a[href], button') ?? [])
+        .filter((element) => !element.closest('[hidden]'))
       if (!focusable?.length) return
       const first = focusable[0]
       const last = focusable[focusable.length - 1]
@@ -79,13 +81,15 @@ export function MobileMenu({ open, onClose }: MobileMenuProps) {
             <X className="h-7 w-7" aria-hidden="true" />
           </button>
         </div>
-        <nav className="grid min-h-0 flex-1 content-start gap-2 overflow-y-auto bg-white px-6 py-8" aria-label="Navigazione mobile">
-          {navItems.map((item) => (
+        <nav className="grid min-h-0 flex-1 content-start gap-1 overflow-y-auto bg-white px-6 py-4" aria-label="Navigazione mobile">
+          {navItems.map((item) => item.path === '/chi-siamo' ? (
+            <AssociationMenu key={item.path} mobile />
+          ) : (
             <NavLink
               key={item.path}
               to={item.path}
               className={({ isActive }) =>
-                `rounded-md px-5 py-4 text-xl font-black transition ${
+                `rounded-md px-5 py-3 text-lg font-semibold transition ${
                   isActive ? 'bg-[#E6F5F3] text-[#066B67]' : 'text-[#334155] hover:bg-[#F7F9FB] hover:text-[#1E2A44]'
                 }`
               }

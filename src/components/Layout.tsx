@@ -4,11 +4,18 @@ import { Footer } from './Footer'
 import { Header } from './Header'
 
 export function Layout() {
-  const { pathname } = useLocation()
+  const { pathname, hash } = useLocation()
 
   useEffect(() => {
-    window.scrollTo({ top: 0, behavior: 'instant' })
-  }, [pathname])
+    let cancelled = false
+    void document.fonts.ready.then(() => {
+      if (cancelled) return
+      const target = hash ? document.getElementById(hash.slice(1)) : null
+      if (target) target.scrollIntoView({ behavior: 'instant' })
+      else window.scrollTo({ top: 0, behavior: 'instant' })
+    })
+    return () => { cancelled = true }
+  }, [pathname, hash])
 
   return (
     <>

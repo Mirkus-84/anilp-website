@@ -3,6 +3,7 @@ import { useCallback, useEffect, useState } from 'react'
 import { NavLink } from 'react-router-dom'
 import { interestUrl, navItems } from '../data/site'
 import { CTAButton } from './CTAButton'
+import { AssociationMenu } from './AssociationMenu'
 import { Logo } from './Logo'
 import { MobileMenu } from './MobileMenu'
 
@@ -27,7 +28,9 @@ export function Header() {
       <div className="container-page flex min-h-[78px] items-center justify-between gap-5">
         <Logo compact />
         <nav className="hidden items-center gap-1 xl:flex" aria-label="Navigazione principale">
-          {navItems.map((item) => (
+          {navItems.map((item) => item.path === '/chi-siamo' ? (
+            <AssociationMenu key={item.path} />
+          ) : (
             <NavLink
               key={item.path}
               to={item.path}

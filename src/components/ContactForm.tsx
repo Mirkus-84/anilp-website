@@ -1,5 +1,6 @@
 import { Send } from 'lucide-react'
 import { useState } from 'react'
+import { Link } from 'react-router-dom'
 
 export function ContactForm() {
   const [prepared, setPrepared] = useState(false)
@@ -53,6 +54,10 @@ export function ContactForm() {
             maxLength={3000}
           />
         </label>
+        <p className="text-sm leading-6 text-[#475569]">
+          I dati servono a gestire la tua richiesta, secondo l’<Link to="/privacy-policy" className="font-semibold text-[#066B67] underline underline-offset-4">informativa privacy</Link>.
+          {' '}Non inserire dati sanitari o informazioni riservate di terzi.
+        </p>
         <button
           type="submit"
           className="inline-flex min-h-12 items-center justify-center gap-2 rounded-md bg-[linear-gradient(135deg,#087F7A,#066B67)] px-5 py-3 text-sm font-bold text-white shadow-md shadow-teal-900/10 transition-all duration-200 hover:-translate-y-0.5 hover:bg-[linear-gradient(135deg,#066B67,#055754)] hover:shadow-lg"

@@ -67,6 +67,8 @@ export const secondaryNavItems = [
   { label: 'Area riservata', path: '/area-riservata' },
 ]
 
+export const associationNavItems = [navItems[1], ...secondaryNavItems.slice(0, 4)]
+
 export const pillars: Array<{ title: string; text: string; icon: LucideIcon }> = [
   {
     title: 'Tutela professionale',

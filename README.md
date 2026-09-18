@@ -76,7 +76,7 @@ git push -u origin main
 - Link definitivo del modulo: le CTA portano oggi a `/diventa-socio`, con contatto via email. Non sono simulate iscrizioni o richieste inviate dal sito.
 - Regolamenti, codice etico e modulistica dopo l’approvazione.
 - Foto, biografie e profili LinkedIn dei soci fondatori, se autorizzati.
-- Policy privacy/cookie validate legalmente.
+- Verifica organizzativa e legale delle informative in relazione ai processi dell’associazione e ai contratti con i fornitori.
 - Social ufficiali.
 - Calendario eventi, convenzioni approvate e area riservata quando effettivamente disponibili.
 
@@ -102,3 +102,19 @@ I metadati Open Graph e Twitter sono in `index.html`, leggibili anche senza Java
 ## Delegazioni
 
 La pagina è temporaneamente nascosta: nessun collegamento nel menu o nella home. Il vecchio indirizzo reindirizza a `/chi-siamo` sia su Netlify sia nella navigazione React. Il componente resta disponibile per una futura riattivazione.
+
+## Tipografia e navigazione
+
+Inter Variable 4.1 è caricato localmente da `public/fonts/InterVariable.woff2`, senza richieste a servizi di font esterni. Licenza SIL Open Font License in `public/fonts/OFL.txt`; fonte ufficiale: https://rsms.me/inter/.
+
+Il menu Associazione raccoglie Chi siamo, Soci fondatori, Organi associativi, Percorso costitutivo e Trasparenza. Le voci sono definite in `src/data/site.ts`. Il sottomenu desktop e il gruppo mobile utilizzano lo stesso componente accessibile `AssociationMenu`.
+
+## Privacy e cookie
+
+I testi sono in `src/data/policies.tsx`, con indice e data di aggiornamento in `src/pages/Policy.tsx`. Descrivono la configurazione verificata il 18 settembre 2026: sito statico su Netlify, nessun cookie o tracciatore, nessuna richiesta a font o contenuti incorporati esterni, nessun archivio dei messaggi. Il modulo prepara un URL `mailto:`; l’invio effettivo avviene dal programma di posta dell’utente.
+
+Riferimenti primari: [GDPR](https://www.garanteprivacy.it/il-testo-del-regolamento), [FAQ cookie del Garante](https://www.garanteprivacy.it/faq/cookie), [Data Processing Agreement Netlify](https://www.netlify.com/pdf/netlify-dpa.pdf).
+
+Prima di aggiungere moduli con invio lato server, iscrizioni, newsletter, analytics, video, mappe incorporate o area soci, aggiornare le informative e verificare basi giuridiche, conservazione, fornitori e trasferimenti. Gli strumenti non necessari devono rimanere disattivati prima del consenso, ove richiesto. La configurazione attuale non richiede un banner per tracciatori assenti.
+
+Il titolare deve verificare e documentare che gestione delle email, accessi autorizzati, cancellazione dei messaggi e contratti con hosting, posta e PEC siano coerenti con l’informativa. I tempi effettivi dei registri tecnici dipendono dalle condizioni del servizio di hosting: non sono stati attribuiti periodi arbitrari. L’attivazione delle adesioni richiederà un’informativa specifica.
