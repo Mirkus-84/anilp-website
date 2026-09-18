@@ -1,7 +1,7 @@
 import { Menu } from 'lucide-react'
-import { useEffect, useState } from 'react'
+import { useCallback, useEffect, useState } from 'react'
 import { NavLink } from 'react-router-dom'
-import { formUrl, navItems } from '../data/site'
+import { interestUrl, navItems } from '../data/site'
 import { CTAButton } from './CTAButton'
 import { Logo } from './Logo'
 import { MobileMenu } from './MobileMenu'
@@ -9,6 +9,7 @@ import { MobileMenu } from './MobileMenu'
 export function Header() {
   const [open, setOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
+  const closeMenu = useCallback(() => setOpen(false), [])
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 8)
@@ -43,7 +44,7 @@ export function Header() {
           ))}
         </nav>
         <div className="hidden xl:block">
-          <CTAButton to={formUrl} external>
+          <CTAButton to={interestUrl}>
             Manifesta interesse
           </CTAButton>
         </div>
@@ -52,12 +53,13 @@ export function Header() {
           className="grid h-11 w-11 place-items-center rounded-md border border-[#D9E1E8] text-[#1E2A44] transition hover:border-[#087F7A] hover:bg-[#E6F5F3] xl:hidden"
           aria-label="Apri menu"
           aria-expanded={open}
+          aria-controls="anilp-mobile-menu"
           onClick={() => setOpen(true)}
         >
           <Menu className="h-5 w-5" aria-hidden="true" />
         </button>
       </div>
-      <MobileMenu open={open} onClose={() => setOpen(false)} />
+      <MobileMenu open={open} onClose={closeMenu} />
     </header>
   )
 }

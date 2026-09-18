@@ -13,7 +13,7 @@ export function Documents() {
       <PageHero
         badge="Archivio documentale"
         title="Documenti"
-        text="Area predisposta per raccogliere i documenti ufficiali dell’associazione e i materiali di adesione del percorso ANILP."
+        text="Lo statuto approvato e l’atto costitutivo di ANILP sono consultabili in formato PDF. Gli altri documenti saranno pubblicati progressivamente dopo la loro approvazione."
       />
       <section className="bg-slate-50 py-20">
         <div className="container-page grid gap-5 md:grid-cols-2 lg:grid-cols-3">

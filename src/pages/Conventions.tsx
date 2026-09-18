@@ -14,7 +14,7 @@ export function Conventions() {
       <PageHero
         badge="Servizi futuri"
         title="Convenzioni"
-        text="Le convenzioni saranno attivate solo dopo la costituzione e secondo criteri di trasparenza, utilità per gli iscritti e coerenza con le finalità associative."
+        text="Le convenzioni non sono ancora attive. Saranno valutate dagli organi competenti secondo criteri di trasparenza, utilità per gli iscritti e coerenza con le finalità associative. Gli accordi saranno pubblicati dopo la loro attivazione."
       />
       <section className="bg-white py-20">
         <div className="container-page grid gap-5 md:grid-cols-2 lg:grid-cols-4">

@@ -11,7 +11,7 @@ type CTAButtonProps = {
 export function CTAButton({ children, to, variant = 'primary', external }: CTAButtonProps) {
   const classes = {
     primary:
-      'bg-[linear-gradient(135deg,#087F7A,#0B9A91)] text-white shadow-md shadow-teal-900/10 hover:-translate-y-0.5 hover:bg-[linear-gradient(135deg,#066B67,#087F7A)] hover:shadow-lg hover:shadow-teal-900/20',
+      'bg-[linear-gradient(135deg,#087F7A,#066B67)] text-white shadow-md shadow-teal-900/10 hover:-translate-y-0.5 hover:bg-[linear-gradient(135deg,#066B67,#055754)] hover:shadow-lg hover:shadow-teal-900/20',
     secondary:
       'border border-[#D9E1E8] bg-white text-[#1E2A44] hover:-translate-y-0.5 hover:border-[#087F7A] hover:bg-[#E6F5F3] hover:text-[#066B67] hover:shadow-md',
     light:
@@ -22,7 +22,7 @@ export function CTAButton({ children, to, variant = 'primary', external }: CTABu
 
   if (external) {
     return (
-      <a href={to} className={className} target="_blank" rel="noreferrer">
+      <a href={to} className={className} target={to.startsWith('mailto:') ? undefined : '_blank'} rel={to.startsWith('mailto:') ? undefined : 'noreferrer'}>
         {children}
         <ArrowRight className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-1" aria-hidden="true" />
       </a>

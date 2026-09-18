@@ -10,7 +10,7 @@ export function Events() {
     <>
       <Seo
         title="Eventi e formazione | ANILP"
-        description="Eventi, webinar, congressi, corsi, tavoli tecnici e attività ECM future del progetto ANILP."
+        description="La programmazione di eventi, webinar, congressi, corsi e tavoli tecnici dell’associazione ANILP."
       />
       <PageHero
         badge="Formazione permanente"
@@ -24,8 +24,9 @@ export function Events() {
               <CalendarDays className="h-8 w-8 text-[#087F7A]" aria-hidden="true" />
               <h2 className="mt-5 text-xl font-black text-[#1E2A44]">{item}</h2>
               <p className="mt-3 leading-7 text-[#475569]">
-                Programmazione in fase di definizione, da attivare dopo la
-                costituzione e secondo le priorità associative.
+                Programmazione in fase di definizione. Date, programmi e
+                modalità di partecipazione saranno pubblicati dopo l’approvazione
+                delle iniziative da parte degli organi competenti.
               </p>
             </Card>
           ))}

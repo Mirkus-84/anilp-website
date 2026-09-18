@@ -6,7 +6,7 @@ import { Seo } from '../components/Seo'
 const territorialAreas = [
   {
     title: 'Delegazioni territoriali',
-    text: 'Saranno valutate dopo la costituzione formale dell’associazione, nel rispetto dello statuto approvato e dei regolamenti interni.',
+    text: 'Saranno valutate dal Consiglio Direttivo nel rispetto dello statuto approvato e dei regolamenti interni.',
     icon: Building2,
   },
   {
@@ -26,7 +26,7 @@ export function Territory() {
     <>
       <Seo
         title="Delegazioni territoriali | ANILP"
-        description="Sviluppo territoriale previsto dal progetto ANILP dopo la costituzione formale dell’associazione."
+        description="Sviluppo territoriale previsto dallo statuto ANILP, da attivare secondo le deliberazioni associative."
       />
       <PageHero
         badge="Presenza territoriale"
@@ -37,11 +37,11 @@ export function Territory() {
         <div className="container-page">
           <Card className="mb-8 border-l-4 border-l-[#087F7A] bg-white">
             <p className="text-lg leading-8 text-[#334155]">
-              Al momento ANILP è in fase di costituzione e non dispone ancora di
-              iscritti ufficiali, delegazioni operative o referenti territoriali
-              formalmente nominati. Questa sezione descrive esclusivamente
-              l’orientamento organizzativo che potrà essere sviluppato dopo la
-              costituzione dell’associazione.
+              ANILP è stata costituita il 9 settembre 2026. La presenza
+              territoriale sarà sviluppata progressivamente secondo le
+              deliberazioni del Consiglio Direttivo. L’attivazione delle strutture
+              e la nomina dei referenti saranno comunicate attraverso i canali
+              istituzionali.
             </p>
           </Card>
 

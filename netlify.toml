@@ -1,4 +1,16 @@
 [[redirects]]
+from = "/delegazioni-territoriali"
+to = "/chi-siamo"
+status = 302
+force = true
+
+[[redirects]]
+from = "/delegazioni-territoriali/"
+to = "/chi-siamo"
+status = 302
+force = true
+
+[[redirects]]
 from = "/*"
 to = "/index.html"
 status = 200

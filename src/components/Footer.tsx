@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import { institutionalEmails, navItems, secondaryNavItems } from '../data/site'
+import { associationPec, associationTaxCode, institutionalEmails, navItems, registeredOffice, secondaryNavItems } from '../data/site'
 import { Logo } from './Logo'
 
 export function Footer() {
@@ -9,8 +9,10 @@ export function Footer() {
         <div>
           <Logo compact />
           <p className="mt-5 max-w-md leading-7 text-[#475569]">
-            ANILP è in fase di costituzione e promuove un percorso verso una
-            rappresentanza nazionale degli infermieri liberi professionisti.
+            ANILP è l’associazione nazionale per la tutela e
+            la valorizzazione degli infermieri liberi professionisti.
+            Costituita il 9 settembre 2026 e registrata presso l’Agenzia delle
+            Entrate il 10 settembre 2026.
           </p>
         </div>
         <div>
@@ -26,7 +28,7 @@ export function Footer() {
         <div>
           <h2 className="text-sm font-bold uppercase tracking-wide text-[#087F7A]">Sezioni istituzionali</h2>
           <div className="mt-4 grid gap-2 text-[#475569]">
-            <Link to="/documenti" className="transition hover:text-[#066B67]">Bozza Statuto</Link>
+            <Link to="/documenti" className="transition hover:text-[#066B67]">Statuto e atto costitutivo</Link>
             {secondaryNavItems.slice(0, 5).map((item) => (
               <Link key={item.path} to={item.path} className="transition hover:text-[#066B67]">
                 {item.label}
@@ -42,8 +44,9 @@ export function Footer() {
                 {item.email}
               </a>
             ))}
-            <span>PEC in fase di attivazione</span>
-            <span>Sede legale in fase di definizione</span>
+            <a href={`mailto:${associationPec}`} className="break-words transition hover:text-[#066B67]">PEC: {associationPec}</a>
+            <span>Sede legale: {registeredOffice}</span>
+            <span>Codice fiscale: {associationTaxCode}</span>
             <Link to="/privacy-policy" className="transition hover:text-[#066B67]">Privacy Policy</Link>
             <Link to="/cookie-policy" className="transition hover:text-[#066B67]">Cookie Policy</Link>
           </div>

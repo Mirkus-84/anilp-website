@@ -12,12 +12,12 @@ export function Policy({ type }: PolicyProps) {
     <>
       <Seo
         title={`${isPrivacy ? 'Privacy Policy' : 'Cookie Policy'} | ANILP`}
-        description={`${isPrivacy ? 'Privacy Policy' : 'Cookie Policy'} professionale placeholder del sito ANILP, da completare prima della pubblicazione definitiva.`}
+        description={`${isPrivacy ? 'Privacy Policy' : 'Cookie Policy'} del sito ANILP: informativa in fase di completamento.`}
       />
       <PageHero
-        badge="Documento legale"
+        badge="Informativa in aggiornamento"
         title={isPrivacy ? 'Privacy Policy' : 'Cookie Policy'}
-        text="Documento placeholder predisposto per revisione legale e adeguamento prima della messa online definitiva."
+        text="L’informativa è in fase di completamento per descrivere i trattamenti effettivi e gli strumenti utilizzati dal sito."
       />
       <section className="bg-slate-50 py-20">
         <div className="container-page max-w-4xl">
@@ -30,9 +30,9 @@ export function Policy({ type }: PolicyProps) {
               di terze parti utilizzati dal sito.
             </p>
             <p className="mt-4 leading-8 text-[#475569]">
-              Titolare, base giuridica, finalita, tempi di conservazione, diritti
-              dell’interessato e dettagli sui cookie saranno aggiornati prima del
-              deploy pubblico definitivo.
+              Titolare, base giuridica, finalità, tempi di conservazione, diritti
+              dell’interessato e dettagli sui cookie sono oggetto di verifica
+              e completamento.
             </p>
           </Card>
         </div>

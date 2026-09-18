@@ -2,7 +2,9 @@
 
 Sito web istituzionale di ANILP - Associazione Nazionale Infermieri Liberi Professionisti.
 
-ANILP è in fase di costituzione. Il sito comunica il progetto associativo nazionale, la manifestazione di interesse, i soci fondatori, gli organi previsti, le attività, i documenti, le news e le aree future.
+ANILP è stata costituita il 9 settembre 2026 e registrata presso l’Agenzia delle Entrate il 10 settembre 2026. Il sito presenta finalità, fondatori e cariche, documenti approvati e aggiornamenti istituzionali.
+
+Sede legale: Via Mauro Macchi 8, Milano. Codice fiscale: `98033030150`. PEC: `associazione.anilp@pec.it`.
 
 ## Stack
 
@@ -70,12 +72,33 @@ git push -u origin main
 
 ## Personalizzazioni future
 
-- Logo ufficiale: il sito usa `public/Logo ANILP no sfondo.png`. Per aggiornare il marchio, sostituire quel file mantenendo lo stesso nome oppure aggiornare il percorso in `src/components/Logo.tsx`.
-- Link definitivo del form di manifestazione di interesse.
-- PEC ufficiale.
-- Sede legale ufficiale.
-- Documenti definitivi: statuto, atto costitutivo, regolamento, codice etico.
-- Foto, ruoli, bio e profili LinkedIn dei soci fondatori.
+- Loghi ufficiali: `public/Sfondo ANILP trasparente.png` per la home e `public/Sfondo ANILP monogramma trasparente.png` per header e footer. Percorsi in `src/components/Logo.tsx`.
+- Link definitivo del modulo: le CTA portano oggi a `/diventa-socio`, con contatto via email. Non sono simulate iscrizioni o richieste inviate dal sito.
+- Regolamenti, codice etico e modulistica dopo l’approvazione.
+- Foto, biografie e profili LinkedIn dei soci fondatori, se autorizzati.
 - Policy privacy/cookie validate legalmente.
 - Social ufficiali.
-- Convenzioni, eventi, area riservata e servizi associativi dopo la costituzione.
+- Calendario eventi, convenzioni approvate e area riservata quando effettivamente disponibili.
+
+## Documenti pubblici
+
+`public/documenti/statuto-anilp.pdf` contiene lo statuto approvato, estratto dalle pagine 3-22 del documento registrato. `public/documenti/atto-costitutivo-anilp.pdf` è una copia pubblica delle prime due pagine con dati anagrafici privati e firme oscurati. Il documento originale non è incluso nel repository.
+
+Per rigenerarli dallo stesso originale (richiede Python e PyMuPDF):
+
+```bash
+python -m pip install pymupdf
+python scripts/prepare-public-documents.py "PERCORSO/ANILP - Atto Costitutivo - Statuto.pdf"
+```
+
+Verificare visivamente entrambe le copie prima della pubblicazione.
+
+## Anteprima dei link
+
+Immagine: `public/anilp-social-preview-2026.png`, creata con lo strumento integrato ImageGen. Brief: logo ufficiale ANILP, fondo bianco, navy e teal, testo «Rappresentanza e tutela della libera professione infermieristica» e `www.anilp.it`, senza effetti commerciali.
+
+I metadati Open Graph e Twitter sono in `index.html`, leggibili anche senza JavaScript. Dopo un aggiornamento, le piattaforme di condivisione possono mantenere una precedente anteprima in cache.
+
+## Delegazioni
+
+La pagina è temporaneamente nascosta: nessun collegamento nel menu o nella home. Il vecchio indirizzo reindirizza a `/chi-siamo` sia su Netlify sia nella navigazione React. Il componente resta disponibile per una futura riattivazione.

@@ -1,21 +1,21 @@
-import { Mail, MapPin, Share2 } from 'lucide-react'
+import { Mail, MapPin } from 'lucide-react'
 import { Card } from '../components/Card'
 import { ContactForm } from '../components/ContactForm'
 import { PageHero } from '../components/PageHero'
 import { Seo } from '../components/Seo'
-import { institutionalEmails } from '../data/site'
+import { associationPec, associationTaxCode, institutionalEmails, registeredOffice } from '../data/site'
 
 export function Contacts() {
   return (
     <>
       <Seo
         title="Contatti | ANILP"
-        description="Contatti ANILP: email istituzionali, PEC in fase di attivazione, sede legale in fase di definizione e form frontend-only."
+        description="Contatti ANILP: email istituzionali, PEC associazione.anilp@pec.it, sede legale a Milano e codice fiscale 98033030150."
       />
       <PageHero
         badge="Contatti istituzionali"
         title="Contatti"
-        text="Per informazioni sul progetto ANILP, sugli eventi e sulla manifestazione di interesse è possibile utilizzare gli indirizzi istituzionali dell’associazione."
+        text="Per informazioni sull’associazione, sugli eventi e sulle adesioni, utilizza gli indirizzi istituzionali ANILP."
       />
       <section className="bg-white py-20">
         <div className="container-page grid gap-8 lg:grid-cols-[0.8fr_1fr]">
@@ -36,20 +36,13 @@ export function Contacts() {
             </Card>
             <Card>
               <MapPin className="h-8 w-8 text-[#087F7A]" aria-hidden="true" />
-              <h2 className="mt-4 text-2xl font-black text-[#1E2A44]">Sede e PEC</h2>
-              <p className="mt-2 leading-7 text-[#475569]">PEC in fase di attivazione</p>
-              <p className="leading-7 text-[#475569]">Sede legale in fase di definizione</p>
-            </Card>
-            <Card>
-              <h2 className="text-2xl font-black text-[#1E2A44]">Social</h2>
-              <div className="mt-4 flex gap-3">
-                <span className="grid h-11 w-11 place-items-center rounded-md bg-slate-100 text-slate-700" aria-label="Facebook placeholder">
-                  <Share2 className="h-5 w-5" aria-hidden="true" />
-                </span>
-                <span className="grid h-11 w-11 place-items-center rounded-md bg-slate-100 text-slate-700" aria-label="LinkedIn placeholder">
-                  <Share2 className="h-5 w-5" aria-hidden="true" />
-                </span>
-              </div>
+              <h2 className="mt-4 text-2xl font-black text-[#1E2A44]">Dati dell’associazione</h2>
+              <dl className="mt-4 grid gap-4 leading-7 text-[#475569]">
+                <div><dt className="font-bold text-[#1E2A44]">PEC</dt><dd><a className="break-words text-[#066B67]" href={`mailto:${associationPec}`}>{associationPec}</a></dd></div>
+                <div><dt className="font-bold text-[#1E2A44]">Sede legale</dt><dd>{registeredOffice}</dd></div>
+                <div><dt className="font-bold text-[#1E2A44]">Codice fiscale</dt><dd>{associationTaxCode}</dd></div>
+                <div><dt className="font-bold text-[#1E2A44]">Costituzione e registrazione</dt><dd>Costituita il 9 settembre 2026; registrata presso l’Agenzia delle Entrate il 10 settembre 2026.</dd></div>
+              </dl>
             </Card>
           </div>
           <ContactForm />

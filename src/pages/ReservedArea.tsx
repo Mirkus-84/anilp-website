@@ -13,7 +13,7 @@ export function ReservedArea() {
       <PageHero
         badge="In fase di attivazione"
         title="Area riservata"
-        text="Area riservata soci in fase di attivazione. Non è previsto un login reale in questa fase."
+        text="Area riservata soci in fase di attivazione. Le modalità di accesso saranno comunicate agli associati attraverso i canali istituzionali."
       />
       <section className="bg-white py-20">
         <div className="container-page max-w-4xl">

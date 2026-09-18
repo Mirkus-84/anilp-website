@@ -1,4 +1,4 @@
-import { createBrowserRouter, RouterProvider } from 'react-router-dom'
+import { createBrowserRouter, Navigate, RouterProvider } from 'react-router-dom'
 import { Layout } from './components/Layout'
 import { About } from './pages/About'
 import { Activities } from './pages/Activities'
@@ -10,12 +10,12 @@ import { Founders } from './pages/Founders'
 import { Home } from './pages/Home'
 import { Join } from './pages/Join'
 import { News } from './pages/News'
+import { NewsArticle } from './pages/NewsArticle'
 import { Organs } from './pages/Organs'
 import { Policy } from './pages/Policy'
 import { ConstitutionPath } from './pages/ConstitutionPath'
 import { ReservedArea } from './pages/ReservedArea'
 import { Transparency } from './pages/Transparency'
-import { Territory } from './pages/Territory'
 
 const router = createBrowserRouter([
   {
@@ -30,9 +30,10 @@ const router = createBrowserRouter([
       { path: 'diventa-socio', element: <Join /> },
       { path: 'documenti', element: <Documents /> },
       { path: 'news', element: <News /> },
+      { path: 'news/:slug', element: <NewsArticle /> },
       { path: 'eventi-formazione', element: <Events /> },
       { path: 'convenzioni', element: <Conventions /> },
-      { path: 'delegazioni-territoriali', element: <Territory /> },
+      { path: 'delegazioni-territoriali', element: <Navigate to="/chi-siamo" replace /> },
       { path: 'percorso-costitutivo', element: <ConstitutionPath /> },
       { path: 'trasparenza', element: <Transparency /> },
       { path: 'contatti', element: <Contacts /> },

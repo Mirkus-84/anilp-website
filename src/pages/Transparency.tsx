@@ -3,13 +3,20 @@ import { Card } from '../components/Card'
 import { PageHero } from '../components/PageHero'
 import { Seo } from '../components/Seo'
 import { StatusBadge } from '../components/StatusBadge'
+import { foundingActUrl, statuteUrl } from '../data/site'
 
 const items = [
   {
     title: 'Statuto',
     status: 'disponibile',
-    href: '/documenti/statuto-anilp.pdf',
-    text: 'Statuto ufficiale dell’associazione consultabile in formato PDF.',
+    href: statuteUrl,
+    text: 'Statuto approvato il 9 settembre 2026, consultabile in formato PDF.',
+  },
+  {
+    title: 'Atto costitutivo',
+    status: 'disponibile',
+    href: foundingActUrl,
+    text: 'Copia pubblica dell’atto costitutivo con dati anagrafici privati e firme oscurati.',
   },
   {
     title: 'Regolamenti',
@@ -33,7 +40,8 @@ const items = [
   },
   {
     title: 'Organi associativi',
-    status: 'in aggiornamento',
+    status: 'disponibile',
+    href: '/organi-associativi',
     text: 'Riepilogo degli organi associativi secondo lo statuto e gli atti approvati.',
   },
 ]
@@ -48,7 +56,7 @@ export function Transparency() {
       <PageHero
         badge="Documenti istituzionali"
         title="Trasparenza"
-        text="I documenti saranno pubblicati progressivamente dopo la costituzione, secondo quanto previsto dallo statuto e dai regolamenti associativi."
+        text="Sono disponibili lo statuto e la copia pubblica dell’atto costitutivo. Regolamenti, bilanci e altri documenti saranno pubblicati progressivamente secondo le approvazioni e le scadenze associative."
       />
       <section className="institutional-gradient py-20">
         <div className="container-page grid gap-5 md:grid-cols-2 lg:grid-cols-3">
@@ -65,9 +73,9 @@ export function Transparency() {
                   href={item.href}
                   target="_blank"
                   rel="noreferrer"
-                  className="mt-6 inline-flex min-h-11 items-center justify-center rounded-md bg-[linear-gradient(135deg,#087F7A,#0B9A91)] px-4 py-2 text-sm font-bold text-white transition hover:-translate-y-0.5 hover:bg-[linear-gradient(135deg,#066B67,#087F7A)]"
+                  className="mt-6 inline-flex min-h-11 items-center justify-center rounded-md bg-[linear-gradient(135deg,#087F7A,#066B67)] px-4 py-2 text-sm font-bold text-white transition hover:-translate-y-0.5 hover:bg-[linear-gradient(135deg,#066B67,#055754)]"
                 >
-                  Consulta il documento
+                  {item.title === 'Organi associativi' ? 'Consulta gli organi' : 'Consulta il documento'}
                 </a>
               )}
             </Card>

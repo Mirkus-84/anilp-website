@@ -10,20 +10,20 @@ export function News() {
     <>
       <Seo
         title="News | ANILP"
-        description="Aggiornamenti e comunicazioni del progetto ANILP sulla libera professione infermieristica."
+        description="Notizie, approfondimenti e aggiornamenti istituzionali dell’associazione ANILP sulla libera professione infermieristica."
       />
       <PageHero
         badge="Aggiornamenti istituzionali"
         title="News"
-        text="La sezione è predisposta per distinguere news, comunicati ufficiali e aggiornamenti istituzionali dedicati agli infermieri liberi professionisti."
+        text="Notizie sulla vita associativa, aggiornamenti istituzionali e approfondimenti dedicati agli infermieri liberi professionisti."
       />
       <section className="bg-white py-20">
         <div className="container-page">
           <div className="mb-10 grid gap-5 md:grid-cols-3">
             {[
-              ['News', Newspaper, 'Approfondimenti e contenuti informativi sul progetto ANILP.'],
+              ['News', Newspaper, 'Approfondimenti e contenuti informativi sulla libera professione infermieristica.'],
               ['Comunicati ufficiali', ScrollText, 'Comunicazioni istituzionali pubblicate dagli organi competenti.'],
-              ['Aggiornamenti istituzionali', Megaphone, 'Avanzamenti del percorso costitutivo e delle attività associative.'],
+              ['Aggiornamenti istituzionali', Megaphone, 'Costituzione, organi associativi e avanzamento delle attività.'],
             ].map(([title, Icon, text]) => (
               <Card key={title as string}>
                 <Icon className="h-8 w-8 text-[#087F7A]" aria-hidden="true" />

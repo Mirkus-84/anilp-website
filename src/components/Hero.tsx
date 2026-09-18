@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion'
 import { CheckCircle2, Mail, MapPinned, ShieldCheck } from 'lucide-react'
-import { formUrl, institutionalEmails } from '../data/site'
+import { interestUrl, institutionalEmails } from '../data/site'
 import { CTAButton } from './CTAButton'
 import { Logo } from './Logo'
 import { StatusBadge } from './StatusBadge'
@@ -17,7 +17,7 @@ export function Hero() {
         >
           <Logo prominent />
           <div className="mt-2">
-            <StatusBadge>Associazione in fase di costituzione</StatusBadge>
+            <StatusBadge>Associazione costituita il 9 settembre 2026</StatusBadge>
           </div>
           <h1 className="mt-3 max-w-5xl text-4xl font-black leading-tight text-[#1E2A44] md:text-5xl lg:text-6xl">
             La rappresentanza nazionale degli infermieri liberi professionisti
@@ -27,7 +27,7 @@ export function Hero() {
             che esercitano o intendono esercitare la libera professione in Italia.
           </p>
           <div className="mt-5 flex flex-col justify-center gap-3 sm:flex-row">
-            <CTAButton to={formUrl} external>
+            <CTAButton to={interestUrl}>
               Manifesta il tuo interesse
             </CTAButton>
             <CTAButton to="/chi-siamo" variant="secondary">
@@ -63,7 +63,7 @@ export function Hero() {
               {[
                 'Rappresentanza nazionale e internazionale degli iscritti',
                 'Supporto formativo, informativo e organizzativo',
-                'Delegazioni territoriali e coordinamenti regionali',
+                'Qualità, deontologia e buone pratiche professionali',
               ].map((item) => (
                 <div key={item} className="rounded-md border border-[#D9E1E8] bg-[#F7F9FB] p-4">
                   <CheckCircle2 className="mb-3 h-5 w-5 text-[#087F7A]" aria-hidden="true" />
