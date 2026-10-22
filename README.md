@@ -6,7 +6,7 @@ ANILP è stata costituita il 9 settembre 2026 e registrata presso l’Agenzia de
 
 Sede legale: Via Mauro Macchi 8, Milano. Codice fiscale: `98033030150`. PEC: `associazione.anilp@pec.it`.
 
-Quota associativa: 60 euro annui. Il valore è centralizzato in `src/data/site.ts`; la manifestazione di interesse non costituisce iscrizione e non comporta pagamenti.
+Quota associativa: 60 euro annui. Il valore è centralizzato in `src/data/site.ts`. La domanda è disponibile tramite il portale Yapla, ma non attribuisce automaticamente la qualifica di socio: l’ammissione richiede una delibera del Consiglio Direttivo. Le modalità di pagamento dipendono dalla campagna attiva e dalle indicazioni della Segreteria.
 
 ## Stack
 
@@ -75,7 +75,7 @@ git push -u origin main
 ## Personalizzazioni future
 
 - Loghi ufficiali: `public/Sfondo ANILP trasparente.png` per la home e `public/Sfondo ANILP monogramma trasparente.png` per header e footer. Percorsi in `src/components/Logo.tsx`.
-- Link definitivo del modulo: le CTA portano oggi a `/diventa-socio`, con contatto via email. Non sono simulate iscrizioni o richieste inviate dal sito.
+- Il portale adesioni e area membri Yapla è disponibile alle pagine `/diventa-socio` e `/area-riservata` tramite incorporamento responsive attivabile dall’utente. Il link diretto di fallback è definito in `src/data/site.ts` (`yaplaMembersUrl`). La procedura di registrazione e gli eventuali pagamenti vengono eseguiti da Yapla, non dal frontend ANILP.
 - Regolamenti, codice etico e modulistica dopo l’approvazione.
 - Foto, biografie e profili LinkedIn dei soci fondatori, se autorizzati.
 - Verifica organizzativa e legale delle informative in relazione ai processi dell’associazione e ai contratti con i fornitori.
@@ -129,10 +129,20 @@ Il menu Associazione raccoglie Chi siamo, Soci fondatori, Organi associativi, Pe
 
 ## Privacy e cookie
 
-I testi sono in `src/data/policies.tsx`, con indice e data di aggiornamento in `src/pages/Policy.tsx`. Descrivono la configurazione verificata il 18 settembre 2026: sito statico su Netlify, nessun cookie o tracciatore, nessuna richiesta a font o contenuti incorporati esterni, nessun archivio dei messaggi. Il modulo prepara un URL `mailto:`; l’invio effettivo avviene dal programma di posta dell’utente.
+I testi sono in `src/data/policies.tsx`, con indice e data di aggiornamento in `src/pages/Policy.tsx`. Descrivono la configurazione aggiornata al 22 ottobre 2026: sito statico su Netlify, nessun tracciatore pubblicitario di prima parte, font locali e integrazione esterna Yapla solo a seguito di una scelta esplicita dell’utente. La pagina di iscrizione incorpora il portale Yapla con un iframe, che può impiegare propri cookie e trattare dati tecnici o di registrazione. Il modulo prepara un URL `mailto:`; l’invio effettivo avviene dal programma di posta dell’utente.
 
 Riferimenti primari: [GDPR](https://www.garanteprivacy.it/il-testo-del-regolamento), [FAQ cookie del Garante](https://www.garanteprivacy.it/faq/cookie), [Data Processing Agreement Netlify](https://www.netlify.com/pdf/netlify-dpa.pdf).
 
-Prima di aggiungere moduli con invio lato server, iscrizioni, newsletter, analytics, video, mappe incorporate o area soci, aggiornare le informative e verificare basi giuridiche, conservazione, fornitori e trasferimenti. Gli strumenti non necessari devono rimanere disattivati prima del consenso, ove richiesto. La configurazione attuale non richiede un banner per tracciatori assenti.
+Prima di aprire pubblicamente nuove campagne di adesione o pagamenti, verificare i documenti GDPR e la configurazione Yapla: processo di validazione del Consiglio Direttivo, modalità di incasso/rimborso, cookie e relativi consensi, fornitori e trasferimenti. Gli strumenti non necessari devono rimanere disattivati prima del consenso, ove richiesto. La configurazione attuale non richiede un banner per tracciatori assenti.
 
 Il titolare deve verificare e documentare che gestione delle email, accessi autorizzati, cancellazione dei messaggi e contratti con hosting, posta e PEC siano coerenti con l’informativa. I tempi effettivi dei registri tecnici dipendono dalle condizioni del servizio di hosting: non sono stati attribuiti periodi arbitrari. L’attivazione delle adesioni richiederà un’informativa specifica.
+
+## Integrazione Yapla — ottobre 2026
+
+Il modulo esterno è ospitato da Yapla all'indirizzo definito nella costante `yaplaMembersUrl` (`src/data/site.ts`). Il componente `src/components/YaplaMemberEmbed.tsx`:
+
+- non carica contenuti di terze parti finché l'utente non preme «Carica il portale Yapla»;
+- usa un iframe a larghezza fluida e altezza adattata al viewport, senza bloccare login o pagamenti tramite un sandbox restrittivo;
+- mostra sempre un link diretto per aprire Yapla in una scheda separata in caso di incompatibilità del browser, cookie di terze parti o restrizioni di embedding.
+
+Yapla sconsiglia i siti monopagina integrati via iframe per le operazioni sensibili. Verificare manualmente l'intero flusso di registrazione su desktop e smartphone prima di promuovere la pagina. L'incorporamento non conferisce la qualifica di socio, che resta subordinata al Consiglio Direttivo.
