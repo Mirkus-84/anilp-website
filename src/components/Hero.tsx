@@ -17,7 +17,7 @@ export function Hero() {
         >
           <Logo prominent />
           <div className="mt-2">
-            <StatusBadge>Associazione costituita il 9 settembre 2026</StatusBadge>
+            <StatusBadge>Domande di adesione aperte · modulo Yapla attivo</StatusBadge>
           </div>
           <h1 className="mt-3 max-w-5xl text-4xl font-black leading-tight text-[#1E2A44] md:text-5xl lg:text-6xl">
             La rappresentanza nazionale degli infermieri liberi professionisti
@@ -28,7 +28,7 @@ export function Hero() {
           </p>
           <div className="mt-5 flex flex-col justify-center gap-3 sm:flex-row">
             <CTAButton to={interestUrl}>
-              Presenta la domanda di ammissione
+              Diventa socio: presenta la domanda
             </CTAButton>
             <CTAButton to="/chi-siamo" variant="secondary">
               Scopri ANILP

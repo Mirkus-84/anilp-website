@@ -17,7 +17,7 @@ import {
 import type { LucideIcon } from 'lucide-react'
 
 export const interestUrl = '/diventa-socio'
-export const interestEmailUrl = `mailto:info@anilp.it?subject=${encodeURIComponent('Manifestazione di interesse ANILP')}`
+export const interestEmailUrl = `mailto:info@anilp.it?subject=${encodeURIComponent('Informazioni sulla domanda di ammissione ANILP')}`
 export const annualMembershipFee = 60
 export const yaplaMembersUrl = 'https://anilp-associazione-nazionale-infermieri-liberi-professionisti-1.s2.yapla.com/it/area-membri'
 export const registeredOffice = 'Via Mauro Macchi 8, Milano'
@@ -114,7 +114,7 @@ export const documents = [
   { title: 'Atto costitutivo', text: 'Atto di costituzione dell’associazione. Copia per la consultazione pubblica con dati anagrafici privati e firme oscurati.', status: 'disponibile', href: foundingActUrl },
   { title: 'Regolamento interno', text: 'Sarà elaborato secondo lo statuto approvato.', status: 'appena disponibile' },
   { title: 'Codice etico', text: 'Documento in fase di elaborazione.', status: 'in elaborazione' },
-  { title: 'Modulistica adesione', text: 'Materiali per manifestazione di interesse e futura adesione.', status: 'in aggiornamento' },
+  { title: 'Domanda di ammissione online', text: 'È possibile compilare la domanda tramite il portale Yapla. In questa fase il pagamento della quota di 60 euro è differito, secondo le indicazioni della Segreteria.', status: 'disponibile', href: '/diventa-socio' },
   { title: 'Comunicati ufficiali', text: 'Archivio delle comunicazioni istituzionali ANILP.', status: 'in aggiornamento' },
 ]
 
@@ -125,7 +125,38 @@ export const news: Array<{
   category: string
   excerpt: string
   paragraphs: string[]
+  sourceUrl?: string
+  registrationUrl?: string
 }> = [
+  {
+    slug: 'presentazione-ufficiale-anilp-venezia-2026',
+    title: 'ANILP si presenta ufficialmente all’evento OPI Venezia del 29 ottobre',
+    date: '22 ottobre 2026',
+    category: 'Evento istituzionale',
+    excerpt: 'Appuntamento giovedì 29 ottobre all’Auditorium M9 di Mestre per “Libera Professione Infermieristica Senza Confini”: ANILP sarà presentata ufficialmente in occasione dell’incontro promosso da OPI Venezia.',
+    paragraphs: [
+      'ANILP sarà presentata ufficialmente il 29 ottobre 2026, in occasione dell’evento “Libera Professione Infermieristica Senza Confini” promosso dall’Ordine delle Professioni Infermieristiche di Venezia con il patrocinio FNOPI.',
+      'L’appuntamento si svolgerà dalle 8:30 alle 14:00 all’Auditorium M9, in via Giovanni Pascoli 11 a Mestre (Venezia). L’iniziativa è dedicata agli strumenti professionali, normativi, comunicativi e fiscali della libera professione infermieristica.',
+      'Tra gli interventi annunciati da OPI Venezia figurano Michele Nanocchio sulla pubblicità e visibilità in sanità, Mara Giunta sul giusto compenso, Vito De Angelis sul rapporto di fiducia con il paziente, Stefano Rossi sulla scelta tra studio e ambulatorio infermieristico e Giovanni Anelli sugli aspetti fiscali e previdenziali. È previsto anche un intervento di Luigi Pais dei Mori sul ruolo strategico della libera professione.',
+      'L’evento è gratuito, rivolto a infermieri e studenti in Infermieristica e accreditato per 2,10 crediti ECM. OPI Venezia indica un massimo di 180 partecipanti. Per programma, condizioni di accesso e iscrizione fare riferimento ai link ufficiali dell’Ordine.',
+      'La partecipazione a questo appuntamento rappresenta per ANILP l’occasione per presentare pubblicamente la propria identità associativa, le finalità di rappresentanza e il percorso di adesione ora disponibile tramite Yapla.',
+    ],
+    sourceUrl: 'https://www.opivenezia.it/notizie/tutte-le-notizie/656-opi-venezia-formazione-al-via-levento-libera-professione-infermieristica-senza-confini',
+    registrationUrl: 'https://docs.google.com/forms/d/e/1FAIpQLSe3CVEtXSWr3FZG-bqcdFyLuWed61_RjIVVZlHQ82EIbwBs1A/viewform',
+  },
+  {
+    slug: 'domande-di-ammissione-anilp-aperte',
+    title: 'Aperte le domande di ammissione ad ANILP tramite Yapla',
+    date: '22 ottobre 2026',
+    category: 'Vita associativa',
+    excerpt: 'È possibile presentare online la domanda di ammissione: quota ordinaria di 60 euro, per ora con pagamento differito tramite modalità tracciabili comunicate dalla Segreteria.',
+    paragraphs: [
+      'ANILP ha attivato su Yapla il modulo digitale per presentare la domanda di ammissione a Socio Ordinario. È possibile compilare i dati richiesti e trasmettere la documentazione prevista senza versare immediatamente la quota.',
+      'La quota ordinaria è pari a 60 euro. In questa fase la modalità disponibile è il pagamento differito: la Segreteria comunicherà successivamente le istruzioni per il bonifico o per altre modalità tracciabili autorizzate. Non si tratta di un’adesione gratuita.',
+      'La presentazione della domanda non attribuisce automaticamente la qualità di socio. L’ammissione resta subordinata alla verifica dei requisiti e alla deliberazione del Consiglio Direttivo; l’iscrizione si perfeziona dopo la delibera favorevole e la verifica del versamento. Se una domanda non viene accolta, l’eventuale importo già versato è rimborsato integralmente.',
+      'Il pagamento direttamente online tramite Yapla sarà reso disponibile in una fase successiva, non appena completata la relativa configurazione. Nel frattempo, chi desidera aderire può già presentare la domanda dalla pagina “Diventa socio”.',
+    ],
+  },
   {
     slug: 'costituzione-anilp',
     title: 'ANILP è ufficialmente costituita',
@@ -136,7 +167,7 @@ export const news: Array<{
       'L’Associazione Nazionale Infermieri Liberi Professionisti è stata ufficialmente costituita il 9 settembre 2026. La registrazione presso l’Agenzia delle Entrate è avvenuta il giorno successivo, 10 settembre 2026.',
       'L’associazione, senza scopo di lucro, ha sede legale in Via Mauro Macchi 8 a Milano. Lo statuto individua le finalità di tutela, rappresentanza e valorizzazione della libera professione infermieristica.',
       'L’atto costitutivo nomina il primo Consiglio Direttivo, composto da nove membri, per un mandato di quattro anni. Michele Nanocchio assume la carica di Presidente, Mara Giunta quella di Vicepresidente e Jessly Maria Izquierdo Gonzales quella di Segretario.',
-      'Lo statuto e la copia pubblica dell’atto costitutivo sono consultabili nella sezione Documenti. Le modalità operative di adesione e il calendario delle iniziative saranno comunicati attraverso i canali istituzionali.',
+      'Lo statuto e la copia pubblica dell’atto costitutivo sono consultabili nella sezione Documenti. Le domande di ammissione possono ora essere presentate online tramite il portale Yapla. La modalità di pagamento disponibile è attualmente differita; la Segreteria comunicherà successivamente le istruzioni per versare la quota associativa.',
     ],
   },
   {
@@ -178,11 +209,13 @@ export const futureServices = [
 export const stakeholderIcons = [Users, BriefcaseBusiness, Globe2, Network]
 
 export const constitutionSteps = [
-  { title: 'Costituzione dell’associazione', date: '9 settembre 2026', text: 'Sottoscrizione dell’atto costitutivo e approvazione dello statuto.', status: 'completata' },
-  { title: 'Primo Consiglio Direttivo', date: '9 settembre 2026', text: 'Nomina dei nove componenti e attribuzione delle cariche previste dall’atto costitutivo. Il primo mandato ha durata di quattro anni.', status: 'completata' },
-  { title: 'Registrazione', date: '10 settembre 2026', text: 'Registrazione dell’associazione presso l’Agenzia delle Entrate.', status: 'completata' },
-  { title: 'Procedure di adesione', date: 'Fase di avvio', text: 'Raccolta delle domande di ammissione tramite Yapla, con istruttoria e delibera del Consiglio Direttivo.', status: 'in corso' },
-  { title: 'Attività associative', date: 'Prossime iniziative', text: 'Programmazione delle attività e degli strumenti per gli associati, secondo le decisioni degli organi competenti.', status: 'in programmazione' },
+  { title: 'Costituzione e primo Consiglio Direttivo', date: '9 settembre 2026', text: 'Sottoscrizione dell’atto costitutivo, approvazione dello Statuto e nomina dei nove membri del primo Consiglio Direttivo.', status: 'completata' },
+  { title: 'Registrazione ufficiale', date: '10 settembre 2026', text: 'Registrazione di ANILP presso l’Agenzia delle Entrate e avvio degli adempimenti istituzionali.', status: 'completata' },
+  { title: 'Nomina del Tesoriere e quota associativa', date: '10 settembre 2026', text: 'Il Consiglio Direttivo nomina Giovanni Anelli Tesoriere e delibera la quota ordinaria di 60 euro.', status: 'completata' },
+  { title: 'Avvio delle procedure di adesione', date: '29 settembre 2026', text: 'Approvazione della bozza della procedura di iscrizione e affidamento dell’attività operativa alle consigliere incaricate.', status: 'completata' },
+  { title: 'Domande di ammissione online', date: 'Ottobre 2026', text: 'Aperta la raccolta delle domande tramite Yapla, inizialmente con pagamento differito della quota. L’ammissione rimane subordinata alla delibera del Consiglio Direttivo.', status: 'completata' },
+  { title: 'Presentazione ufficiale a Mestre', date: '29 ottobre 2026', text: 'ANILP sarà presentata in occasione dell’evento “Libera Professione Infermieristica Senza Confini”, promosso da OPI Venezia all’Auditorium M9.', status: 'in programmazione' },
+  { title: 'Pagamento online delle quote', date: 'Prossima attivazione', text: 'È prevista l’attivazione del pagamento direttamente online tramite Yapla; nel frattempo la Segreteria comunicherà le modalità tracciabili di versamento.', status: 'in programmazione' },
 ]
 
 export const faqs = [
@@ -199,7 +232,7 @@ export const faqs = [
   {
     question: 'Qual è la quota associativa annuale?',
     answer:
-      `La quota ordinaria è di ${annualMembershipFee} euro annui. Le modalità di pagamento disponibili sono indicate nel portale Yapla e dalla Segreteria. La presentazione della domanda non comporta automaticamente l’ammissione a socio.`,
+      `La quota ordinaria è di ${annualMembershipFee} euro. La domanda può essere già presentata tramite Yapla senza pagamento immediato: la Segreteria comunicherà le modalità tracciabili di versamento. Il pagamento direttamente online arriverà in una fase successiva. La presentazione della domanda non comporta automaticamente l’ammissione a socio.`,
   },
   {
     question: 'Possono aderire anche infermieri non ancora liberi professionisti?',
@@ -214,7 +247,7 @@ export const faqs = [
   {
     question: 'Come si presenta la domanda di ammissione?',
     answer:
-      'Puoi presentare domanda attraverso il portale Yapla nella pagina Diventa socio. La Segreteria verifica la documentazione e l’ammissione è deliberata dal Consiglio Direttivo. La registrazione preliminare non attribuisce automaticamente la qualità di socio.',
+      'Le domande sono aperte: compila il modulo Yapla dalla pagina Diventa socio. In questa fase non è richiesto il pagamento online immediato; le istruzioni per il versamento tracciabile arriveranno dalla Segreteria. L’ammissione è deliberata dal Consiglio Direttivo e non è automatica.',
   },
   {
     question: 'Come posso ricevere aggiornamenti?',

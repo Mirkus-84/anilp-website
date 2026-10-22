@@ -23,6 +23,9 @@ export function NewsArticle() {
           <div className="mt-10 flex flex-wrap gap-3">
             <CTAButton to="/news" variant="secondary">Tutte le notizie</CTAButton>
             {article.slug === 'costituzione-anilp' && <CTAButton to="/documenti">Consulta i documenti</CTAButton>}
+            {article.slug === 'domande-di-ammissione-anilp-aperte' && <CTAButton to="/diventa-socio">Presenta la domanda su Yapla</CTAButton>}
+            {article.sourceUrl && <CTAButton to={article.sourceUrl} variant="secondary" external>Notizia ufficiale OPI Venezia</CTAButton>}
+            {article.registrationUrl && <CTAButton to={article.registrationUrl} external>Modulo iscrizione all’evento</CTAButton>}
           </div>
         </div>
       </article>
