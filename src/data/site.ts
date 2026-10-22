@@ -19,6 +19,7 @@ import type { LucideIcon } from 'lucide-react'
 export const interestUrl = '/diventa-socio'
 export const interestEmailUrl = `mailto:info@anilp.it?subject=${encodeURIComponent('Manifestazione di interesse ANILP')}`
 export const annualMembershipFee = 60
+export const yaplaMembersUrl = 'https://anilp-associazione-nazionale-infermieri-liberi-professionisti-1.s2.yapla.com/it/area-membri'
 export const registeredOffice = 'Via Mauro Macchi 8, Milano'
 export const associationTaxCode = '98033030150'
 export const associationPec = 'associazione.anilp@pec.it'
@@ -180,7 +181,7 @@ export const constitutionSteps = [
   { title: 'Costituzione dell’associazione', date: '9 settembre 2026', text: 'Sottoscrizione dell’atto costitutivo e approvazione dello statuto.', status: 'completata' },
   { title: 'Primo Consiglio Direttivo', date: '9 settembre 2026', text: 'Nomina dei nove componenti e attribuzione delle cariche previste dall’atto costitutivo. Il primo mandato ha durata di quattro anni.', status: 'completata' },
   { title: 'Registrazione', date: '10 settembre 2026', text: 'Registrazione dell’associazione presso l’Agenzia delle Entrate.', status: 'completata' },
-  { title: 'Procedure di adesione', date: 'Fase di avvio', text: 'Definizione delle modalità operative per presentare la domanda di adesione secondo lo statuto.', status: 'in definizione' },
+  { title: 'Procedure di adesione', date: 'Fase di avvio', text: 'Raccolta delle domande di ammissione tramite Yapla, con istruttoria e delibera del Consiglio Direttivo.', status: 'in corso' },
   { title: 'Attività associative', date: 'Prossime iniziative', text: 'Programmazione delle attività e degli strumenti per gli associati, secondo le decisioni degli organi competenti.', status: 'in programmazione' },
 ]
 
@@ -198,12 +199,12 @@ export const faqs = [
   {
     question: 'Qual è la quota associativa annuale?',
     answer:
-      `La quota associativa è di ${annualMembershipFee} euro annui. La manifestazione di interesse non costituisce iscrizione e non comporta pagamenti; le modalità operative di adesione saranno comunicate sui canali istituzionali.`,
+      `La quota ordinaria è di ${annualMembershipFee} euro annui. Le modalità di pagamento disponibili sono indicate nel portale Yapla e dalla Segreteria. La presentazione della domanda non comporta automaticamente l’ammissione a socio.`,
   },
   {
     question: 'Possono aderire anche infermieri non ancora liberi professionisti?',
     answer:
-      'Sì, la manifestazione di interesse è aperta anche agli infermieri iscritti OPI interessati a conoscere o sviluppare la libera professione.',
+      'Sì. Possono presentare domanda anche gli infermieri iscritti OPI interessati a conoscere o sviluppare la libera professione.',
   },
   {
     question: 'ANILP è una community o un’associazione?',
@@ -211,9 +212,9 @@ export const faqs = [
       'ANILP è un’associazione nazionale di rappresentanza professionale, senza scopo di lucro, apartitica e aconfessionale, costituita con atto e statuto propri.',
   },
   {
-    question: 'Quando partiranno le adesioni ufficiali?',
+    question: 'Come si presenta la domanda di ammissione?',
     answer:
-      'Le modalità operative di adesione sono in fase di definizione e saranno comunicate sui canali istituzionali. Nel frattempo puoi scrivere a info@anilp.it per manifestare interesse: questo contatto non costituisce iscrizione né comporta pagamenti.',
+      'Puoi presentare domanda attraverso il portale Yapla nella pagina Diventa socio. La Segreteria verifica la documentazione e l’ammissione è deliberata dal Consiglio Direttivo. La registrazione preliminare non attribuisce automaticamente la qualità di socio.',
   },
   {
     question: 'Come posso ricevere aggiornamenti?',
