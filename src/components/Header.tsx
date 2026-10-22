@@ -48,7 +48,7 @@ export function Header() {
         </nav>
         <div className="hidden xl:block">
           <CTAButton to={interestUrl}>
-            Manifesta interesse
+            Diventa socio
           </CTAButton>
         </div>
         <button

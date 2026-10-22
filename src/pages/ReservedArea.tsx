@@ -1,30 +1,30 @@
-import { LockKeyhole } from 'lucide-react'
-import { Card } from '../components/Card'
+import { Link } from 'react-router-dom'
 import { PageHero } from '../components/PageHero'
 import { Seo } from '../components/Seo'
+import { YaplaMemberEmbed } from '../components/YaplaMemberEmbed'
 
 export function ReservedArea() {
   return (
     <>
       <Seo
-        title="Area riservata | ANILP"
-        description="Area riservata soci ANILP in fase di attivazione, predisposta per documenti, convenzioni, comunicazioni e webinar."
+        title="Area membri | ANILP"
+        description="Accedi al portale membri ANILP su Yapla per consultare e aggiornare i tuoi dati associativi."
       />
       <PageHero
-        badge="In fase di attivazione"
-        title="Area riservata"
-        text="Area riservata soci in fase di attivazione. Le modalità di accesso saranno comunicate agli associati attraverso i canali istituzionali."
+        badge="Portale associativo"
+        title="Area membri ANILP"
+        text="Accedi al portale Yapla per gestire il profilo e le funzionalità associate al tuo account. La registrazione al portale non costituisce, da sola, ammissione a socio."
       />
-      <section className="bg-white py-20">
-        <div className="container-page max-w-4xl">
-          <Card>
-            <LockKeyhole className="h-10 w-10 text-[#087F7A]" aria-hidden="true" />
-            <h2 className="mt-5 text-2xl font-black text-[#1E2A44]">Sviluppi futuri</h2>
-            <p className="mt-4 leading-8 text-[#475569]">
-              La futura area soci potrà ospitare documenti riservati, materiali
-              formativi, convenzioni, comunicazioni agli iscritti e strumenti operativi.
-            </p>
-          </Card>
+      <section className="bg-white py-12 sm:py-16">
+        <div className="container-page">
+          <p className="mb-7 max-w-3xl leading-7 text-[#475569]">
+            Se hai già creato un account Yapla puoi accedere dal portale qui sotto.
+            Per presentare una nuova domanda, consulta anche la pagina{' '}
+            <Link to="/diventa-socio" className="font-semibold text-[#066B67] underline underline-offset-2">
+              Diventa socio
+            </Link>.
+          </p>
+          <YaplaMemberEmbed />
         </div>
       </section>
     </>

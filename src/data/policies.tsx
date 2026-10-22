@@ -8,7 +8,7 @@ export type PolicySection = {
   content: ReactNode
 }
 
-export const policyUpdatedAt = '18 settembre 2026'
+export const policyUpdatedAt = '22 ottobre 2026'
 
 const controllerDetails = (
   <dl className="mt-5 grid gap-4 border-l-2 border-[#087F7A] pl-5">
@@ -26,7 +26,7 @@ export const privacySections: PolicySection[] = [
     content: <>
       <p>Questa informativa, resa ai sensi dell’articolo 13 del Regolamento (UE) 2016/679 (GDPR), descrive il trattamento dei dati personali connesso alla consultazione di www.anilp.it e alle comunicazioni indirizzate all’associazione tramite i contatti pubblicati sul sito.</p>
       {controllerDetails}
-      <p className="mt-5">L’informativa riguarda la configurazione attuale del sito. Iscrizioni associative, eventi con registrazione, area riservata e altri servizi che comportino nuovi trattamenti saranno accompagnati da informative specifiche al momento della loro attivazione.</p>
+      <p className="mt-5">Per la presentazione delle domande di ammissione e l’accesso all’area membri è disponibile il servizio esterno Yapla, accompagnato dall’informativa specifica MOD-02 resa consultabile prima della raccolta dei dati. Gli altri servizi che comportino nuovi trattamenti saranno accompagnati da informative specifiche alla loro attivazione.</p>
     </>,
   },
   {
@@ -36,6 +36,7 @@ export const privacySections: PolicySection[] = [
       <p><strong>Dati tecnici di navigazione.</strong> Per rendere disponibili le pagine, l’infrastruttura di hosting riceve informazioni quali indirizzo IP, data e ora della richiesta, indirizzo della pagina richiesta, caratteristiche del browser e del dispositivo, esito della richiesta. Questi dati possono essere presenti nei registri tecnici del fornitore per il funzionamento e la sicurezza del servizio.</p>
       <p><strong>Dati comunicati volontariamente.</strong> Scrivendo a info@anilp.it, eventi@anilp.it, presidenza@anilp.it o alla PEC, vengono trattati l’indirizzo del mittente, il nome eventualmente indicato, il contenuto della comunicazione e gli eventuali allegati inviati.</p>
       <p><strong>Modulo di contatto.</strong> I campi nome, email e messaggio sono utilizzati nel browser per preparare un’email nel programma di posta dell’utente. Il sito non invia il messaggio a un server, non lo registra in un database e non salva i campi nella memoria persistente del browser. ANILP riceve i dati soltanto se l’utente invia effettivamente l’email dal proprio account.</p>
+      <p><strong>Portale adesioni e area membri Yapla.</strong> Nella pagina Diventa socio e nell’Area membri il contenuto Yapla viene caricato tramite iframe soltanto dopo una scelta esplicita dell’utente; in alternativa è disponibile un collegamento diretto al portale esterno. Una volta caricato, il browser si collega a Yapla e il gestore del servizio può trattare dati di navigazione, autenticazione, dati comunicati nei moduli e informazioni relative alle operazioni effettuate secondo le condizioni applicabili e l’informativa MOD-02 ANILP.</p>
       <p><strong>Informazioni istituzionali pubblicate.</strong> Il sito riporta i nomi dei fondatori e le cariche associative per rendere conoscibile la composizione degli organi. Le copie pubbliche dei documenti costitutivi escludono i dati anagrafici privati e le firme.</p>
       <p>Invitiamo a comunicare soltanto le informazioni pertinenti alla richiesta, evitando dati sanitari, dati di pazienti o altre informazioni riservate di terzi. Il sito non richiede questi dati.</p>
     </>,
@@ -50,7 +51,7 @@ export const privacySections: PolicySection[] = [
         <li><strong>Informazione sulla governance:</strong> pubblicazione delle informazioni essenziali sulle cariche associative, sulla base del legittimo interesse alla trasparenza e alla riconoscibilità dell’associazione, ai sensi dell’articolo 6, paragrafo 1, lettera f).</li>
         <li><strong>Adempimenti obbligatori:</strong> ove applicabili, gestione degli obblighi previsti dalla legge, sulla base dell’articolo 6, paragrafo 1, lettera c).</li>
       </ul>
-      <p>Il sito non effettua profilazione, non attiva iscrizioni automatiche a newsletter e non utilizza decisioni esclusivamente automatizzate con effetti giuridici o analogamente significativi. Una manifestazione di interesse non costituisce domanda di ammissione o iscrizione all’associazione.</p>
+      <p>Il sito istituzionale non utilizza propri strumenti pubblicitari di profilazione né attiva automaticamente iscrizioni a newsletter. Le domande di ammissione sono trattate tramite il portale Yapla; il loro invio non attribuisce automaticamente la qualifica di socio, che richiede una deliberazione del Consiglio Direttivo secondo lo Statuto.</p>
     </>,
   },
   {
@@ -66,6 +67,7 @@ export const privacySections: PolicySection[] = [
     title: 'Destinatari e servizi utilizzati',
     content: <>
       <p>Le comunicazioni ricevute sono destinate alle persone incaricate dall’associazione di gestire la richiesta. Per il funzionamento del sito e della corrispondenza sono utilizzati fornitori di servizi di hosting, manutenzione tecnica, posta elettronica e PEC, nei limiti necessari alla prestazione del servizio e secondo il ruolo assunto nel trattamento.</p>
+      <p>Per le domande di adesione e la gestione degli account viene utilizzato <strong>Yapla</strong>, piattaforma esterna raggiungibile anche attraverso il riquadro incorporato attivabile dall’utente. Per le finalità, i dati richiesti, i destinatari e la conservazione relativi alla gestione associativa, consulta il MOD-02 ANILP e le informazioni rese nel portale Yapla.</p>
       <p>Il sito è ospitato su <strong>Netlify</strong>. Il trattamento svolto dal fornitore per conto del cliente è disciplinato dal suo <a href="https://www.netlify.com/pdf/netlify-dpa.pdf">Data Processing Agreement</a>; l’elenco dei subfornitori è consultabile nella <a href="https://www.netlify.com/legal/subprocessors/">documentazione ufficiale Netlify</a>.</p>
       <p>I dati contenuti nelle richieste private non vengono pubblicati o venduti. Possono essere comunicati alle autorità competenti quando previsto dalla legge o quando necessario per l’accertamento, l’esercizio o la difesa di un diritto.</p>
     </>,
@@ -93,7 +95,7 @@ export const privacySections: PolicySection[] = [
     content: <>
       <p>La connessione al sito utilizza HTTPS. Il modulo di contatto non dispone di un servizio di raccolta dei messaggi lato server. La sicurezza e la conservazione di una bozza preparata nel programma di posta dipendono anche dal servizio e dal dispositivo scelti dall’utente.</p>
       <p>Nella configurazione attuale il sito non installa cookie di profilazione, strumenti pubblicitari o sistemi di analisi del comportamento. Le informazioni dettagliate sono nella <Link to="/cookie-policy">Cookie Policy</Link>.</p>
-      <p>I collegamenti a siti esterni non caricano contenuti incorporati durante la consultazione delle pagine ANILP. Se scegli di seguirli, il trattamento effettuato dal servizio di destinazione è descritto nelle sue informative.</p>
+      <p>Il portale Yapla è incorporabile nelle pagine Diventa socio e Area membri ma non viene caricato automaticamente: il caricamento avviene solo dopo aver premuto «Carica il portale Yapla». Da quel momento il servizio esterno può utilizzare cookie tecnici e altri strumenti secondo le sue informative. È sempre disponibile un collegamento per aprire Yapla in una scheda separata.</p>
     </>,
   },
   {
@@ -152,15 +154,15 @@ export const cookieSections: PolicySection[] = [
     id: 'configurazione',
     title: 'Strumenti presenti sul sito',
     content: <>
-      <p><strong>Nella configurazione attuale non sono installati cookie né altri strumenti di tracciamento dal sito ANILP.</strong> Non sono presenti servizi di analisi delle visite, pubblicità, profilazione o contenuti di terze parti incorporati.</p>
+      <p><strong>Le pagine istituzionali ANILP non installano direttamente cookie di analytics, pubblicità o profilazione.</strong> Il portale esterno Yapla è disponibile come contenuto incorporato, ma viene caricato soltanto su richiesta dell’utente. Dal momento del caricamento Yapla potrebbe utilizzare cookie e altri strumenti necessari all’autenticazione, all’invio delle domande o alle funzioni del servizio; per i dettagli occorre consultare le informative del fornitore e il MOD-02 ANILP.</p>
       <ul>
-        <li><strong>Cookie tecnici dell’applicazione:</strong> non utilizzati. Non è presente un login o una sessione riservata soci.</li>
+        <li><strong>Cookie tecnici dell’applicazione istituzionale:</strong> non utilizzati direttamente da www.anilp.it. L’accesso ai membri è gestito sul portale Yapla, che può impiegare propri cookie tecnici una volta aperto o caricato.</li>
         <li><strong>Cookie e strumenti di analisi:</strong> non utilizzati.</li>
         <li><strong>Cookie pubblicitari e di profilazione:</strong> non utilizzati.</li>
-        <li><strong>Video, mappe e social incorporati:</strong> non presenti.</li>
+        <li><strong>Contenuti incorporati:</strong> iframe Yapla opzionale sulle pagine di adesione e area membri, attivato su richiesta.</li>
         <li><strong>Memoria persistente del browser:</strong> l’applicazione non registra dati in localStorage o sessionStorage e non salva i campi del modulo di contatto.</li>
       </ul>
-      <p>Le immagini e il carattere tipografico sono serviti dal dominio del sito, senza richiedere font o immagini a piattaforme esterne. Non essendoci cookie installati dall’applicazione, non sono previsti nomi, durate o destinatari di cookie da elencare.</p>
+      <p>Le immagini e il carattere tipografico del sito istituzionale sono serviti dal dominio ANILP. Per nome, durata e finalità degli eventuali cookie impostati da Yapla dopo il caricamento del suo contenuto occorre fare riferimento alle informazioni e ai controlli forniti dal servizio esterno.</p>
       <p>L’hosting può trattare dati tecnici necessari alla consegna delle pagine e alla sicurezza, come l’indirizzo IP. Questi trattamenti non dipendono dall’installazione di cookie e sono descritti nella <Link to="/privacy-policy#dati-trattati">Privacy Policy</Link>.</p>
     </>,
   },
@@ -168,7 +170,7 @@ export const cookieSections: PolicySection[] = [
     id: 'consenso',
     title: 'Consenso e banner',
     content: <>
-      <p>Il sito non presenta un banner di consenso perché non utilizza strumenti per i quali sia necessario raccogliere preventivamente il consenso dell’utente. La consultazione delle pagine non attiva profilazione o tracciamento pubblicitario.</p>
+      <p>La navigazione ordinaria del sito ANILP non attiva l’iframe di terze parti. Il contenuto Yapla viene caricato solo quando il visitatore sceglie esplicitamente «Carica il portale Yapla»; questa scelta di visualizzazione non sostituisce l’eventuale raccolta di consenso richiesta per strumenti non essenziali del fornitore. La configurazione dei cookie e dei relativi consensi va verificata nel portale Yapla prima dell’apertura al pubblico.</p>
       <p>Se in futuro saranno introdotti strumenti non necessari al funzionamento del sito, questa informativa sarà aggiornata e tali strumenti saranno attivati soltanto dopo la raccolta del consenso, ove richiesto. Saranno rese disponibili modalità per scegliere e modificare le preferenze.</p>
     </>,
   },
@@ -177,7 +179,7 @@ export const cookieSections: PolicySection[] = [
     title: 'Browser, email e servizi esterni',
     content: <>
       <p>La cache delle pagine, la cronologia, l’autocompletamento dei campi e le bozze del programma di posta sono funzionalità del browser o dei servizi scelti dall’utente; non costituiscono sistemi di profilazione installati dal sito ANILP.</p>
-      <p>Il pulsante del modulo di contatto prepara un messaggio nel programma di posta. L’email viene inviata soltanto attraverso l’azione dell’utente. I collegamenti esterni non incorporano automaticamente i servizi di destinazione nel sito: seguendoli, si applicano le informative dei relativi gestori.</p>
+      <p>Il pulsante del modulo di contatto prepara un messaggio nel programma di posta. L’email viene inviata soltanto attraverso l’azione dell’utente. I link a siti esterni portano al servizio di destinazione; l’eccezione è l’iframe Yapla, che viene caricato soltanto dopo la scelta esplicita del visitatore e può implicare un trattamento tecnico da parte del fornitore.</p>
       <p>Puoi comunque gestire i cookie e i dati dei siti nelle impostazioni del tuo browser. Le guide ufficiali sono disponibili per <a href="https://support.google.com/chrome/answer/95647?hl=it">Google Chrome</a>, <a href="https://support.mozilla.org/it/kb/Eliminare%20i%20cookie">Mozilla Firefox</a> e <a href="https://support.apple.com/it-it/105082">Safari</a>.</p>
     </>,
   },

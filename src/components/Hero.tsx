@@ -28,7 +28,7 @@ export function Hero() {
           </p>
           <div className="mt-5 flex flex-col justify-center gap-3 sm:flex-row">
             <CTAButton to={interestUrl}>
-              Manifesta il tuo interesse
+              Presenta la domanda di ammissione
             </CTAButton>
             <CTAButton to="/chi-siamo" variant="secondary">
               Scopri ANILP
