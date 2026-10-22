@@ -108,12 +108,12 @@ export function Home() {
             <div className="accent-bar mb-5 h-1 w-20 rounded-full" aria-hidden="true" />
             <h2 className="text-3xl font-black text-[#1E2A44]">Partecipa al percorso di ANILP</h2>
             <p className="mt-3 max-w-2xl leading-7 text-[#334155]">
-              Manifesta il tuo interesse e contribuisci alla costruzione di una
+              Presenta la domanda tramite il portale Yapla e partecipa alla
               rappresentanza nazionale degli infermieri liberi professionisti.
             </p>
           </div>
           <CTAButton to={interestUrl}>
-            Manifesta il tuo interesse
+            Diventa socio
           </CTAButton>
         </div>
       </section>
