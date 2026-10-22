@@ -1,91 +1,71 @@
-import { CheckCircle2 } from 'lucide-react'
+import { CheckCircle2, CreditCard, FileCheck2, ShieldCheck } from 'lucide-react'
+import { Link } from 'react-router-dom'
 import { Card } from '../components/Card'
-import { CTAButton } from '../components/CTAButton'
 import { PageHero } from '../components/PageHero'
-import { SectionTitle } from '../components/SectionTitle'
 import { Seo } from '../components/Seo'
-import { StatusBadge } from '../components/StatusBadge'
-import { annualMembershipFee, faqs, interestEmailUrl } from '../data/site'
+import { YaplaMemberEmbed } from '../components/YaplaMemberEmbed'
+import { annualMembershipFee } from '../data/site'
+
+const eligibleMembers = [
+  'Infermieri liberi professionisti con partita IVA individuale',
+  'Infermieri liberi professionisti in studio associato, STP o altra forma consentita',
+  'Infermieri iscritti OPI interessati alla libera professione',
+  'Infermieri con titolo estero autorizzati all’esercizio temporaneo in Italia, nei casi previsti dallo Statuto',
+]
 
 export function Join() {
-  const who = [
-    'Infermieri liberi professionisti con partita IVA individuale',
-    'Infermieri liberi professionisti in forma collettiva, STP, studi associati o società',
-    'Infermieri iscritti OPI interessati alla libera professione',
-    'Infermieri con titolo estero autorizzati all’esercizio temporaneo in Italia, alle condizioni previste dall’articolo 5 dello statuto',
-  ]
-
   return (
     <>
       <Seo
-        title="Diventa socio | ANILP"
-        description={`Partecipa al percorso di ANILP: requisiti statutari, manifestazione di interesse, quota associativa di ${annualMembershipFee} euro annui e informazioni sulle adesioni.`}
+        title="Diventa socio | Domanda di ammissione ANILP"
+        description="Compila la domanda di ammissione ANILP tramite il portale Yapla. Quota associativa ordinaria di 60 euro, documentazione e delibera del Consiglio Direttivo."
       />
       <PageHero
-        badge="Manifestazione di interesse"
-        title="Partecipa al percorso di ANILP"
-        text="ANILP è costituita e avvia il proprio percorso associativo. Le modalità operative di adesione sono in fase di definizione: puoi già manifestare interesse e chiedere informazioni."
+        badge="Adesioni ANILP"
+        title="Diventa socio"
+        text="Presenta la tua domanda di ammissione tramite il portale Yapla e segui le comunicazioni della Segreteria. L’invio della domanda non equivale all’ammissione a socio."
       />
-      <section className="bg-white py-20">
-        <div className="container-page grid gap-8 lg:grid-cols-[1fr_0.8fr]">
-          <div className="grid gap-5">
+
+      <section className="bg-white py-12 sm:py-16">
+        <div className="container-page">
+          <div className="mb-8 grid gap-5 lg:grid-cols-[1.3fr_0.7fr]">
             <Card>
-              <h2 className="text-2xl font-black text-[#1E2A44]">Perché partecipare</h2>
-              <p className="mt-4 leading-8 text-[#475569]">
-                Manifestare interesse significa contribuire allo sviluppo di
-                un’associazione nazionale orientata a rappresentanza, tutela,
-                appartenenza professionale e costruzione di strumenti utili per
-                gli infermieri liberi professionisti.
-              </p>
-              <p className="mt-4 leading-7 text-[#475569]">La manifestazione di interesse non costituisce iscrizione e non comporta pagamenti. L’ammissione come socio è deliberata dal Consiglio Direttivo su domanda scritta, secondo lo statuto.</p>
+              <h2 className="text-2xl font-black text-[#1E2A44]">Come funziona</h2>
+              <ol className="mt-5 grid gap-4">
+                <li className="flex gap-3"><FileCheck2 className="mt-1 h-5 w-5 shrink-0 text-[#087F7A]" aria-hidden="true" /><span className="leading-7 text-[#334155]"><strong>Compila la domanda</strong> su Yapla, inserendo i tuoi dati e i documenti richiesti.</span></li>
+                <li className="flex gap-3"><CreditCard className="mt-1 h-5 w-5 shrink-0 text-[#087F7A]" aria-hidden="true" /><span className="leading-7 text-[#334155]"><strong>Segui le istruzioni per la quota</strong>: se la modalità selezionata non prevede pagamento online, la Segreteria comunicherà come versare la quota tramite metodo tracciabile.</span></li>
+                <li className="flex gap-3"><ShieldCheck className="mt-1 h-5 w-5 shrink-0 text-[#087F7A]" aria-hidden="true" /><span className="leading-7 text-[#334155]"><strong>Attendi la valutazione</strong>: l’ammissione è deliberata dal Consiglio Direttivo dopo la verifica dei requisiti. In caso di mancata ammissione, quanto eventualmente versato per la domanda viene rimborsato integralmente.</span></li>
+              </ol>
             </Card>
-            <Card>
-              <h2 className="text-2xl font-black text-[#1E2A44]">Chi può manifestare interesse</h2>
-              <div className="mt-5 grid gap-4">
-                {who.map((item) => (
-                  <div key={item} className="flex gap-3">
-                    <CheckCircle2 className="mt-1 h-5 w-5 shrink-0 text-[#087F7A]" aria-hidden="true" />
-                    <span className="leading-7 text-[#334155]">{item}</span>
-                  </div>
-                ))}
-              </div>
+            <Card className="border-l-4 border-l-[#087F7A] bg-[#F7F9FB]">
+              <p className="text-sm font-bold uppercase tracking-wide text-[#066B67]">Quota associativa ordinaria</p>
+              <p className="mt-3 text-5xl font-black text-[#1E2A44]">{annualMembershipFee} € <span className="text-base font-semibold text-[#475569]">annui</span></p>
+              <p className="mt-4 leading-7 text-[#334155]">
+                L’eventuale registrazione preliminare senza pagamento non è un’adesione gratuita.
+                La qualifica di socio si perfeziona secondo la procedura associativa, dopo
+                la delibera favorevole e la verifica del versamento.
+              </p>
+              <p className="mt-4 text-sm leading-6 text-[#475569]">
+                Consulta anche lo <Link to="/documenti" className="font-semibold text-[#066B67] underline underline-offset-2">Statuto e i documenti ANILP</Link>.
+              </p>
             </Card>
           </div>
-          <Card className="h-fit border-l-4 border-l-[#087F7A] bg-[#F7F9FB]">
-            <StatusBadge>Adesione associativa</StatusBadge>
-            <h2 className="mt-5 text-2xl font-black text-[#1E2A44]">Quota associativa</h2>
-            <p className="mt-4 flex flex-wrap items-baseline gap-2 text-[#1E2A44]">
-              <span className="text-4xl font-bold">{annualMembershipFee} €</span>
-              <span className="text-base font-semibold text-[#475569]">annui</span>
+
+          <YaplaMemberEmbed />
+
+          <div className="mt-8 rounded-xl border border-[#D9E1E8] bg-[#F7F9FB] p-6">
+            <h2 className="text-xl font-bold text-[#1E2A44]">Chi può presentare domanda</h2>
+            <ul className="mt-4 grid gap-3 md:grid-cols-2">
+              {eligibleMembers.map((item) => (
+                <li key={item} className="flex items-start gap-3 text-sm leading-6 text-[#334155]">
+                  <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-[#087F7A]" aria-hidden="true" />
+                  {item}
+                </li>
+              ))}
+            </ul>
+            <p className="mt-5 text-sm leading-6 text-[#475569]">
+              Per informazioni o difficoltà con il portale: <a className="font-semibold text-[#066B67] underline underline-offset-2" href="mailto:info@anilp.it">info@anilp.it</a>.
             </p>
-            <p className="mt-4 leading-8 text-[#334155]">
-              La quota associativa è di {annualMembershipFee} euro annui.
-              Le modalità operative di adesione saranno comunicate sui canali istituzionali.
-            </p>
-            <p className="mt-4 text-sm leading-6 text-[#475569]">La manifestazione di interesse non costituisce iscrizione e non comporta pagamenti.</p>
-            <div className="mt-8">
-              <CTAButton to={interestEmailUrl} external>
-                Manifesta il tuo interesse via email
-              </CTAButton>
-            </div>
-            <p className="mt-4 text-sm leading-6 text-[#475569]">Scrivi a info@anilp.it per informazioni sulle adesioni.</p>
-          </Card>
-        </div>
-      </section>
-      <section className="institutional-gradient py-20">
-        <div className="container-page">
-          <SectionTitle
-            eyebrow="Domande frequenti"
-            title="FAQ"
-            text="Risposte sintetiche per comprendere natura, tempi e modalità del percorso ANILP."
-          />
-          <div className="grid gap-5 md:grid-cols-2">
-            {faqs.map((faq) => (
-              <Card key={faq.question}>
-                <h2 className="text-xl font-black text-[#1E2A44]">{faq.question}</h2>
-                <p className="mt-3 leading-7 text-[#475569]">{faq.answer}</p>
-              </Card>
-            ))}
           </div>
         </div>
       </section>
