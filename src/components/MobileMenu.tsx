@@ -100,7 +100,7 @@ export function MobileMenu({ open, onClose }: MobileMenuProps) {
         </nav>
         <div className="shrink-0 border-t border-[#D9E1E8] bg-white px-6 py-6 pb-[max(1.5rem,env(safe-area-inset-bottom))]">
           <CTAButton to={interestUrl}>
-            Manifesta interesse
+            Diventa socio
           </CTAButton>
         </div>
       </div>
