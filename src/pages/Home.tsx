@@ -61,10 +61,10 @@ export function Home() {
           <SectionTitle
             eyebrow="Percorso"
             title="Dalla costituzione all’avvio delle attività"
-            text="ANILP è stata costituita il 9 settembre 2026 e registrata presso l’Agenzia delle Entrate il 10 settembre 2026. Ecco le tappe raggiunte e il prossimo passo."
+            text="ANILP è ufficialmente costituita e raccoglie già le domande di ammissione tramite Yapla. Scopri le tappe più recenti e i prossimi appuntamenti."
           />
           <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-4">
-            {constitutionSteps.slice(0, 4).map((step, index) => (
+            {constitutionSteps.slice(-4).map((step, index) => (
               <article
                 key={step.title}
                 className="rounded-md border border-[#D9E1E8] border-l-4 border-l-[#087F7A] bg-[#F7F9FB] p-6 shadow-sm shadow-slate-950/5 transition-all duration-200 hover:-translate-y-[3px] hover:border-[#9DD8D3] hover:shadow-lg"
@@ -75,7 +75,7 @@ export function Home() {
                 <p className="mt-4 text-sm font-bold text-[#066B67]">{step.date}</p>
                 <h3 className="mt-2 text-xl font-black text-[#1E2A44]">{step.title}</h3>
                 <p className="mt-3 leading-7 text-[#475569]">{step.text}</p>
-                <p className="mt-4 text-sm font-semibold text-[#334155]">{step.status === 'completata' ? 'Tappa completata' : 'In definizione'}</p>
+                <p className="mt-4 text-sm font-semibold text-[#334155]">{step.status === 'completata' ? 'Tappa completata' : step.status === 'in corso' ? 'In corso' : 'In programmazione'}</p>
               </article>
             ))}
           </div>
@@ -95,7 +95,7 @@ export function Home() {
             text="Aggiornamenti sulla vita associativa e approfondimenti dedicati alla libera professione infermieristica."
           />
           <div className="grid gap-5 md:grid-cols-3">
-            {news.map((item) => (
+            {news.slice(0, 3).map((item) => (
               <NewsCard key={item.title} {...item} />
             ))}
           </div>
@@ -106,10 +106,11 @@ export function Home() {
         <div className="container-page flex flex-col items-start justify-between gap-6 md:flex-row md:items-center">
           <div>
             <div className="accent-bar mb-5 h-1 w-20 rounded-full" aria-hidden="true" />
-            <h2 className="text-3xl font-black text-[#1E2A44]">Partecipa al percorso di ANILP</h2>
+            <h2 className="text-3xl font-black text-[#1E2A44]">Le domande di ammissione ad ANILP sono aperte</h2>
             <p className="mt-3 max-w-2xl leading-7 text-[#334155]">
-              Presenta la domanda tramite il portale Yapla e partecipa alla
-              rappresentanza nazionale degli infermieri liberi professionisti.
+              Puoi già inviare la domanda tramite Yapla. La quota ordinaria è
+              di 60 € e verrà versata successivamente secondo le indicazioni
+              della Segreteria. Il pagamento online diretto arriverà a breve.
             </p>
           </div>
           <CTAButton to={interestUrl}>
