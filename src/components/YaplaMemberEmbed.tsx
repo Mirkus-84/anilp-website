@@ -1,5 +1,6 @@
 import { ExternalLink, MonitorSmartphone, ShieldCheck } from 'lucide-react'
 import { useState } from 'react'
+import { Link } from 'react-router-dom'
 import { yaplaMembersUrl } from '../data/site'
 
 export function YaplaMemberEmbed() {
@@ -66,8 +67,9 @@ export function YaplaMemberEmbed() {
           <p className="mt-6 flex max-w-xl items-start gap-2 text-left text-sm leading-6 text-[#64748B]">
             <ShieldCheck className="mt-0.5 h-4 w-4 shrink-0" aria-hidden="true" />
             Il caricamento può comportare il trattamento di dati tecnici e cookie
-            necessari al servizio esterno. Consulta la nostra informativa privacy
-            e quella di Yapla prima di inserire i tuoi dati.
+            necessari al servizio esterno. Consulta la nostra{' '}
+            <Link to="/privacy-policy" className="font-semibold text-[#066B67] underline underline-offset-2">informativa privacy</Link>{' '}
+            e le informazioni di Yapla prima di inserire i tuoi dati.
           </p>
         </div>
       )}
