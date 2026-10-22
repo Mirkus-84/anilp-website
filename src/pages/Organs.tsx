@@ -29,7 +29,7 @@ export function Organs() {
     <>
       <Seo
         title="Organi associativi | ANILP"
-        description="Gli organi di ANILP, i nove membri del primo Consiglio Direttivo e il Tesoriere Dott. Giovanni Anelli, nominato il 10 settembre 2026."
+        description="Gli organi di ANILP, i nove membri del primo Consiglio Direttivo e il Tesoriere Giovanni Anelli, nominato il 10 settembre 2026."
       />
       <PageHero
         badge="Statuto approvato"
@@ -70,7 +70,7 @@ export function Organs() {
           </p>
           <div className="mt-10 rounded-xl border border-[#D9E1E8] border-l-4 border-l-[#087F7A] bg-white p-6 shadow-sm shadow-slate-950/5 sm:p-8">
             <p className="text-sm font-bold uppercase tracking-wide text-[#066B67]">Tesoriere dell’associazione</p>
-            <h3 className="mt-3 text-2xl font-black text-[#1E2A44]">Dott. Giovanni Anelli</h3>
+            <h3 className="mt-3 text-2xl font-black text-[#1E2A44]">Giovanni Anelli</h3>
             <p className="mt-2 font-semibold text-[#334155]">Dottore Commercialista e Revisore Legale</p>
             <p className="mt-4 leading-7 text-[#475569]">
               Nominato all’unanimità dal Consiglio Direttivo nella seduta del
