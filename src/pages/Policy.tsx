@@ -26,7 +26,7 @@ export function Policy({ type }: PolicyProps) {
       />
       <div className="container-page grid items-start gap-10 py-12 lg:grid-cols-[260px_minmax(0,1fr)] lg:gap-16 lg:py-16">
         <aside className="border-b border-[#D9E1E8] pb-8 lg:sticky lg:top-28 lg:max-h-[calc(100dvh-8rem)] lg:overflow-y-auto lg:border-b-0 lg:pb-0">
-          <p className="text-sm text-[#475569]">Ultimo aggiornamento<br /><time dateTime="2026-09-18" className="font-semibold text-[#1E2A44]">{policyUpdatedAt}</time></p>
+          <p className="text-sm text-[#475569]">Ultimo aggiornamento<br /><time dateTime="2026-10-22" className="font-semibold text-[#1E2A44]">{policyUpdatedAt}</time></p>
           <nav className="mt-6" aria-label={`Indice ${title}`}>
             <h2 className="text-base font-bold text-[#1E2A44]">In questa informativa</h2>
             <ol className="mt-3 grid gap-1">
