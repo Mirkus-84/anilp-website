@@ -20,6 +20,27 @@ export function NewsArticle() {
           <div className="grid gap-6 text-lg leading-8 text-[#334155]">
             {article.paragraphs.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
           </div>
+          {article.gallery && (
+            <section className="mt-12" aria-label="Galleria fotografica del convegno">
+              <h2 className="mb-6 text-2xl font-black text-[#1E2A44]">Le immagini dell’evento</h2>
+              <div className="grid gap-5 sm:grid-cols-3">
+                {article.gallery.map((photo) => (
+                  <figure key={photo.src}>
+                    <img src={photo.src} alt={photo.alt} loading="lazy" className="h-72 w-full rounded-xl object-cover object-center sm:h-80" />
+                    <figcaption className="mt-3 text-sm leading-6 text-[#475569]">{photo.caption}</figcaption>
+                  </figure>
+                ))}
+              </div>
+              {article.photoCreditUrl && (
+                <p className="mt-5 text-sm text-[#475569]">
+                  Fotografie: OPI Venezia.{' '}
+                  <a href={article.photoCreditUrl} target="_blank" rel="noopener noreferrer" className="font-semibold text-[#087F7A] hover:underline">
+                    Visualizza il post originale
+                  </a>
+                </p>
+              )}
+            </section>
+          )}
           <div className="mt-10 flex flex-wrap gap-3">
             <CTAButton to="/news" variant="secondary">Tutte le notizie</CTAButton>
             {article.slug === 'costituzione-anilp' && <CTAButton to="/documenti">Consulta i documenti</CTAButton>}

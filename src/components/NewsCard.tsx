@@ -8,11 +8,13 @@ type NewsCardProps = {
   category: string
   date: string
   excerpt: string
+  image?: string
 }
 
-export function NewsCard({ title, slug, category, date, excerpt }: NewsCardProps) {
+export function NewsCard({ title, slug, category, date, excerpt, image }: NewsCardProps) {
   return (
     <Card className="h-full">
+      {image && <img src={image} alt="" loading="lazy" className="mb-5 h-48 w-full rounded-xl object-cover object-center" />}
       <p className="text-sm font-bold uppercase tracking-wide text-[#066B67]">{category}</p>
       <p className="mt-2 text-sm text-[#475569]">{date}</p>
       <h3 className="mt-3 text-xl font-black leading-snug text-[#1E2A44]">{title}</h3>

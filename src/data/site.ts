@@ -125,9 +125,34 @@ export const news: Array<{
   category: string
   excerpt: string
   paragraphs: string[]
+  image?: string
+  gallery?: Array<{ src: string; alt: string; caption: string }>
+  photoCreditUrl?: string
   sourceUrl?: string
   registrationUrl?: string
 }> = [
+  {
+    slug: 'resoconto-presentazione-anilp-opi-venezia-2026',
+    title: 'ANILP presentata ufficialmente a Venezia: una nuova voce per la libera professione infermieristica',
+    date: '9 novembre 2026',
+    category: 'Vita associativa',
+    excerpt: 'Il convegno OPI Venezia del 29 ottobre è stato un momento di confronto su autonomia, equo compenso, comunicazione e fiscalità, e ha ospitato la presentazione ufficiale di ANILP.',
+    paragraphs: [
+      'Il 29 ottobre 2026, l’Auditorium M9 di Mestre ha ospitato il convegno “Libera Professione Infermieristica Senza Confini”, promosso dall’Ordine delle Professioni Infermieristiche di Venezia con il patrocinio della FNOPI. Una giornata di dialogo sui temi che riguardano da vicino gli infermieri che esercitano in autonomia e quanti desiderano avvicinarsi alla libera professione.',
+      'Al centro degli interventi: identità e autonomia professionale, equo compenso, organizzazione degli studi infermieristici, rapporto di fiducia con i pazienti, fiscalità, previdenza e comunicazione sanitaria. Questioni concrete, da affrontare con competenza, collaborazione e una visione condivisa del futuro della professione.',
+      'Il Presidente ANILP Michele Nanocchio è intervenuto sul tema “Pubblicità e visibilità in sanità”, evidenziando l’importanza di comunicare in modo chiaro e corretto il valore delle competenze infermieristiche. La Vicepresidente Mara Giunta ha affrontato il tema dell’equo e giusto compenso. Sono intervenuti inoltre Vito De Angelis sul rapporto di fiducia con il paziente, Stefano Rossi sullo studio e l’ambulatorio infermieristico, Giovanni Anelli sugli aspetti fiscali e previdenziali e Luigi Pais dei Mori sul ruolo strategico della libera professione.',
+      'L’incontro ha segnato anche un passaggio importante per ANILP – Associazione Nazionale Infermieri Liberi Professionisti: la sua presentazione ufficiale al pubblico. Un’associazione nata per promuovere rappresentanza, tutela, riconoscibilità e collaborazione tra i professionisti, con l’obiettivo di dare risposte ai bisogni reali di chi opera sul territorio.',
+      'ANILP ringrazia la Presidente dell’OPI Venezia Marina Bottacin, il Tesoriere Francesco Gallo, gli organizzatori, i relatori e tutti i colleghi che hanno partecipato. Venezia rappresenta un punto di partenza: il futuro della libera professione infermieristica si costruisce attraverso il confronto, le competenze e il lavoro comune.',
+    ],
+    image: '/news/opi-venezia-2026-michele-nanocchio.jpg',
+    gallery: [
+      { src: '/news/opi-venezia-2026-michele-nanocchio.jpg', alt: 'Michele Nanocchio interviene al convegno OPI Venezia sul tema della pubblicità e visibilità in sanità', caption: 'Michele Nanocchio: pubblicità e visibilità in sanità.' },
+      { src: '/news/opi-venezia-2026-mara-giunta.jpg', alt: 'Mara Giunta interviene all’Auditorium M9 sul tema dell’equo compenso', caption: 'Mara Giunta: equo e giusto compenso.' },
+      { src: '/news/opi-venezia-2026-relatori.jpg', alt: 'Fotografia di gruppo dei relatori e organizzatori del convegno OPI Venezia', caption: 'I protagonisti della giornata al M9 di Mestre.' },
+    ],
+    photoCreditUrl: 'https://www.instagram.com/p/DfFAyoxgGti/',
+    sourceUrl: 'https://www.opivenezia.it/notizie/tutte-le-notizie/656-opi-venezia-formazione-al-via-levento-libera-professione-infermieristica-senza-confini',
+  },
   {
     slug: 'presentazione-ufficiale-anilp-venezia-2026',
     title: 'ANILP si presenta ufficialmente all’evento OPI Venezia del 29 ottobre',
