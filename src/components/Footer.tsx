@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom'
 import { associationPec, associationTaxCode, institutionalEmails, navItems, registeredOffice, secondaryNavItems } from '../data/site'
 import { Logo } from './Logo'
+import { SocialLinks } from './SocialLinks'
 
 export function Footer() {
   return (
@@ -55,6 +56,9 @@ export function Footer() {
               </a>
             ))}
             <a href={`mailto:${associationPec}`} className="break-words transition hover:text-[#066B67]">PEC: {associationPec}</a>
+          </div>
+          <div className="mt-5">
+            <SocialLinks />
           </div>
         </div>
       </div>

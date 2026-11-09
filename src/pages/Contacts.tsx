@@ -3,6 +3,7 @@ import { Card } from '../components/Card'
 import { ContactForm } from '../components/ContactForm'
 import { PageHero } from '../components/PageHero'
 import { Seo } from '../components/Seo'
+import { SocialLinks } from '../components/SocialLinks'
 import { associationPec, associationTaxCode, institutionalEmails, registeredOffice } from '../data/site'
 
 export function Contacts() {
@@ -33,6 +34,11 @@ export function Contacts() {
                   </div>
                 ))}
               </div>
+            </Card>
+            <Card>
+              <h2 className="text-2xl font-black text-[#1E2A44]">Seguici sui social</h2>
+              <p className="mb-5 mt-3 leading-7 text-[#475569]">Resta aggiornato sulle attività e sulle iniziative di ANILP attraverso i nostri profili ufficiali.</p>
+              <SocialLinks />
             </Card>
             <Card>
               <MapPin className="h-8 w-8 text-[#087F7A]" aria-hidden="true" />

@@ -1,6 +1,7 @@
 import { Navigate, useParams } from 'react-router-dom'
 import { CTAButton } from '../components/CTAButton'
 import { PageHero } from '../components/PageHero'
+import { PhotoGallery } from '../components/PhotoGallery'
 import { Seo } from '../components/Seo'
 import { news } from '../data/site'
 
@@ -23,14 +24,7 @@ export function NewsArticle() {
           {article.gallery && (
             <section className="mt-12" aria-label="Galleria fotografica del convegno">
               <h2 className="mb-6 text-2xl font-black text-[#1E2A44]">Le immagini dell’evento</h2>
-              <div className="grid gap-5 sm:grid-cols-3">
-                {article.gallery.map((photo) => (
-                  <figure key={photo.src}>
-                    <img src={photo.src} alt={photo.alt} loading="lazy" className="h-72 w-full rounded-xl object-cover object-center sm:h-80" />
-                    <figcaption className="mt-3 text-sm leading-6 text-[#475569]">{photo.caption}</figcaption>
-                  </figure>
-                ))}
-              </div>
+              <PhotoGallery photos={article.gallery} />
               {article.photoCreditUrl && (
                 <p className="mt-5 text-sm text-[#475569]">
                   Fotografie: OPI Venezia.{' '}
