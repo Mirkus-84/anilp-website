@@ -182,12 +182,12 @@ export const news: Array<{
     title: 'Aperte le domande di ammissione ad ANILP tramite Yapla',
     date: '22 ottobre 2026',
     category: 'Vita associativa',
-    excerpt: 'È possibile presentare online la domanda di ammissione: quota ordinaria di 60 euro, per ora con pagamento differito tramite modalità tracciabili comunicate dalla Segreteria.',
+    excerpt: 'Domande di ammissione aperte su Yapla. Dal 9 novembre 2026 è disponibile anche il pagamento online della quota ordinaria di 60 euro.',
     paragraphs: [
       'ANILP ha attivato su Yapla il modulo digitale per presentare la domanda di ammissione a Socio Ordinario. È possibile compilare i dati richiesti e trasmettere la documentazione prevista senza versare immediatamente la quota.',
-      'La quota ordinaria è pari a 60 euro. In questa fase la modalità disponibile è il pagamento differito: la Segreteria comunicherà successivamente le istruzioni per il bonifico o per altre modalità tracciabili autorizzate. Non si tratta di un’adesione gratuita.',
+      'All’apertura del modulo, il 22 ottobre 2026, era prevista una prima fase di pagamento differito. La quota ordinaria è pari a 60 euro. La modalità di pagamento è stata successivamente aggiornata.',
       'La presentazione della domanda non attribuisce automaticamente la qualità di socio. L’ammissione resta subordinata alla verifica dei requisiti e alla deliberazione del Consiglio Direttivo; l’iscrizione si perfeziona dopo la delibera favorevole e la verifica del versamento. Se una domanda non viene accolta, l’eventuale importo già versato è rimborsato integralmente.',
-      'Il pagamento direttamente online tramite Yapla sarà reso disponibile in una fase successiva, non appena completata la relativa configurazione. Nel frattempo, chi desidera aderire può già presentare la domanda dalla pagina “Diventa socio”.',
+      'Aggiornamento del 9 novembre 2026: il pagamento online della quota di 60 euro è attivo nel modulo Yapla accessibile dalla pagina “Diventa socio”. Resta necessaria la valutazione del Consiglio Direttivo prima dell’ammissione definitiva.',
     ],
   },
   {
@@ -247,8 +247,8 @@ export const constitutionSteps = [
   { title: 'Nomina del Tesoriere e quota associativa', date: '10 settembre 2026', text: 'Il Consiglio Direttivo nomina Giovanni Anelli Tesoriere e delibera la quota ordinaria di 60 euro.', status: 'completata' },
   { title: 'Avvio delle procedure di adesione', date: '29 settembre 2026', text: 'Approvazione della bozza della procedura di iscrizione e affidamento dell’attività operativa alle consigliere incaricate.', status: 'completata' },
   { title: 'Domande di ammissione online', date: 'Ottobre 2026', text: 'Aperta la raccolta delle domande tramite Yapla, inizialmente con pagamento differito della quota. L’ammissione rimane subordinata alla delibera del Consiglio Direttivo.', status: 'completata' },
-  { title: 'Presentazione ufficiale a Mestre', date: '29 ottobre 2026', text: 'ANILP sarà presentata in occasione dell’evento “Libera Professione Infermieristica Senza Confini”, promosso da OPI Venezia all’Auditorium M9.', status: 'in programmazione' },
-  { title: 'Pagamento online delle quote', date: 'Prossima attivazione', text: 'È prevista l’attivazione del pagamento direttamente online tramite Yapla; nel frattempo la Segreteria comunicherà le modalità tracciabili di versamento.', status: 'in programmazione' },
+  { title: 'Presentazione ufficiale a Mestre', date: '29 ottobre 2026', text: 'ANILP è stata presentata ufficialmente al convegno “Libera Professione Infermieristica Senza Confini”, promosso da OPI Venezia all’Auditorium M9. Un momento di confronto su identità, autonomia, equo compenso e prospettive della professione.', status: 'completata' },
+  { title: 'Attivazione del pagamento online', date: '9 novembre 2026', text: 'Attivato il modulo di ammissione su Yapla con pagamento online della quota associativa ordinaria di 60 euro. L’ammissione a socio resta subordinata alla verifica dei requisiti e alla delibera del Consiglio Direttivo.', status: 'completata' },
 ]
 
 export const faqs = [
@@ -265,7 +265,7 @@ export const faqs = [
   {
     question: 'Qual è la quota associativa annuale?',
     answer:
-      `La quota ordinaria è di ${annualMembershipFee} euro. La domanda può essere già presentata tramite Yapla senza pagamento immediato: la Segreteria comunicherà le modalità tracciabili di versamento. Il pagamento direttamente online arriverà in una fase successiva. La presentazione della domanda non comporta automaticamente l’ammissione a socio.`,
+      `La quota ordinaria è di ${annualMembershipFee} euro. Dal 9 novembre 2026 è attivo il pagamento online tramite il modulo Yapla della pagina Diventa socio. Il versamento non comporta automaticamente l’ammissione a socio, che rimane soggetta alla verifica dei requisiti e alla delibera del Consiglio Direttivo.`,
   },
   {
     question: 'Possono aderire anche infermieri non ancora liberi professionisti?',
@@ -280,7 +280,7 @@ export const faqs = [
   {
     question: 'Come si presenta la domanda di ammissione?',
     answer:
-      'Le domande sono aperte: compila il modulo Yapla dalla pagina Diventa socio. In questa fase non è richiesto il pagamento online immediato; le istruzioni per il versamento tracciabile arriveranno dalla Segreteria. L’ammissione è deliberata dal Consiglio Direttivo e non è automatica.',
+      'Le domande sono aperte: compila il modulo Yapla dalla pagina Diventa socio e segui la procedura di pagamento online della quota di 60 euro, attiva dal 9 novembre 2026. L’ammissione è deliberata dal Consiglio Direttivo dopo la verifica dei requisiti e non è automatica.',
   },
   {
     question: 'Come posso ricevere aggiornamenti?',

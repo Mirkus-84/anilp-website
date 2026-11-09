@@ -61,7 +61,7 @@ export function Home() {
           <SectionTitle
             eyebrow="Percorso"
             title="Dalla costituzione all’avvio delle attività"
-            text="ANILP è ufficialmente costituita e raccoglie già le domande di ammissione tramite Yapla. Scopri le tappe più recenti e i prossimi appuntamenti."
+            text="Dopo la presentazione ufficiale all’evento OPI Venezia del 29 ottobre, ANILP ha attivato il pagamento online delle quote su Yapla il 9 novembre 2026. Scopri le tappe più recenti."
           />
           <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-4">
             {constitutionSteps.slice(-4).map((step, index) => (
@@ -108,9 +108,9 @@ export function Home() {
             <div className="accent-bar mb-5 h-1 w-20 rounded-full" aria-hidden="true" />
             <h2 className="text-3xl font-black text-[#1E2A44]">Le domande di ammissione ad ANILP sono aperte</h2>
             <p className="mt-3 max-w-2xl leading-7 text-[#334155]">
-              Puoi già inviare la domanda tramite Yapla. La quota ordinaria è
-              di 60 € e verrà versata successivamente secondo le indicazioni
-              della Segreteria. Il pagamento online diretto arriverà a breve.
+              Puoi inviare la domanda di ammissione tramite Yapla ed effettuare
+              il pagamento online della quota ordinaria di 60 €, attivo dal
+              9 novembre 2026. L’ammissione rimane subordinata alla delibera del Consiglio Direttivo.
             </p>
           </div>
           <CTAButton to={interestUrl}>
