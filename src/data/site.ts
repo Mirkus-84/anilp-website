@@ -114,7 +114,7 @@ export const documents = [
   { title: 'Atto costitutivo', text: 'Atto di costituzione dell’associazione. Copia per la consultazione pubblica con dati anagrafici privati e firme oscurati.', status: 'disponibile', href: foundingActUrl },
   { title: 'Regolamento interno', text: 'Sarà elaborato secondo lo statuto approvato.', status: 'appena disponibile' },
   { title: 'Codice etico', text: 'Documento in fase di elaborazione.', status: 'in elaborazione' },
-  { title: 'Domanda di ammissione online', text: 'È possibile compilare la domanda tramite il portale Yapla. In questa fase il pagamento della quota di 60 euro è differito, secondo le indicazioni della Segreteria.', status: 'disponibile', href: '/diventa-socio' },
+  { title: 'Domanda di ammissione online', text: 'Compila la domanda di ammissione tramite Yapla e versa online la quota associativa ordinaria di 60 euro. Il pagamento online è attivo dal 9 novembre 2026; l’ammissione è subordinata alla verifica dei requisiti e alla delibera del Consiglio Direttivo.', status: 'disponibile', href: '/diventa-socio' },
   { title: 'Comunicati ufficiali', text: 'Archivio delle comunicazioni istituzionali ANILP.', status: 'in aggiornamento' },
 ]
 
@@ -200,7 +200,7 @@ export const news: Array<{
       'L’Associazione Nazionale Infermieri Liberi Professionisti è stata ufficialmente costituita il 9 settembre 2026. La registrazione presso l’Agenzia delle Entrate è avvenuta il giorno successivo, 10 settembre 2026.',
       'L’associazione, senza scopo di lucro, ha sede legale in Via Mauro Macchi 8 a Milano. Lo statuto individua le finalità di tutela, rappresentanza e valorizzazione della libera professione infermieristica.',
       'L’atto costitutivo nomina il primo Consiglio Direttivo, composto da nove membri, per un mandato di quattro anni. Michele Nanocchio assume la carica di Presidente, Mara Giunta quella di Vicepresidente e Jessly Maria Izquierdo Gonzales quella di Segretario.',
-      'Lo statuto e la copia pubblica dell’atto costitutivo sono consultabili nella sezione Documenti. Le domande di ammissione possono ora essere presentate online tramite il portale Yapla. La modalità di pagamento disponibile è attualmente differita; la Segreteria comunicherà successivamente le istruzioni per versare la quota associativa.',
+      'Lo statuto e la copia pubblica dell’atto costitutivo sono consultabili nella sezione Documenti. Le domande di ammissione possono essere presentate tramite Yapla. Aggiornamento del 9 novembre 2026: è attivo il pagamento online della quota ordinaria di 60 euro; l’ammissione resta subordinata alla delibera del Consiglio Direttivo.',
     ],
   },
   {
