@@ -30,7 +30,7 @@ export function About() {
               ['Visione', 'Una professione infermieristica autonoma, riconosciuta, competente e rappresentata in modo unitario.'],
               ['Missione', 'Costruire tutela, servizi, formazione e interlocuzione per gli iscritti e per il sistema sanitario.'],
               ['Valori', 'Deontologia, qualità, responsabilità, trasparenza, collaborazione e crescita professionale continua.'],
-              ['Fase attuale', 'Costituita il 9 settembre 2026 e registrata presso l’Agenzia delle Entrate il 10 settembre 2026. Sono in corso la definizione delle procedure di adesione e la programmazione delle attività.'],
+              ['Fase attuale', 'Costituita il 9 settembre 2026 e registrata presso l’Agenzia delle Entrate il 10 settembre 2026. Le domande di ammissione sono aperte tramite Yapla dal 22 ottobre 2026, con pagamento online attivo dal 9 novembre 2026. È in corso la programmazione delle attività associative.'],
             ].map(([title, text]) => (
               <Card key={title}>
                 <h2 className="text-xl font-black text-[#1E2A44]">{title}</h2>
