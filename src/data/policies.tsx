@@ -8,7 +8,7 @@ export type PolicySection = {
   content: ReactNode
 }
 
-export const policyUpdatedAt = '22 ottobre 2026'
+export const policyUpdatedAt = '24 novembre 2026'
 
 const controllerDetails = (
   <dl className="mt-5 grid gap-4 border-l-2 border-[#087F7A] pl-5">
@@ -26,7 +26,7 @@ export const privacySections: PolicySection[] = [
     content: <>
       <p>Questa informativa, resa ai sensi dell’articolo 13 del Regolamento (UE) 2016/679 (GDPR), descrive il trattamento dei dati personali connesso alla consultazione di www.anilp.it e alle comunicazioni indirizzate all’associazione tramite i contatti pubblicati sul sito.</p>
       {controllerDetails}
-      <p className="mt-5">Per la presentazione delle domande di ammissione e l’accesso all’area membri è disponibile il servizio esterno Yapla, accompagnato dall’informativa specifica MOD-02 resa consultabile prima della raccolta dei dati. Gli altri servizi che comportino nuovi trattamenti saranno accompagnati da informative specifiche alla loro attivazione.</p>
+      <p className="mt-5">Per la presentazione delle domande di ammissione e l’accesso all’area membri è disponibile il servizio esterno Yapla, accompagnato dall’informativa specifica MOD-02 resa consultabile prima della raccolta dei dati. Per la registrazione agli eventi, quando attivata, il portale Yapla presenta l’informativa specifica dell’evento prima della raccolta dei dati. Gli altri servizi che comportino nuovi trattamenti saranno accompagnati da informative specifiche alla loro attivazione.</p>
     </>,
   },
   {
@@ -95,7 +95,7 @@ export const privacySections: PolicySection[] = [
     content: <>
       <p>La connessione al sito utilizza HTTPS. Il modulo di contatto non dispone di un servizio di raccolta dei messaggi lato server. La sicurezza e la conservazione di una bozza preparata nel programma di posta dipendono anche dal servizio e dal dispositivo scelti dall’utente.</p>
       <p>Nella configurazione attuale il sito non installa cookie di profilazione, strumenti pubblicitari o sistemi di analisi del comportamento. Le informazioni dettagliate sono nella <Link to="/cookie-policy">Cookie Policy</Link>.</p>
-      <p>Il portale Yapla è incorporabile nelle pagine Diventa socio e Area membri ma non viene caricato automaticamente: il caricamento avviene solo dopo aver premuto «Carica il portale Yapla». Da quel momento il servizio esterno può utilizzare cookie tecnici e altri strumenti secondo le sue informative. È sempre disponibile un collegamento per aprire Yapla in una scheda separata.</p>
+      <p>Il portale Yapla è incorporabile nelle pagine Diventa socio, Area membri e Webinar (quando le iscrizioni sono attive), ma non viene caricato automaticamente: il caricamento avviene solo su esplicita richiesta dell’utente. Da quel momento il servizio esterno può utilizzare cookie tecnici e altri strumenti secondo le sue informative. È sempre disponibile un collegamento per aprire Yapla in una scheda separata.</p>
     </>,
   },
   {
@@ -159,7 +159,7 @@ export const cookieSections: PolicySection[] = [
         <li><strong>Cookie tecnici dell’applicazione istituzionale:</strong> non utilizzati direttamente da www.anilp.it. L’accesso ai membri è gestito sul portale Yapla, che può impiegare propri cookie tecnici una volta aperto o caricato.</li>
         <li><strong>Cookie e strumenti di analisi:</strong> non utilizzati.</li>
         <li><strong>Cookie pubblicitari e di profilazione:</strong> non utilizzati.</li>
-        <li><strong>Contenuti incorporati:</strong> iframe Yapla opzionale sulle pagine di adesione e area membri, attivato su richiesta.</li>
+        <li><strong>Contenuti incorporati:</strong> iframe Yapla opzionale sulle pagine di adesione, area membri e webinar (quando disponibile), attivato su richiesta.</li>
         <li><strong>Memoria persistente del browser:</strong> l’applicazione non registra dati in localStorage o sessionStorage e non salva i campi del modulo di contatto.</li>
       </ul>
       <p>Le immagini e il carattere tipografico del sito istituzionale sono serviti dal dominio ANILP. Per nome, durata e finalità degli eventuali cookie impostati da Yapla dopo il caricamento del suo contenuto occorre fare riferimento alle informazioni e ai controlli forniti dal servizio esterno.</p>
@@ -170,7 +170,7 @@ export const cookieSections: PolicySection[] = [
     id: 'consenso',
     title: 'Consenso e banner',
     content: <>
-      <p>La navigazione ordinaria del sito ANILP non attiva l’iframe di terze parti. Il contenuto Yapla viene caricato solo quando il visitatore sceglie esplicitamente «Carica il portale Yapla»; questa scelta di visualizzazione non sostituisce l’eventuale raccolta di consenso richiesta per strumenti non essenziali del fornitore. La configurazione dei cookie e dei relativi consensi va verificata nel portale Yapla prima dell’apertura al pubblico.</p>
+      <p>La navigazione ordinaria del sito ANILP non attiva l’iframe di terze parti. Il contenuto Yapla viene caricato solo quando il visitatore sceglie esplicitamente di caricare il portale o il modulo; questa scelta di visualizzazione non sostituisce l’eventuale raccolta di consenso richiesta per strumenti non essenziali del fornitore. La configurazione dei cookie e dei relativi consensi va verificata nel portale Yapla prima dell’apertura al pubblico.</p>
       <p>Se in futuro saranno introdotti strumenti non necessari al funzionamento del sito, questa informativa sarà aggiornata e tali strumenti saranno attivati soltanto dopo la raccolta del consenso, ove richiesto. Saranno rese disponibili modalità per scegliere e modificare le preferenze.</p>
     </>,
   },
