@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { Seo } from '../components/Seo'
 import { founders } from '../data/site'
@@ -24,7 +24,11 @@ const agenda = [
 
 export function Webinar() {
   const [embedLoaded, setEmbedLoaded] = useState(false)
-  const closed = Date.now() >= Date.parse('2026-12-03T21:00:00+01:00')
+  const [closed, setClosed] = useState(() => Date.now() >= Date.parse('2026-12-03T21:00:00+01:00'))
+  useEffect(() => {
+    const timer = window.setInterval(() => setClosed(Date.now() >= Date.parse('2026-12-03T21:00:00+01:00')), 30000)
+    return () => window.clearInterval(timer)
+  }, [])
   const canRegister = !closed && registration.publicUrl.startsWith('https://')
   const canEmbed = canRegister && registration.embedUrl.startsWith('https://')
   return (
