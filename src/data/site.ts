@@ -132,6 +132,18 @@ export const news: Array<{
   registrationUrl?: string
 }> = [
   {
+    slug: 'webinar-presentazione-anilp-3-dicembre-2026',
+    title: 'ANILP incontra i professionisti: webinar del 3 dicembre',
+    date: '25 novembre 2026',
+    category: 'Eventi e formazione',
+    excerpt: 'Giovedì 3 dicembre, dalle 21:00 alle 22:00, ANILP presenta i suoi organi associativi e il progetto nazionale in un webinar gratuito aperto a tutti.',
+    paragraphs: [
+      'ANILP invita infermieri, studenti e persone interessate a conoscere il progetto associativo e le persone che lo animano.',
+      'L’incontro online sarà dedicato alla missione dell’associazione, alla rappresentanza, alla tutela e alle prospettive della libera professione infermieristica, con spazio per le domande.',
+      'La partecipazione è gratuita e aperta anche ai non soci. Le istruzioni per il collegamento saranno comunicate agli iscritti. Consulta la pagina dedicata al webinar per le informazioni sulla registrazione.',
+    ],
+  },
+  {
     slug: 'resoconto-presentazione-anilp-opi-venezia-2026',
     title: 'ANILP presentata ufficialmente a Venezia: una nuova voce per la libera professione infermieristica',
     date: '9 novembre 2026',

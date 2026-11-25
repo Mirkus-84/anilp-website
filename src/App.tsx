@@ -16,6 +16,8 @@ import { Policy } from './pages/Policy'
 import { ConstitutionPath } from './pages/ConstitutionPath'
 import { ReservedArea } from './pages/ReservedArea'
 import { Transparency } from './pages/Transparency'
+import { EventPrivacy } from './pages/EventPrivacy'
+import { Webinar } from './pages/Webinar'
 
 const router = createBrowserRouter([
   {
@@ -32,6 +34,8 @@ const router = createBrowserRouter([
       { path: 'news', element: <News /> },
       { path: 'news/:slug', element: <NewsArticle /> },
       { path: 'eventi-formazione', element: <Events /> },
+      { path: 'webinar', element: <Webinar /> },
+      { path: 'privacy-eventi', element: <EventPrivacy /> },
       { path: 'convenzioni', element: <Conventions /> },
       { path: 'delegazioni-territoriali', element: <Navigate to="/chi-siamo" replace /> },
       { path: 'percorso-costitutivo', element: <ConstitutionPath /> },
