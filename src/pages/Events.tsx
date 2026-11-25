@@ -20,6 +20,12 @@ export function Events() {
       />
       <section className="bg-white py-12 sm:py-16">
         <div className="container-page">
+          <Card className="mb-6 border-l-4 border-l-[#087F7A]">
+            <p className="text-sm font-bold uppercase tracking-wide text-[#066B67]">3 dicembre 2026 · Online · Gratuito</p>
+            <h2 className="mt-3 text-2xl font-black text-[#1E2A44]">ANILP – Il futuro della libera professione infermieristica</h2>
+            <p className="mt-3 leading-7 text-[#334155]">Dalle 21:00 alle 22:00. Presentazione degli organi associativi, della missione e delle prospettive di ANILP. Aperto a tutti, anche ai non soci.</p>
+            <div className="mt-6"><CTAButton to="/webinar">Scopri il webinar</CTAButton></div>
+          </Card>
           <Card className="border-l-4 border-l-[#087F7A]">
             <p className="text-sm font-bold uppercase tracking-wide text-[#066B67]">29 ottobre 2026 · Mestre (VE)</p>
             <h2 className="mt-3 text-2xl font-black text-[#1E2A44]">Libera Professione Infermieristica Senza Confini</h2>
