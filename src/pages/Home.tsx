@@ -15,6 +15,16 @@ export function Home() {
         description="ANILP è l’associazione nazionale dedicata alla rappresentanza, tutela e valorizzazione degli infermieri liberi professionisti in Italia, costituita il 9 settembre 2026."
       />
       <Hero />
+      {Date.now() < Date.parse('2026-12-03T21:00:00+01:00') && (
+        <section className="bg-[#1E2A44] py-8 text-white" aria-label="Prossimo webinar ANILP">
+          <div className="container-page flex flex-col items-start justify-between gap-5 md:flex-row md:items-center">
+            <div><p className="text-sm font-bold uppercase tracking-wide text-teal-200">Webinar gratuito · 3 dicembre 2026 · ore 21:00</p>
+              <h2 className="mt-2 text-2xl font-black">Il futuro della libera professione infermieristica</h2>
+              <p className="mt-2 text-slate-200">Incontra gli organi associativi di ANILP. Aperto a tutti.</p></div>
+            <CTAButton to="/webinar">Scopri il webinar</CTAButton>
+          </div>
+        </section>
+      )}
 
       <section className="bg-white py-20">
         <div className="container-page grid gap-10 lg:grid-cols-[0.9fr_1.1fr]">
