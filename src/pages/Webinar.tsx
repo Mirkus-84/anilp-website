@@ -6,7 +6,7 @@ import { founders } from '../data/site'
 // Use the exact public URL and iframe src supplied by Yapla in Pagina Web > Condivisione.
 const registration: { publicUrl: string; embedUrl: string } = {
   publicUrl: 'https://anilp-associazione-nazionale-infermieri-liberi-professionisti-1.s2.yapla.com/it/event-134712',
-  embedUrl: '',
+  embedUrl: 'https://anilp-associazione-nazionale-infermieri-liberi-professionisti-1.s2.yapla.com/it/event-134712',
 }
 const event = {
   date: 'Giovedì 3 dicembre 2026',
@@ -82,10 +82,10 @@ export function Webinar() {
             <h3 className="text-2xl font-black text-[#1e2a44]">Registrazione al webinar</h3>
             <p className="mt-3 text-slate-600">Partecipazione gratuita, aperta a tutti. Riceverai via email le istruzioni per collegarti quando saranno disponibili.</p>
             {canRegister ? <>
-              <p className="mt-4 text-sm text-slate-600">Le iscrizioni sono gestite esclusivamente da Yapla. Prima dell’invio consulta l’informativa relativa all’evento sul portale. Accedi al modulo ufficiale tramite il pulsante qui sotto.</p>
+              <p className="mt-4 text-sm text-slate-600">Le iscrizioni sono gestite esclusivamente da Yapla. Prima dell’invio consulta l’informativa relativa all’evento sul portale. Per visualizzare il modulo incorporato, seleziona «Carica il modulo Yapla». Puoi anche aprirlo in una nuova scheda.</p>
               <div className="mt-5 flex flex-wrap gap-3">
                 {canEmbed && !embedLoaded && <button type="button" onClick={() => setEmbedLoaded(true)} className="rounded-lg bg-[#087f7a] px-5 py-3 font-bold text-white hover:bg-[#066b67]">Carica il modulo Yapla</button>}
-                <a href={registration.publicUrl} target="_blank" rel="noopener noreferrer" className="rounded-lg bg-[#087f7a] px-5 py-3 font-bold text-white hover:bg-[#066b67]">{canEmbed ? 'Apri il modulo in una nuova scheda' : 'Iscriviti gratuitamente su Yapla'}</a>
+                <a href={registration.publicUrl} target="_blank" rel="noopener noreferrer" className="rounded-lg border border-[#087f7a] px-5 py-3 font-bold text-[#066b67] hover:bg-[#e6f5f3]">{canEmbed ? 'Apri il modulo in una nuova scheda' : 'Iscriviti gratuitamente su Yapla'}</a>
               </div>
             </> : <p role="status" className="mt-4 rounded-lg bg-slate-100 p-4 font-semibold text-[#1e2a44]">{closed ? 'Le iscrizioni sono concluse.' : 'Le iscrizioni apriranno a breve. Il modulo Yapla è in preparazione.'}</p>}
             <Link to="/privacy-eventi" className="mt-5 block text-sm text-[#066b67] underline">Informativa privacy degli eventi</Link>
@@ -93,7 +93,7 @@ export function Webinar() {
         </div>
         {canEmbed && embedLoaded && <div className="container-page mt-8">
           <div className="flex justify-end pb-3"><button type="button" onClick={() => setEmbedLoaded(false)} className="font-semibold text-[#066b67] underline">Chiudi il modulo</button></div>
-          <iframe src={registration.embedUrl} title="Modulo Yapla di registrazione al webinar ANILP" className="h-[1100px] w-full rounded-xl border border-[#d9e1e8] bg-white" referrerPolicy="strict-origin-when-cross-origin" />
+          <iframe src={registration.embedUrl} title="Modulo Yapla di registrazione al webinar ANILP" width="950" height="750" className="mx-auto block h-[1000px] w-full max-w-[950px] rounded-xl border border-[#d9e1e8] bg-white sm:h-[900px]" referrerPolicy="strict-origin-when-cross-origin" />
         </div>}
       </section>
     </>
