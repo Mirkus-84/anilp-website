@@ -5,7 +5,7 @@ import { founders } from '../data/site'
 
 // Use the exact public URL and iframe src supplied by Yapla in Pagina Web > Condivisione.
 const registration: { publicUrl: string; embedUrl: string } = {
-  publicUrl: '',
+  publicUrl: 'https://anilp-associazione-nazionale-infermieri-liberi-professionisti-1.s2.yapla.com/it/event-134712',
   embedUrl: '',
 }
 const event = {
@@ -82,13 +82,13 @@ export function Webinar() {
             <h3 className="text-2xl font-black text-[#1e2a44]">Registrazione al webinar</h3>
             <p className="mt-3 text-slate-600">Partecipazione gratuita, aperta a tutti. Riceverai via email le istruzioni per collegarti quando saranno disponibili.</p>
             {canRegister ? <>
-              <p className="mt-4 text-sm text-slate-600">Le iscrizioni sono gestite esclusivamente da Yapla. Prima dell’invio consulta l’informativa relativa all’evento sul portale. Il modulo esterno viene caricato soltanto su tua richiesta.</p>
+              <p className="mt-4 text-sm text-slate-600">Le iscrizioni sono gestite esclusivamente da Yapla. Prima dell’invio consulta l’informativa relativa all’evento sul portale. Accedi al modulo ufficiale tramite il pulsante qui sotto.</p>
               <div className="mt-5 flex flex-wrap gap-3">
                 {canEmbed && !embedLoaded && <button type="button" onClick={() => setEmbedLoaded(true)} className="rounded-lg bg-[#087f7a] px-5 py-3 font-bold text-white hover:bg-[#066b67]">Carica il modulo Yapla</button>}
-                <a href={registration.publicUrl} target="_blank" rel="noopener noreferrer" className="rounded-lg border border-[#087f7a] px-5 py-3 font-bold text-[#066b67]">{canEmbed ? 'Apri il modulo in una nuova scheda' : 'Iscriviti gratuitamente su Yapla'}</a>
+                <a href={registration.publicUrl} target="_blank" rel="noopener noreferrer" className="rounded-lg bg-[#087f7a] px-5 py-3 font-bold text-white hover:bg-[#066b67]">{canEmbed ? 'Apri il modulo in una nuova scheda' : 'Iscriviti gratuitamente su Yapla'}</a>
               </div>
             </> : <p role="status" className="mt-4 rounded-lg bg-slate-100 p-4 font-semibold text-[#1e2a44]">{closed ? 'Le iscrizioni sono concluse.' : 'Le iscrizioni apriranno a breve. Il modulo Yapla è in preparazione.'}</p>}
-            <Link to="/privacy-policy" className="mt-5 block text-sm text-[#066b67] underline">Informativa privacy del sito</Link>
+            <Link to="/privacy-eventi" className="mt-5 block text-sm text-[#066b67] underline">Informativa privacy degli eventi</Link>
           </div>
         </div>
         {canEmbed && embedLoaded && <div className="container-page mt-8">
