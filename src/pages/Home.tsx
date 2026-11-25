@@ -1,3 +1,4 @@
+import { useEffect, useState } from 'react'
 import { ActivityCard } from '../components/ActivityCard'
 import { CTAButton } from '../components/CTAButton'
 import { Hero } from '../components/Hero'
@@ -8,6 +9,11 @@ import { StatusBadge } from '../components/StatusBadge'
 import { constitutionSteps, interestUrl, news, pillars } from '../data/site'
 
 export function Home() {
+  const [showWebinar, setShowWebinar] = useState(() => Date.now() < Date.parse('2026-12-03T21:00:00+01:00'))
+  useEffect(() => {
+    const timer = window.setInterval(() => setShowWebinar(Date.now() < Date.parse('2026-12-03T21:00:00+01:00')), 30000)
+    return () => window.clearInterval(timer)
+  }, [])
   return (
     <>
       <Seo
@@ -15,7 +21,7 @@ export function Home() {
         description="ANILP è l’associazione nazionale dedicata alla rappresentanza, tutela e valorizzazione degli infermieri liberi professionisti in Italia, costituita il 9 settembre 2026."
       />
       <Hero />
-      {Date.now() < Date.parse('2026-12-03T21:00:00+01:00') && (
+      {showWebinar && (
         <section className="bg-[#1E2A44] py-8 text-white" aria-label="Prossimo webinar ANILP">
           <div className="container-page flex flex-col items-start justify-between gap-5 md:flex-row md:items-center">
             <div><p className="text-sm font-bold uppercase tracking-wide text-teal-200">Webinar gratuito · 3 dicembre 2026 · ore 21:00</p>
