@@ -1,4 +1,16 @@
 [[redirects]]
+from = "/iscriviti-webinar"
+to = "https://anilp-associazione-nazionale-infermieri-liberi-professionisti-1.s2.yapla.com/it/event-134712"
+status = 302
+force = true
+
+[[redirects]]
+from = "/iscriviti-webinar/"
+to = "https://anilp-associazione-nazionale-infermieri-liberi-professionisti-1.s2.yapla.com/it/event-134712"
+status = 302
+force = true
+
+[[redirects]]
 from = "/delegazioni-territoriali"
 to = "/chi-siamo"
 status = 302
