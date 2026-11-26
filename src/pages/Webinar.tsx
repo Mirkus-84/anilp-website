@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
 import { Seo } from '../components/Seo'
 import { founders } from '../data/site'
 
@@ -23,6 +23,8 @@ const agenda = [
 ]
 
 export function Webinar() {
+  const { search } = useLocation()
+  const fromShortlink = new URLSearchParams(search).get('via') === 'shortlink'
   const [embedLoaded, setEmbedLoaded] = useState(false)
   const [closed, setClosed] = useState(() => Date.now() >= Date.parse('2026-12-03T21:00:00+01:00'))
   useEffect(() => {
@@ -42,7 +44,7 @@ export function Webinar() {
             <h1 className="text-4xl font-black leading-tight sm:text-6xl">Il futuro della libera professione infermieristica.</h1>
             <p className="mt-6 text-xl font-semibold text-teal-100">Incontra le persone. Scopri il progetto. Partecipa al cambiamento.</p>
             <p className="mt-5 max-w-xl leading-7 text-slate-200">ANILP apre il dialogo con i professionisti di tutta Italia. Conosci chi sta costruendo l’associazione, la sua visione e le iniziative per dare una voce alla libera professione infermieristica.</p>
-            <a href="#registrazione" className="mt-8 inline-flex rounded-lg bg-white px-6 py-4 font-bold text-[#066b67] hover:bg-teal-50">{canRegister ? 'Iscriviti gratuitamente' : 'Scopri come partecipare'}</a>
+            <a href={fromShortlink && canRegister ? registration.publicUrl : "#registrazione"} target={fromShortlink && canRegister ? "_blank" : undefined} rel={fromShortlink && canRegister ? "noopener noreferrer" : undefined} className="mt-8 inline-flex rounded-lg bg-white px-6 py-4 font-bold text-[#066b67] hover:bg-teal-50">{canRegister ? 'Iscriviti gratuitamente' : 'Scopri come partecipare'}</a>
           </div>
           <div className="rounded-2xl border border-white/20 bg-white/10 p-6 sm:p-8">
             <img src="/Logo%20ANILP%20solo%20fiamma%20no%20sfondo.png" alt="" className="mb-6 h-20 w-20 object-contain" />
