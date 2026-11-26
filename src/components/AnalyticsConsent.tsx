@@ -69,6 +69,8 @@ export function AnalyticsConsent() {
   const [editing, setEditing] = useState(false)
   const { pathname, search } = useLocation()
   const lastPage = useRef('')
+  const storageUnavailable = useRef(false)
+  const [storageWarning, setStorageWarning] = useState(false)
   useEffect(() => {
     if (choice !== 'accepted') return
     startTag()
@@ -95,6 +97,7 @@ export function AnalyticsConsent() {
   }, [])
   useEffect(() => {
     const synchronize = () => {
+      if (storageUnavailable.current) return
       const saved = readPreference()
       if (preference?.choice === 'accepted' && saved?.choice !== 'accepted' &&
           (preference.expires <= Date.now() || saved?.choice === 'rejected')) {
@@ -109,7 +112,7 @@ export function AnalyticsConsent() {
     }
     const timer = window.setInterval(synchronize, 30000)
     const onStorage = (event: StorageEvent) => {
-      if (event.key !== preferenceKey && event.key !== null) return
+      if (storageUnavailable.current || (event.key !== preferenceKey && event.key !== null)) return
       if (preference?.choice === 'accepted' && readPreference()?.choice !== 'accepted') {
         tagWindow['ga-disable-G-W1CT9XRFY5'] = true
         clearAnalyticsCookies()
@@ -133,15 +136,17 @@ export function AnalyticsConsent() {
     try {
       localStorage.setItem(preferenceKey, JSON.stringify(saved))
       stored = true
-    } catch { /* Session-only preference if storage is unavailable. */ }
-    if (next === 'rejected') {
+    } catch { /* Without durable choice, keep tracking disabled. */ }
+    storageUnavailable.current = !stored
+    setStorageWarning(!stored)
+    if (!stored || next === 'rejected') {
       tagWindow['ga-disable-G-W1CT9XRFY5'] = true
       lastPage.current = ''
       clearAnalyticsCookies()
       if (wasAccepted && stored) { window.location.reload(); return }
     }
-    setPreference(saved)
-    setEditing(false)
+    setPreference(stored ? saved : { ...saved, choice: 'rejected' })
+    setEditing(!stored)
   }
   if (choice !== null && !editing) return null
   return (
@@ -150,6 +155,7 @@ export function AnalyticsConsent() {
         <div className="max-w-2xl">
           <h2 className="font-bold text-[#1E2A44]">Le tue preferenze sui cookie</h2>
           <p className="mt-1 text-sm text-[#475569]">Usiamo Google Analytics solo con il tuo consenso per misurare le visite e migliorare il sito. Puoi rifiutare senza perdere alcuna funzionalità e modificare la scelta dal piè di pagina. <Link className="underline" to="/cookie-policy">Informativa cookie</Link>.</p>
+          {storageWarning && <p role="status" className="mt-2 text-sm text-[#475569]">Non è stato possibile salvare la preferenza. Le statistiche restano disattivate in questa pagina.</p>}
         </div>
         <div className="flex flex-wrap gap-3">
           <button type="button" onClick={() => select('rejected')} className="rounded-md border border-[#087F7A] bg-white px-4 py-3 text-sm font-bold text-[#066B67]">Rifiuta statistiche</button>
