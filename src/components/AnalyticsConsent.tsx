@@ -31,8 +31,8 @@ function cleanLocation(path: string, search: string) {
 }
 
 function startTag() {
-  if (tagWindow.gtag) return
   tagWindow['ga-disable-G-W1CT9XRFY5'] = false
+  if (tagWindow.gtag) return
   tagWindow.dataLayer = tagWindow.dataLayer || []
   tagWindow.gtag = function () { tagWindow.dataLayer!.push(arguments) }
   tagWindow.gtag('consent', 'default', { analytics_storage: 'denied', ad_storage: 'denied', ad_user_data: 'denied', ad_personalization: 'denied' })
@@ -97,6 +97,7 @@ export function AnalyticsConsent() {
     } catch { /* Session-only preference if storage is unavailable. */ }
     if (next === 'rejected') {
       tagWindow['ga-disable-G-W1CT9XRFY5'] = true
+      lastPage.current = ''
       clearAnalyticsCookies()
       if (wasAccepted && stored) { window.location.reload(); return }
     }
