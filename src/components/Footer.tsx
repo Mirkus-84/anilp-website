@@ -67,6 +67,7 @@ export function Footer() {
         <nav aria-label="Informative legali" className="flex flex-wrap gap-x-6 gap-y-2">
           <Link to="/privacy-policy" className="transition hover:text-[#066B67]">Privacy Policy</Link>
           <Link to="/cookie-policy" className="transition hover:text-[#066B67]">Cookie Policy</Link>
+          <button type="button" className="text-left underline hover:text-[#066B67]" onClick={() => window.dispatchEvent(new Event('anilp-cookie-settings'))}>Preferenze cookie</button>
         </nav>
       </div>
     </footer>
