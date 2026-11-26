@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react'
-import { Link, useLocation } from 'react-router-dom'
+import { useLocation } from 'react-router-dom'
 
 const measurementId = 'G-W1CT9XRFY5'
 const preferenceKey = 'anilp-analytics-choice-v1'
@@ -71,6 +71,20 @@ export function AnalyticsConsent() {
   const lastPage = useRef('')
   const storageUnavailable = useRef(false)
   const [storageWarning, setStorageWarning] = useState(false)
+  const dialogRef = useRef<HTMLDialogElement>(null)
+  const policyPage = pathname === '/cookie-policy' || pathname === '/privacy-policy'
+  const visible = editing || (choice === null && !policyPage)
+  useEffect(() => {
+    const dialog = dialogRef.current
+    if (!dialog || !visible) return
+    const previousOverflow = document.body.style.overflow
+    document.body.style.overflow = 'hidden'
+    dialog.showModal()
+    return () => {
+      dialog.close()
+      document.body.style.overflow = previousOverflow
+    }
+  }, [visible])
   useEffect(() => {
     if (choice !== 'accepted') return
     startTag()
@@ -146,22 +160,22 @@ export function AnalyticsConsent() {
       if (wasAccepted && stored) { window.location.reload(); return }
     }
     setPreference(stored ? saved : { ...saved, choice: 'rejected' })
-    setEditing(!stored)
+    setEditing(!stored && next === 'accepted')
   }
-  if (choice !== null && !editing) return null
+  if (!visible) return null
   return (
-    <aside aria-label="Preferenze cookie" className="fixed inset-x-0 bottom-0 z-[100] border-t border-[#D9E1E8] bg-white p-4 shadow-xl sm:p-6">
-      <div className="container-page flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
-        <div className="max-w-2xl">
-          <h2 className="font-bold text-[#1E2A44]">Le tue preferenze sui cookie</h2>
-          <p className="mt-1 text-sm text-[#475569]">Usiamo Google Analytics solo con il tuo consenso per misurare le visite e migliorare il sito. Puoi rifiutare senza perdere alcuna funzionalità e modificare la scelta dal piè di pagina. <Link className="underline" to="/cookie-policy">Informativa cookie</Link>.</p>
-          {storageWarning && <p role="status" className="mt-2 text-sm text-[#475569]">Non è stato possibile salvare la preferenza. Le statistiche restano disattivate in questa pagina.</p>}
-        </div>
-        <div className="flex flex-wrap gap-3">
-          <button type="button" onClick={() => select('rejected')} className="rounded-md border border-[#087F7A] bg-white px-4 py-3 text-sm font-bold text-[#066B67]">Rifiuta statistiche</button>
-          <button type="button" onClick={() => select('accepted')} className="rounded-md border border-[#087F7A] bg-white px-4 py-3 text-sm font-bold text-[#066B67]">Accetta statistiche</button>
-        </div>
+    <dialog ref={dialogRef} aria-labelledby="cookie-dialog-title" aria-describedby="cookie-dialog-description" onCancel={event => { event.preventDefault(); select('rejected') }} className="fixed inset-0 m-auto max-h-[90dvh] w-[calc(100%-2rem)] max-w-lg overflow-y-auto rounded-2xl border border-[#D9E1E8] bg-white p-5 text-[#1E2A44] shadow-2xl backdrop:bg-[#1E2A44]/65 sm:p-8">
+      <div className="flex items-start justify-between gap-3">
+        <h2 id="cookie-dialog-title" className="text-xl font-bold sm:text-2xl">Le tue preferenze sui cookie</h2>
+        <button type="button" aria-label="Chiudi e continua senza statistiche" onClick={() => select('rejected')} className="flex h-11 w-11 shrink-0 items-center justify-center rounded-md border border-[#087F7A] bg-white text-2xl font-bold text-[#066B67]">×</button>
       </div>
-    </aside>
+      <p id="cookie-dialog-description" className="mt-4 text-sm leading-relaxed text-[#475569]">Utilizziamo strumenti tecnici necessari al funzionamento del sito. Con il tuo consenso, usiamo Google Analytics per misurare le visite e migliorare il sito. Rifiutando o chiudendo con la X, puoi continuare senza cookie statistici e senza perdere alcuna funzionalità.</p>
+      <p className="mt-3 text-sm text-[#475569]">Puoi modificare la scelta in qualsiasi momento dal piè di pagina. Consulta la <a className="font-semibold underline" href="/cookie-policy" target="_blank" rel="noopener noreferrer">Cookie Policy</a> e la <a className="font-semibold underline" href="/privacy-policy" target="_blank" rel="noopener noreferrer">Privacy Policy</a> (si aprono in una nuova scheda).</p>
+      {storageWarning && <p role="status" className="mt-3 text-sm text-[#475569]">Non è stato possibile salvare la preferenza. Puoi continuare senza statistiche.</p>}
+      <div className="mt-6 grid grid-cols-1 gap-3 sm:grid-cols-2">
+        <button type="button" onClick={() => select('rejected')} className="min-h-12 rounded-md border border-[#087F7A] bg-white px-4 py-3 text-sm font-bold text-[#066B67]">Rifiuta statistiche</button>
+        <button type="button" onClick={() => select('accepted')} className="min-h-12 rounded-md border border-[#087F7A] bg-white px-4 py-3 text-sm font-bold text-[#066B67]">Accetta statistiche</button>
+      </div>
+    </dialog>
   )
 }

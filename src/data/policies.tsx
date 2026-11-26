@@ -175,7 +175,7 @@ export const cookieSections: PolicySection[] = [
     title: 'Consenso e banner',
     content: <>
       <p>La navigazione ordinaria del sito ANILP non attiva l’iframe di terze parti. Il contenuto Yapla viene caricato solo quando il visitatore sceglie esplicitamente di caricare il portale o il modulo; questa scelta di visualizzazione non sostituisce l’eventuale raccolta di consenso richiesta per strumenti non essenziali del fornitore. La configurazione dei cookie e dei relativi consensi va verificata nel portale Yapla prima dell’apertura al pubblico.</p>
-      <p>Il banner offre la scelta tra accettare e rifiutare le statistiche con pari evidenza. Il rifiuto non impedisce l’accesso ai servizi. Dal collegamento Preferenze cookie nel piè di pagina puoi cambiare scelta e revocare il consenso; la revoca interrompe le misurazioni future e rimuove i cookie Analytics accessibili sul dominio. Non modifica i dati già trattati lecitamente. Il consenso su ANILP non equivale automaticamente al consenso sul portale Yapla.</p>
+      <p>Al primo accesso, una finestra di dialogo presenta la scelta tra accettare e rifiutare le statistiche con pari evidenza. È possibile chiuderla con la X per continuare senza statistiche, oppure consultare le informative prima di scegliere. Il rifiuto e la chiusura non impediscono l’accesso ai servizi. Dal collegamento Preferenze cookie nel piè di pagina puoi cambiare scelta e revocare il consenso; la revoca interrompe le misurazioni future e rimuove i cookie Analytics accessibili sul dominio. Non modifica i dati già trattati lecitamente. Il consenso su ANILP non equivale automaticamente al consenso sul portale Yapla.</p>
     </>,
   },
   {
