@@ -1,5 +1,6 @@
 import { Outlet, useLocation } from 'react-router-dom'
 import { useEffect } from 'react'
+import { AnalyticsConsent } from './AnalyticsConsent'
 import { Footer } from './Footer'
 import { Header } from './Header'
 
@@ -24,6 +25,7 @@ export function Layout() {
         <Outlet />
       </main>
       <Footer />
+      <AnalyticsConsent />
     </>
   )
 }
