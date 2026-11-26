@@ -26,7 +26,7 @@ export function Home() {
             <div><p className="text-sm font-bold uppercase tracking-wide text-teal-200">Webinar gratuito · 3 dicembre 2026 · ore 21:00</p>
               <h2 className="mt-1 text-xl font-black sm:text-2xl">Il futuro della libera professione infermieristica</h2>
               <p className="mt-1 text-sm text-slate-200">Incontra gli organi associativi di ANILP. Aperto a tutti.</p></div>
-            <CTAButton to="/webinar">Scopri il webinar</CTAButton>
+            <CTAButton to="https://anilp-associazione-nazionale-infermieri-liberi-professionisti-1.s2.yapla.com/it/event-134712" external>Iscriviti gratuitamente</CTAButton>
           </div>
         </section>
       )}
