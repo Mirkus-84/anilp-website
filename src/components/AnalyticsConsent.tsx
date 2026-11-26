@@ -9,18 +9,19 @@ type Choice = 'accepted' | 'rejected'
 type TagWindow = Window & { dataLayer?: unknown[]; gtag?: (...args: unknown[]) => void; 'ga-disable-G-W1CT9XRFY5'?: boolean }
 const tagWindow = window as TagWindow
 
-function readChoice(): Choice | null {
+function readPreference(): { choice: Choice; expires: number } | null {
   try {
     const raw = localStorage.getItem(preferenceKey)
     if (!raw) return null
     const saved = JSON.parse(raw) as { choice?: string; expires?: number }
     if (typeof saved.expires !== 'number' || saved.expires <= Date.now()) return null
-    return saved.choice === 'accepted' || saved.choice === 'rejected' ? saved.choice : null
+    return saved.choice === 'accepted' || saved.choice === 'rejected' ? { choice: saved.choice, expires: saved.expires } : null
   } catch { return null }
 }
 
 function cleanLocation(path: string, search: string) {
-  const url = new URL(path, window.location.origin)
+  const allowed = /^\/(?:chi-siamo|soci-fondatori|organi-associativi|attivita|diventa-socio|documenti|news|eventi-formazione|webinar|privacy-eventi|convenzioni|percorso-costitutivo|trasparenza|contatti|privacy-policy|cookie-policy|area-riservata)?\/?$/
+  const url = new URL(allowed.test(path) ? path : path.startsWith('/news/') ? '/news/articolo' : '/', window.location.origin)
   const params = new URLSearchParams(search)
   const sources = ['facebook', 'instagram', 'linkedin', 'whatsapp', 'newsletter', 'anilp', 'google']
   const mediums = ['social', 'email', 'referral', 'organic', 'cpc']
@@ -34,6 +35,8 @@ function startTag() {
   tagWindow['ga-disable-G-W1CT9XRFY5'] = false
   if (tagWindow.gtag) return
   tagWindow.dataLayer = tagWindow.dataLayer || []
+  // Google's documented gtag queue uses an Arguments object.
+  // eslint-disable-next-line prefer-rest-params
   tagWindow.gtag = function () { tagWindow.dataLayer!.push(arguments) }
   tagWindow.gtag('consent', 'default', { analytics_storage: 'denied', ad_storage: 'denied', ad_user_data: 'denied', ad_personalization: 'denied' })
   tagWindow.gtag('consent', 'update', { analytics_storage: 'granted' })
@@ -61,7 +64,8 @@ function clearAnalyticsCookies() {
 }
 
 export function AnalyticsConsent() {
-  const [choice, setChoice] = useState<Choice | null>(readChoice)
+  const [preference, setPreference] = useState(readPreference)
+  const choice = preference?.choice ?? null
   const [editing, setEditing] = useState(false)
   const { pathname, search } = useLocation()
   const lastPage = useRef('')
@@ -71,6 +75,7 @@ export function AnalyticsConsent() {
     const location = cleanLocation(pathname, search)
     if (lastPage.current === location) return
     lastPage.current = location
+    tagWindow.gtag?.('set', { page_location: location, page_referrer: document.referrer ? new URL(document.referrer).origin : '' })
     tagWindow.gtag?.('event', 'page_view', { page_location: location, page_title: document.title, page_referrer: document.referrer ? new URL(document.referrer).origin : '' })
   }, [choice, pathname, search])
   useEffect(() => {
@@ -88,11 +93,45 @@ export function AnalyticsConsent() {
     window.addEventListener('anilp-cookie-settings', open)
     return () => window.removeEventListener('anilp-cookie-settings', open)
   }, [])
+  useEffect(() => {
+    const synchronize = () => {
+      const saved = readPreference()
+      if (preference?.choice === 'accepted' && saved?.choice !== 'accepted' &&
+          (preference.expires <= Date.now() || saved?.choice === 'rejected')) {
+        tagWindow['ga-disable-G-W1CT9XRFY5'] = true
+        clearAnalyticsCookies()
+        lastPage.current = ''
+        window.location.reload()
+        return
+      }
+      if (preference && preference.expires <= Date.now()) setPreference(null)
+      else if (saved && (saved.choice !== preference?.choice || saved.expires !== preference?.expires)) setPreference(saved)
+    }
+    const timer = window.setInterval(synchronize, 30000)
+    const onStorage = (event: StorageEvent) => {
+      if (event.key !== preferenceKey && event.key !== null) return
+      if (preference?.choice === 'accepted' && readPreference()?.choice !== 'accepted') {
+        tagWindow['ga-disable-G-W1CT9XRFY5'] = true
+        clearAnalyticsCookies()
+        window.location.reload()
+        return
+      }
+      synchronize()
+    }
+    window.addEventListener('storage', onStorage)
+    window.addEventListener('focus', synchronize)
+    return () => {
+      window.clearInterval(timer)
+      window.removeEventListener('storage', onStorage)
+      window.removeEventListener('focus', synchronize)
+    }
+  }, [preference])
   function select(next: Choice) {
     const wasAccepted = choice === 'accepted'
+    const saved = { choice: next, expires: Date.now() + lifetime }
     let stored = false
     try {
-      localStorage.setItem(preferenceKey, JSON.stringify({ choice: next, expires: Date.now() + lifetime }))
+      localStorage.setItem(preferenceKey, JSON.stringify(saved))
       stored = true
     } catch { /* Session-only preference if storage is unavailable. */ }
     if (next === 'rejected') {
@@ -101,7 +140,7 @@ export function AnalyticsConsent() {
       clearAnalyticsCookies()
       if (wasAccepted && stored) { window.location.reload(); return }
     }
-    setChoice(next)
+    setPreference(saved)
     setEditing(false)
   }
   if (choice !== null && !editing) return null
