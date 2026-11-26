@@ -7,7 +7,7 @@ on:
 
 jobs:
   check:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -25,13 +25,13 @@ jobs:
 
       - name: Install browser for consent smoke test
         run: |
-          npm install --no-save --package-lock=false playwright@1.56.1
-          npx playwright install --with-deps chromium
+          npm install --prefix /tmp/anilp-browser --no-save playwright@1.56.1
+          /tmp/anilp-browser/node_modules/.bin/playwright install --with-deps chromium
       - name: Test analytics consent without sending real Google data
         run: |
           npm run preview -- --host 127.0.0.1 > /tmp/anilp-preview.log 2>&1 &
           node --input-type=module <<'JS'
-          import { chromium } from 'playwright'
+          import { chromium } from '/tmp/anilp-browser/node_modules/playwright/index.mjs'
           import assert from 'node:assert/strict'
           const url = 'http://127.0.0.1:4173'
           for (let i = 0; i < 40; i++) {
@@ -47,6 +47,7 @@ jobs:
               await route.fulfill({ contentType: 'application/javascript', body: '' })
             })
             const page = await context.newPage()
+            await page.clock.setFixedTime(new Date('2026-11-26T12:00:00+01:00'))
             await page.goto(url + '/?utm_source=facebook&email=example%40invalid.test')
             await page.getByRole('button', {name:'Rifiuta statistiche'}).waitFor()
             assert.equal(requests, 0, 'no Google request before choice')
@@ -54,9 +55,11 @@ jobs:
             await page.reload()
             await page.getByRole('button', {name:'Preferenze cookie'}).click()
             assert.equal(requests, 0, 'no Google request after rejection')
+            const tagRequest = page.waitForRequest(/googletagmanager/)
             await page.getByRole('button', {name:'Accetta statistiche'}).click()
+            await tagRequest
             await page.waitForFunction(() => window.dataLayer?.some(e => e[0] === 'event' && e[1] === 'page_view'))
-            await page.waitForRequest(/googletagmanager/, {timeout:2000}).catch(() => {})
+            await page.waitForFunction(() => Boolean(window.gtag))
             assert.equal(requests, 1, 'one Google tag load')
             const events = await page.evaluate(() => window.dataLayer.map(e => Array.from(e)))
             assert.equal(events.filter(e=>e[0]==='event' && e[1]==='page_view').length,1)
