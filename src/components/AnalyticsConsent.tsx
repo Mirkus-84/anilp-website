@@ -23,6 +23,7 @@ function cleanLocation(path: string, search: string) {
   const allowed = /^\/(?:chi-siamo|soci-fondatori|organi-associativi|attivita|diventa-socio|documenti|news|eventi-formazione|webinar|privacy-eventi|convenzioni|percorso-costitutivo|trasparenza|contatti|privacy-policy|cookie-policy|area-riservata)?\/?$/
   const url = new URL(allowed.test(path) ? path : path.startsWith('/news/') ? '/news/articolo' : '/', window.location.origin)
   const params = new URLSearchParams(search)
+  if (path === '/webinar' && params.get('via') === 'shortlink') url.searchParams.set('via', 'shortlink')
   const sources = ['facebook', 'instagram', 'linkedin', 'whatsapp', 'newsletter', 'anilp', 'google']
   const mediums = ['social', 'email', 'referral', 'organic', 'cpc']
   if (sources.includes(params.get('utm_source') ?? '')) url.searchParams.set('utm_source', params.get('utm_source')!)
@@ -93,6 +94,9 @@ export function AnalyticsConsent() {
     lastPage.current = location
     tagWindow.gtag?.('set', { page_location: location, page_referrer: document.referrer ? new URL(document.referrer).origin : '' })
     tagWindow.gtag?.('event', 'page_view', { page_location: location, page_title: document.title, page_referrer: document.referrer ? new URL(document.referrer).origin : '' })
+    if (pathname === '/webinar' && new URLSearchParams(search).get('via') === 'shortlink') {
+      tagWindow.gtag?.('event', 'webinar_shortlink_visit', { event_code: 'anilp_20261203', page_location: location })
+    }
   }, [choice, pathname, search])
   useEffect(() => {
     if (choice !== 'accepted') return
